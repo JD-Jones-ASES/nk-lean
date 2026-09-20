@@ -1,5 +1,32 @@
 # Verification, 20 September 2026
 
+**The complete official Comparator run passed** on proof commit
+409bcef149ae96f40f69d38a17cf8bd7330dee98. Statement and ordinary-definition matching,
+the standard-axiom policy, Lean default-kernel replay and NanoDa all accepted.
+The run exited zero with its final success message after 2777.40 seconds.
+
+The same single master configuration selected all 19 statements; no subset
+replays, definition holes, enlarged axiom list or modified checker were used.
+This was developer-controlled source replay on macOS using the official
+unsandboxed Landrun shim. It is not the separate Palomar Linux intake gate.
+
+- Full replay log: [comparator-409bcef.log](replay/comparator-409bcef.log).
+- Run metadata: [comparator-409bcef.json](replay/comparator-409bcef.json).
+- Log SHA256: 55b8007b6deb5185cf708e4cdf5998decb61700cf9f4e87c7bfd7a591a5f0a23.
+- Full Solution export: 232,434,222 bytes; SHA256
+  e12be5029a582cad015d4e0e4fef200e0b31fdcd1b0c16651f710233a544cc71.
+- Export provenance: [solution-export-409bcef.json](replay/solution-export-409bcef.json).
+- All 118 source/build/certificate input hashes:
+  [proof-inputs-409bcef.json](replay/proof-inputs-409bcef.json).
+- Complete development audit log:
+  [development-audit-409bcef.log](replay/development-audit-409bcef.log).
+
+The later packaging checkpoint changes documentation and verification records,
+not these proof inputs or the compared statements. The accepted run is attributed
+to the exact proof commit above; it is not relabeled as a separate run on a
+documentation-only commit. REPLAY_TOOLCHAIN.md pins all tools and gives the
+replay command.
+
 ## Complete Lean development checks
 
 The full `lake build` passes with Lean 4.33.0 and the committed Mathlib/rk-lean
@@ -74,36 +101,19 @@ controls. Stronger Bellman/factor-two claims remain outside the 19 statements.
 and jsonschema 4.26.0. Python compilation and `git diff --check` pass. The
 metadata's zero-sorry counts refer to the proof-bearing Solution closure.
 
-## Independent candidate replay
+## Resource diagnosis and corrected proof representation
 
-The official Comparator/Lean/NanoDa installation smoke test passed on its
-`simple_match` control. The complete run on commit `99de2ade1fe572407d0295481b36f07167fa9e2e`
-passed statement/definition matching, the axiom policy and Lean default-kernel
-replay. NanoDa was killed with exit 137 without a proof-error diagnostic; the
-aggregate run therefore failed. The signal alone does not establish its cause.
+The earlier run at 99de2ade1fe572407d0295481b36f07167fa9e2e passed comparison,
+the axiom policy and Lean replay, but NanoDa was killed. A logging-only diagnostic
+copy subsequently confirmed attempted computation of 4^(10^15) in a binary
+component proof. Chunking the Odd215 numerical proof alone did not resolve it.
 
-The subsequent candidate splits Odd215 numerical reduction into 64 leaf chunks
-and 63 assembly nodes, using the existing one-sided sound checker. The exact
-lower sum, endpoints, data and public moment statement are unchanged. Its full
-Lean build and the then-current 11,308-declaration axiom audit passed. Python normal
-and optimized modes reproduce the source and reject the three corruption
-controls. Its full Solution export is 232,431,308 bytes, SHA256
-`71b7f99a9508d993a675bc79ce434044b302dab8ae4732134c679b0c3a6d16e0`.
-A standalone NanoDa replay was also killed after about 161 seconds, so this
-change did not resolve the failure. A separate logging-only diagnostic checker
-then confirmed attempted evaluation of 4^(10^15) in the binary component
-base-equals-square proof. See NANODA_POWER_REDUCTION.md for the exact trace.
-
-The current proof uses a depth chosen from the singleton {10^15}, proves its
-exact value, and applies the generic moment theorem to that noncomputing depth.
-The generated logarithmic certificate, exponent and all 19 selected statements
-are unchanged. BinaryDepth, BinaryApplication and SquareApplication compile
-warning-free, and the full build audits 11,314 declarations. The updated
-complete independent replay is pending.
-
-The independent verification gate must identify the exact candidate commit. REPLAY_TOOLCHAIN.md pins all tools and gives the command. On this
-macOS host the official development Landrun shim provides no sandbox; a local
-run is developer-controlled source replay, distinct from Palomar's Linux gate.
+The accepted candidate proves that a noncomputing chosen depth equals exactly
+10^15, and uses that depth inside natural powers. Its scalar logarithmic
+certificate and all mathematical conclusions are unchanged. The remedy passed
+the unchanged official checker; the diagnostic checker was not used as the
+acceptance authority. NANODA_POWER_REDUCTION.md retains the failed-run and
+diagnostic evidence, including their precise limits.
 
 The repository remains private. Public release, submission and registration
-have not occurred and are separate from mathematical verification.
+have not occurred and are separate from this mathematical verification.

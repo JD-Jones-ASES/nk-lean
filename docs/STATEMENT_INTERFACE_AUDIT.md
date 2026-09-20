@@ -39,26 +39,22 @@ endorsement, and Palomar acceptance. It makes no global optimality or worldwide
 record claim. Its zero-sorry count concerns the proof-bearing Solution closure;
 Challenge deliberately contains the 19 statement placeholders.
 
-## Verification boundary
+## Verification boundary and later evidence
 
-Following the initial source review, both complete odd components and
-`SquareApplication.lean` compiled, with the final square application
-warning-free. The completed project build and transitive axiom audit cover
-10,794 NK declarations and admit only the three permitted standard axioms.
-The 19 intentional Challenge placeholders are the only theorem placeholders.
-These build results were recorded by the main verification lane; this reviewer
-did not rerun them.
+At the earlier snapshot following this source review, both odd components
+and SquareApplication compiled, and the transitive audit covered 10,794 NK
+declarations. Those results came from the main verification lane; this reviewer
+did not rerun them. The final candidate's audit covers 11,314 declarations.
 
-A subsequent read-only check confirmed that the sole square-assembly proof
-change introduces `hpower (n : ℕ) : Nat.Coprime (4 ^ n) b` from the already
-proved `Nat.Coprime 4 b`, using `Nat.Coprime.pow_left`, then specializes n to
-10^15. This keeps the large power symbolic. It changes no theorem statement,
-component, exponent, coprimality premise, or moment-surplus calculation, and
-introduces no additional assumption.
+The earlier generic coprimality helper was specialized to the literal depth
+10^15. It preserved the mathematical statement but did not prevent NanoDa's
+eager natural-power reduction. The final candidate instead uses the proved
+chosen depth described in NANODA_POWER_REDUCTION.md. Its exact value remains
+10^15; no selected statement, exponent, coprimality premise or surplus changes.
 
-Exact Comparator comparison and NanoDa replay on the final candidate remain
-separate pending gates. The saved-control audit rerun is recorded separately
-by the main verification lane. This source review does not discharge these
-mechanical checks. The installed-tool smoke test in `REPLAY_TOOLCHAIN.md`
-covers only the official small control, not nk-lean. See `PROOF_STATUS.md` and
-`VERIFICATION.md` for subsequent results.
+The main verification lane subsequently completed the unchanged official
+Comparator replay on proof commit
+409bcef149ae96f40f69d38a17cf8bd7330dee98. Statement/definition matching, the axiom
+policy, Lean replay and NanoDa all passed. See VERIFICATION.md for its retained
+evidence and macOS host scope. This historical source review is not presented
+as independently executing those mechanical checks.

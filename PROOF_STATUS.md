@@ -1,7 +1,9 @@
 # Proof status
 
-This is a private development project. It is not yet a completed Palomar
-package. Python/C++ certificates and floating-point search are not Lean proofs.
+This is a complete private proof candidate for Palomar, verified locally with
+the unchanged official Comparator, Lean replay and NanoDa. Public release and
+Palomar intake have not occurred. Python/C++ and floating-point search discover
+witnesses; the imported Lean proofs establish the selected conclusions.
 
 ## Compiled general theorems and building blocks
 
@@ -40,7 +42,8 @@ package. Python/C++ certificates and floating-point search are not Lean proofs.
 
 These declarations have compiled using Lean4.33.0 and the pinned Mathlib.
 The development axiom audit permits only propext, Classical.choice and
-Quot.sound. The final release still needs exhaustive independent replay.
+Quot.sound. The complete official local independent replay accepted proof commit
+409bcef149ae96f40f69d38a17cf8bd7330dee98.
 
 ## Compiled structural and binary companions
 
@@ -64,21 +67,26 @@ Quot.sound. The final release still needs exhaustive independent replay.
 
 `NK.Certificates.square_power_bound` proves the unconditional all-N square
 bound at75806770413/100000000000. All nine actual components are complete.
-The final serial Odd215 geometry/component replay took173/4.9 seconds;
+Earlier serial component checks recorded173/4.9 seconds for Odd215;
 Odd437 numerical moments took188 seconds, geometry927 seconds, and its
-component6.4 seconds. SquareApplication compiled warning-free in4 seconds.
+component6.4 seconds. The then-current SquareApplication compiled warning-free in4 seconds. The final chosen-depth version compiled in5.2 seconds.
 The binary modulus remains symbolic throughout.
 
 
-## Release requirements
+## Verified comparison and release boundary
 
-The draft Challenge/Solution pair selects19 statements, including all three
-proved numerical targets. Challenge imports only
-Mathlib and contains complete ordinary mathematical definitions;
-all finite data and certificate proofs belong in Solution. Completion requires
-matching statement comparison and NanoDa replay on an exact commit. The
-complete project build and transitive audit of11,314 NK declarations pass. Public release and registration have not occurred.
+The Challenge/Solution pair selects 19 proved statements, including all three
+unconditional numerical bounds. Challenge imports only Mathlib, contains
+complete ordinary definitions and has 19 intentional theorem placeholders.
+Solution's proof closure has no admissions or definition holes.
 
-See SUBMISSION_PLAN.md and docs/SOURCE_AND_POLICY_AUDIT.md for the complete
-scope and the pinned current intake contract. Do not describe this list of
-preliminary proofs as completion of the user's full formalization goal.
+The complete build, transitive audit of 11,314 NK declarations and all 25 saved
+control files pass. The unchanged official Comparator accepted proof commit
+409bcef149ae96f40f69d38a17cf8bd7330dee98: exact statement/definition matching,
+the three-axiom policy, Lean default-kernel replay and NanoDa all passed.
+See docs/VERIFICATION.md for the logs, hashes, tool pins and macOS host scope.
+
+This local replay used the official unsandboxed development Landrun shim.
+Public release, the official Palomar Linux gate, submission and registration
+remain separate from completion of this private candidate. SUBMISSION_PLAN.md
+records that release sequence and the exact mathematical scope.

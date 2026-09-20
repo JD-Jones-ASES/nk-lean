@@ -1,0 +1,26 @@
+{
+  "candidate_commit": "409bcef149ae96f40f69d38a17cf8bd7330dee98",
+  "git_status_before": "",
+  "git_head_after": "409bcef149ae96f40f69d38a17cf8bd7330dee98",
+  "git_status_after": "",
+  "argv": [
+    "/Users/jjones/.elan/bin/lake",
+    "env",
+    "/private/tmp/nk-comparator/.lake/build/bin/comparator",
+    "comparator.json"
+  ],
+  "environment_overrides": {
+    "COMPARATOR_LANDRUN": "/private/tmp/nk-comparator/scripts/fake-landrun.sh",
+    "COMPARATOR_LEAN4EXPORT": "/private/tmp/nk-comparator/.lake/packages/lean4export/.lake/build/bin/lean4export",
+    "COMPARATOR_NANODA": "/private/tmp/nk-nanoda/target/release/nanoda_bin"
+  },
+  "exit_code": 0,
+  "elapsed_seconds": 2777.4005663749995,
+  "user_seconds": 2687.598163,
+  "system_seconds": 74.29197,
+  "max_rss_platform_units": 5877841920,
+  "log_path": "/private/tmp/nk-comparator-409bcef149ae.log",
+  "log_sha256": "55b8007b6deb5185cf708e4cdf5998decb61700cf9f4e87c7bfd7a591a5f0a23",
+  "comparator_config_sha256": "2a4f27412b0038e970243fe9d5cdd3d3db02c69daf3813a447f796b621649683",
+  "scope": "Unmodified official tools; local macOS developer-controlled replay with the official unsandboxed fake-landrun shim. Not the Linux intake gate."
+}

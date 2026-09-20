@@ -106,3 +106,12 @@ not completion of the post-change aggregate or independent verifier checks.
 PROOF_STATUS.md and VERIFICATION.md record actual Lean, Comparator and NanoDa
 outcomes. Generator controls and an external exact research replay do not
 substitute for those checks or establish that NanoDa's resource issue is resolved.
+
+## Chosen-depth generator freshness
+
+At proof commit 409bcef149ae96f40f69d38a17cf8bd7330dee98, an independent driver
+intercepted output writes from scripts/generate_binary_depth.py and reproduced
+all 2,689 production bytes under normal Python and -O. Production SHA256:
+61947f19be9647b5be5b1de04bd2c4346ea6677c781fa62e46a76b7a9719deed.
+The normal/optimized records are retained in docs/replay. This is generator
+freshness evidence; independent-kernel acceptance is recorded in VERIFICATION.md.

@@ -1,0 +1,36 @@
+Building Challenge
+WARNING: THIS IS NOT REAL LANDRUN! UNSAFELY RUNNING exec lake build Challenge
+⚠ [8706/8707] Replayed Challenge
+warning: Challenge.lean:66:8: declaration uses `sorry`
+warning: Challenge.lean:80:8: declaration uses `sorry`
+warning: Challenge.lean:86:8: declaration uses `sorry`
+warning: Challenge.lean:92:8: declaration uses `sorry`
+warning: Challenge.lean:98:8: declaration uses `sorry`
+warning: Challenge.lean:104:8: declaration uses `sorry`
+warning: Challenge.lean:117:8: declaration uses `sorry`
+warning: Challenge.lean:122:8: declaration uses `sorry`
+warning: Challenge.lean:129:8: declaration uses `sorry`
+warning: Challenge.lean:137:8: declaration uses `sorry`
+warning: Challenge.lean:140:8: declaration uses `sorry`
+warning: Challenge.lean:143:8: declaration uses `sorry`
+warning: Challenge.lean:157:8: declaration uses `sorry`
+warning: Challenge.lean:162:8: declaration uses `sorry`
+warning: Challenge.lean:166:8: declaration uses `sorry`
+warning: Challenge.lean:205:8: declaration uses `sorry`
+warning: Challenge.lean:217:8: declaration uses `sorry`
+warning: Challenge.lean:227:8: declaration uses `sorry`
+warning: Challenge.lean:233:8: declaration uses `sorry`
+Build completed successfully (8707 jobs).
+WARNING: THIS IS NOT REAL LANDRUN! UNSAFELY RUNNING exec /private/tmp/nk-comparator/.lake/packages/lean4export/.lake/build/bin/lean4export Challenge -- Nat String String.mk Char Quot Quot.mk Quot.lift Quot.ind NK.powerLowerBound_of_intervalMoments NK.dvd_pow_iff_perfectPowerClosure_dvd NK.perfectPowerClosure_le_of_dvd_pow NK.perfectPowerClosure_coprime_iff NK.perfectPowerClosure_idempotent NK.closure_interval_lift NK.unitConductor_le_exponent_iff NK.unitPower_stabilizes NK.unitPower_stabilizes_block NK.Certificates.square_power_bound NK.Certificates.fourth_power_bound NK.Certificates.sixth_power_bound NK.BinaryCapacity.U_supermultiplicative NK.BinaryCapacity.capacity_bounds NK.BinaryCapacity.tendsto_capacity NK.LexicographicCapacity.capacity_lex NK.WordGraphCapacity.word_capacity NK.prime_power_capacity NK.IntervalAlphabet.moment_le_prime_power_capacity propext Quot.sound Classical.choice Nat.add Nat.sub Nat.mul Nat.pow Nat.gcd Nat.div Nat.mod Nat.beq Nat.ble Nat.land Nat.lor Nat.xor Nat.shiftLeft Nat.shiftRight String.ofList Char.ofNat List eagerReduce
+Exporting #[Nat, String, String.mk, Char, Quot, Quot.mk, Quot.lift, Quot.ind, NK.powerLowerBound_of_intervalMoments, NK.dvd_pow_iff_perfectPowerClosure_dvd, NK.perfectPowerClosure_le_of_dvd_pow, NK.perfectPowerClosure_coprime_iff, NK.perfectPowerClosure_idempotent, NK.closure_interval_lift, NK.unitConductor_le_exponent_iff, NK.unitPower_stabilizes, NK.unitPower_stabilizes_block, NK.Certificates.square_power_bound, NK.Certificates.fourth_power_bound, NK.Certificates.sixth_power_bound, NK.BinaryCapacity.U_supermultiplicative, NK.BinaryCapacity.capacity_bounds, NK.BinaryCapacity.tendsto_capacity, NK.LexicographicCapacity.capacity_lex, NK.WordGraphCapacity.word_capacity, NK.prime_power_capacity, NK.IntervalAlphabet.moment_le_prime_power_capacity, propext, Quot.sound, Classical.choice, Nat.add, Nat.sub, Nat.mul, Nat.pow, Nat.gcd, Nat.div, Nat.mod, Nat.beq, Nat.ble, Nat.land, Nat.lor, Nat.xor, Nat.shiftLeft, Nat.shiftRight, String.ofList, Char.ofNat, List, eagerReduce] from Challenge
+Building Solution
+WARNING: THIS IS NOT REAL LANDRUN! UNSAFELY RUNNING exec lake build Solution
+Build completed successfully (8782 jobs).
+WARNING: THIS IS NOT REAL LANDRUN! UNSAFELY RUNNING exec /private/tmp/nk-comparator/.lake/packages/lean4export/.lake/build/bin/lean4export Solution -- Nat String String.mk Char Quot Quot.mk Quot.lift Quot.ind NK.powerLowerBound_of_intervalMoments NK.dvd_pow_iff_perfectPowerClosure_dvd NK.perfectPowerClosure_le_of_dvd_pow NK.perfectPowerClosure_coprime_iff NK.perfectPowerClosure_idempotent NK.closure_interval_lift NK.unitConductor_le_exponent_iff NK.unitPower_stabilizes NK.unitPower_stabilizes_block NK.Certificates.square_power_bound NK.Certificates.fourth_power_bound NK.Certificates.sixth_power_bound NK.BinaryCapacity.U_supermultiplicative NK.BinaryCapacity.capacity_bounds NK.BinaryCapacity.tendsto_capacity NK.LexicographicCapacity.capacity_lex NK.WordGraphCapacity.word_capacity NK.prime_power_capacity NK.IntervalAlphabet.moment_le_prime_power_capacity propext Quot.sound Classical.choice Nat.add Nat.sub Nat.mul Nat.pow Nat.gcd Nat.div Nat.mod Nat.beq Nat.ble Nat.land Nat.lor Nat.xor Nat.shiftLeft Nat.shiftRight String.ofList Char.ofNat List eagerReduce
+WARNING: THIS IS NOT REAL LANDRUN! UNSAFELY RUNNING exec /private/tmp/nk-nanoda/target/release/nanoda_bin /var/folders/bx/n_jpc_k910v84px6b0jmjx940000gp/T/tmp.NUjRPyqP
+Exporting #[Nat, String, String.mk, Char, Quot, Quot.mk, Quot.lift, Quot.ind, NK.powerLowerBound_of_intervalMoments, NK.dvd_pow_iff_perfectPowerClosure_dvd, NK.perfectPowerClosure_le_of_dvd_pow, NK.perfectPowerClosure_coprime_iff, NK.perfectPowerClosure_idempotent, NK.closure_interval_lift, NK.unitConductor_le_exponent_iff, NK.unitPower_stabilizes, NK.unitPower_stabilizes_block, NK.Certificates.square_power_bound, NK.Certificates.fourth_power_bound, NK.Certificates.sixth_power_bound, NK.BinaryCapacity.U_supermultiplicative, NK.BinaryCapacity.capacity_bounds, NK.BinaryCapacity.tendsto_capacity, NK.LexicographicCapacity.capacity_lex, NK.WordGraphCapacity.word_capacity, NK.prime_power_capacity, NK.IntervalAlphabet.moment_le_prime_power_capacity, propext, Quot.sound, Classical.choice, Nat.add, Nat.sub, Nat.mul, Nat.pow, Nat.gcd, Nat.div, Nat.mod, Nat.beq, Nat.ble, Nat.land, Nat.lor, Nat.xor, Nat.shiftLeft, Nat.shiftRight, String.ofList, Char.ofNat, List, eagerReduce] from Solution
+Running nanoda kernel on solution
+Nanoda kernel accepts the solution
+Running Lean default kernel on solution.
+Lean default kernel accepts the solution
+Your solution is okay!

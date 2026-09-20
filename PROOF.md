@@ -131,7 +131,7 @@ Square differences at exponent0.75806770413, fourth powers at0.9142 and
 sixth powers at0.95295 are closed all-N Lean theorems. The square proof
 assembles the actual binary, six chain and two odd components through the
 general criterion. Exact geometry and numerical checks have all passed.
-PROOF_STATUS.md records the remaining independent verification gates.
+PROOF_STATUS.md records the verification record and remaining release gates.
 
 The square gain starts with P0179's four support replacements and width
 optimization over the pinned Naslund0.75806746 witness. P0180 adds cooperative

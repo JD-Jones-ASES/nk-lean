@@ -1,0 +1,11 @@
+{
+  "status": "PASS_PYTHON_ONLY",
+  "optimized": true,
+  "production_bytes_reproduced": true,
+  "production_sha256": "61947f19be9647b5be5b1de04bd2c4346ea6677c781fa62e46a76b7a9719deed",
+  "production_bytes": 2689,
+  "generator_sha256": "8f8a8f1746b7fdfac9775c7729709290eb56253d4408156a7a6a056cdc3af28a",
+  "repository_writes": 0,
+  "lean_builds_run": 0,
+  "exports_run": 0
+}

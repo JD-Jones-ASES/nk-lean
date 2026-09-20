@@ -1,0 +1,83 @@
+{
+  "status": "PASS_READ_ONLY_SOURCE_METADATA_LINK_SCOPE",
+  "head": "409bcef149ae96f40f69d38a17cf8bd7330dee98",
+  "worktree_clean": true,
+  "source_guard_proof_files": 70,
+  "compared_theorems": 19,
+  "intentional_challenge_placeholders": 19,
+  "definition_holes": 0,
+  "nanoDa_enabled": true,
+  "local_markdown_links_checked": [
+    {
+      "source": "README.md",
+      "target": "PROOF_STATUS.md"
+    },
+    {
+      "source": "README.md",
+      "target": "SUBMISSION_PLAN.md"
+    },
+    {
+      "source": "README.md",
+      "target": "docs/ATTRIBUTION.md"
+    }
+  ],
+  "broken_local_links": [],
+  "external_markdown_links_not_network_checked": [
+    "https://github.com/JD-Jones-ASES/fs-lower-bound/tree/d1294519dfdcc5f7e139e77336a7d042f390b9e7",
+    "https://github.com/JD-Jones-ASES/ns-lean/tree/035e9b0c147630e35631e4401433660f695d1fba",
+    "https://github.com/JD-Jones-ASES/rk-lean/tree/4bf2e3a56b6a522764a4d03e5dc606c12376185e",
+    "https://github.com/PalomarRegistry/PalomarPolicy/blob/792c7c0b9e798bd02719e795ef11fa2b5929e067/CONTRIBUTING.md",
+    "https://github.com/PalomarRegistry/PalomarSubmission/blob/3561d237dcc4b28482558ad28a64d767d7cc8615/toolchains.json"
+  ],
+  "direct_dependency_pins_match_manifest": true,
+  "python_scripts_syntax_pass": true,
+  "metadata_schema": "retained official v0.4 schema PASS in nk-validation-env",
+  "decl_count_references": [
+    {
+      "path": "docs/STATEMENT_INTERFACE_AUDIT.md",
+      "line": 47,
+      "text": "10,794 NK declarations and admit only the three permitted standard axioms."
+    },
+    {
+      "path": "docs/VERIFICATION.md",
+      "line": 11,
+      "text": "The transitive audit checks **11,314 NK declarations**, including required"
+    },
+    {
+      "path": "docs/VERIFICATION.md",
+      "line": 88,
+      "text": "Lean build and the then-current 11,308-declaration axiom audit passed. Python normal"
+    },
+    {
+      "path": "docs/VERIFICATION.md",
+      "line": 101,
+      "text": "warning-free, and the full build audits 11,314 declarations. The updated"
+    }
+  ],
+  "binary_depth_replay_normal": {
+    "status": "PASS_PYTHON_ONLY",
+    "optimized": false,
+    "production_bytes_reproduced": true,
+    "production_sha256": "61947f19be9647b5be5b1de04bd2c4346ea6677c781fa62e46a76b7a9719deed",
+    "production_bytes": 2689,
+    "generator_sha256": "8f8a8f1746b7fdfac9775c7729709290eb56253d4408156a7a6a056cdc3af28a",
+    "repository_writes": 0,
+    "lean_builds_run": 0,
+    "exports_run": 0
+  },
+  "binary_depth_replay_optimized": {
+    "status": "PASS_PYTHON_ONLY",
+    "optimized": true,
+    "production_bytes_reproduced": true,
+    "production_sha256": "61947f19be9647b5be5b1de04bd2c4346ea6677c781fa62e46a76b7a9719deed",
+    "production_bytes": 2689,
+    "generator_sha256": "8f8a8f1746b7fdfac9775c7729709290eb56253d4408156a7a6a056cdc3af28a",
+    "repository_writes": 0,
+    "lean_builds_run": 0,
+    "exports_run": 0
+  },
+  "exports_run": 0,
+  "lean_builds_run": 0,
+  "checker_jobs_run": 0,
+  "repository_writes": 0
+}

@@ -118,9 +118,16 @@ The change blocks conversion of the chosen depth to a numeral by ordinary
 definitional reduction. It changes the witness's representation, not its
 mathematical value, the square bound, or the checker.
 
-## Remaining verification requirements
+## Subsequent official replay
 
-The remedy remains subject to ordinary compilation, the transitive axiom
-audit, exact statement comparison, and complete replay with the unchanged
-official NanoDa binary. Diagnostic progress alone cannot discharge any of
-these final acceptance gates.
+After compilation and the complete declaration/control audit, the unchanged
+official Comparator accepted proof commit
+409bcef149ae96f40f69d38a17cf8bd7330dee98, including statement/definition matching,
+the standard-axiom policy, Lean default-kernel replay and NanoDa. The complete
+Solution export has 232,434,222 bytes and SHA256
+e12be5029a582cad015d4e0e4fef200e0b31fdcd1b0c16651f710233a544cc71.
+
+See VERIFICATION.md and replay/comparator-409bcef.log for the exact successful
+run. The logging-only diagnostic copy was not an acceptance authority. This
+later result supersedes the pending verification boundary stated at the time
+of the source review, while preserving the failed runs as historical evidence.

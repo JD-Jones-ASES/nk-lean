@@ -38,12 +38,12 @@ the actual proved library and certificates. Keep `definition_names` empty,
 NanoDa enabled, and exactly the three standard permitted axioms.
 
 All 19 statements and all three numerical applications compile in Lean. The
-full transitive declaration audit and saved controls pass. The final independent
-replay remains a required gate: statement/definition matching, the axiom policy,
-Lean replay and NanoDa must each accept the exact candidate. The first aggregate
-run passed all but NanoDa, which encountered an infeasible closed natural-power
-reduction; the corrected representation is undergoing verification.
-See `docs/VERIFICATION.md` and `docs/REPLAY_TOOLCHAIN.md` for actual run scope.
+full transitive declaration audit and all 25 saved controls pass. The unchanged
+official Comparator accepted proof commit
+409bcef149ae96f40f69d38a17cf8bd7330dee98 under statement/definition matching,
+the standard-axiom policy, Lean default-kernel replay and NanoDa. The earlier
+failed run and the mathematically equivalent depth representation are documented
+in docs/NANODA_POWER_REDUCTION.md. Exact run evidence is in docs/VERIFICATION.md.
 
 Retain the exact input files, source pins, generator replay controls and sound
 Lean checkers in this repository. No access to the private Analytic-Lab is needed
@@ -54,11 +54,11 @@ tools, not proof oracles.
 
 ## Release sequence
 
-1. Freeze the proved candidate; finish and record the complete independent
-   replay, exact tool revisions, source/export hashes and host limitations.
-2. Consolidate the private default branch, metadata, license, proof account,
-   attribution and verification report. Preserve one coherent comparison
-   configuration covering the 19 statements.
+1. Completed: freeze the proved candidate and record the complete local
+   independent replay, exact tool revisions, source/export hashes and host scope.
+2. Retain the private default-branch checkpoint with metadata, license,
+   proof account, attribution and verification report. The single comparison
+   configuration covers all 19 statements.
 3. When JD authorizes public release, refresh the official intake policy and
    current numerical literature, publish the approved private candidate, and
    run the official Linux verification gate. The macOS development shim is

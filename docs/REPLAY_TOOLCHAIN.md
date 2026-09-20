@@ -35,5 +35,7 @@ Comparator instructions. Never disable NanoDa or broaden permitted axioms
 merely to obtain a successful result. `definition_names` remains empty: all
 ordinary definition bodies must match, rather than being accepted as holes.
 
-The full nk-lean run is pending. Its final result must identify the exact
-candidate commit and must supersede this installation-only report explicitly.
+The full nk-lean run subsequently accepted proof commit
+409bcef149ae96f40f69d38a17cf8bd7330dee98 with all checks enabled.
+See VERIFICATION.md and the retained replay log for the actual result; this
+supersedes the installation-only boundary for that exact candidate.

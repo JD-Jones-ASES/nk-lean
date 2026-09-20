@@ -10,8 +10,10 @@ The research is pinned at Analytic-Lab commit
 The current independently checked Lab square exponent is **0.75806770413**;
 the fourth and sixth exponents are **0.9142** and **0.95295**. All three bounds
 are now unconditional all-N Lean theorems, with exact
-finite geometry and moment certificates. Complete independent release replay
-remains pending. No Palomar submission has occurred.
+finite geometry and moment certificates. The complete official local Comparator
+replay, including NanoDa and the Lean kernel, accepted proof commit 409bcef149ae96f40f69d38a17cf8bd7330dee98.
+See [verification](docs/VERIFICATION.md) for the exact evidence and host scope.
+The repository remains private; public release and Palomar intake have not occurred.
 
 The full general finite-family interval-moment transfer theorem now compiles,
 along with canonical closure/free-copy lifting and the underlying word, rank,
@@ -22,3 +24,7 @@ credits Krachun, Jones, Naslund, the supplied consultation and Mathlib.
 
 Build with `lake build` using the committed Lean4.33.0 toolchain and exact
 Mathlib/rk-lean dependency pins. The full project is MIT licensed.
+
+[Next research](docs/NEXT_RESEARCH.md) records the coupled-prime and binary-policy
+routes, their scope, and a proposed exact certificate for fixed-support width
+optimization.

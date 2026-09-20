@@ -12,8 +12,9 @@ project:
     prime-depth capacity law outside binary squares; and existence of intrinsic binary interval capacity
     as the limit of finite-depth roots. The square witness combines Naslund's binary policy and odd supports
     with cooperative support changes, new widths, and a fresh exact global allocation. No global optimality
-    or worldwide record claim is made. The private candidate remains under verification; PROOF_STATUS.md
-    records the remaining independent replay and release gates.
+    or worldwide record claim is made. The private candidate passed the complete official local Comparator replay
+    at proof commit 409bcef149ae96f40f69d38a17cf8bd7330dee98. PROOF_STATUS.md records the
+    host scope and the remaining public release and Palomar intake gates.
   authors:
   - JD Jones
   responsible_maintainers:
@@ -115,7 +116,7 @@ automation:
     Claude contributed predecessor work and the initial port suggestion. See docs/ATTRIBUTION.md.
 status:
   scope: 'Private candidate: 19 selected theorem statements, complete ordinary definitions and no definition
-    holes. The zero sorry counts refer to the proof-bearing Solution import closure; Challenge has 19 intentional theorem placeholders. All three numerical applications and the selected structural theorems are proved; complete independent release replay remains pending. No global optimum, numerical binary capacity,
+    holes. The zero sorry counts refer to the proof-bearing Solution import closure; Challenge has 19 intentional theorem placeholders. All three numerical applications and the selected structural theorems are proved; the complete official local Comparator replay accepted proof commit 409bcef149ae96f40f69d38a17cf8bd7330dee98, while public release and the official Palomar Linux gate remain separate. No global optimum, numerical binary capacity,
     Bellman identity, factor-two finite-depth estimate, public release or Palomar acceptance is claimed.'
   sorry_count: 0
   sorry_in_definitions: 0
