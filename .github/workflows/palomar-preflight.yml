@@ -13,6 +13,6 @@ jobs:
       repository: JD-Jones-ASES/nk-lean
       commit: ${{ github.sha }}
       pipeline_commit: 3561d237dcc4b28482558ad28a64d767d7cc8615
-      request_id: nk-module-repair-${{ github.run_id }}
+      request_id: nkrepair0001
       mode: full
       execution_profile: palomar-standard-v1
