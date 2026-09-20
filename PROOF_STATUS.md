@@ -5,6 +5,10 @@ package. Python/C++ certificates and floating-point search are not Lean proofs.
 
 ## Compiled general theorems and building blocks
 
+- **Unconditional numerical applications**: `NK.Certificates.fourth_power_bound`
+  proves `PowerLowerBound 4 (4571/5000)` and `sixth_power_bound` proves
+  `PowerLowerBound 6 (19059/20000)`, through literal seed geometry, proved
+  rational-power enclosures, canonical closure and the full transfer theorem.
 - **Full finite-family interval-moment transfer**: from ordinary finite interval
   alphabets on pairwise coprime perfect-power bases, nonnegative moment
   exponents and strict surplus, conclude the all-N bound. Uniform width
@@ -26,7 +30,7 @@ package. Python/C++ certificates and floating-point search are not Lean proofs.
 - Full word-interval alphabet, preserving exact cardinality and moment.
 - Shared CRT product and strict-surplus budget, assembled into the theorem.
 - Analytic log/exp/rpow enclosure bounds and exact natural floor/ceiling
-  rounding primitives. Finite Taylor/logarithm series now have computable natural-number endpoints and proved outward rounding; rational-power composition is in progress.
+  rounding primitives. Finite Taylor/logarithm series and rational-power composition have computable natural-number endpoints and proved outward rounding.
 - Constructive odd-unit square criterion modulo2^n and factor-of-four descent.
 
 - Retained-digit forward graph projection and exact fibers, including weighted sums.
@@ -39,10 +43,11 @@ The development axiom audit permits only propext, Classical.choice and
 Quot.sound. The final release still needs exhaustive independent replay.
 
 ## Work in progress
-- Prime-power conductor companions, retained-word CRT interval construction, and binary finite-policy iteration.
-- Proved exact arithmetic/geometry checkers and unconditional numerical
-  applications: square at the strongest exact Lab target (currently
-  0.75806770413), fourth0.9142, sixth0.95295.
+- Prime-power conductor companions and binary finite-policy iteration.
+  Retained-word CRT interval construction and its exact moment factor are proved.
+- Unconditional square numerical application at the strongest exact Lab target,
+  currently0.75806770413; two large retained-word alphabets and the binary
+  finite-policy growth certificate remain to be assembled.
 - Binary capacity, its two-sided finite-depth estimates, and the remaining
   structural companion statements selected for the final comparator.
 

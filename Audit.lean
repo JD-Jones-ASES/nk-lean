@@ -33,7 +33,9 @@ run_cmd do
       `NK.BinaryGlue.glue_moment,
       `NK.retainedPair_fiber_card,
       `NK.RationalMomentCertificate.moment_bound,
-      `NK.RationalPowerBounds.unitRpowBounds_sound] do
+      `NK.RationalPowerBounds.unitRpowBounds_sound,
+      `NK.Certificates.fourth_power_bound,
+      `NK.Certificates.sixth_power_bound] do
     unless env.contains name do
       logError m!"Required development theorem missing: {name}"
   logInfo m!"Axiom audit checked {checked} NK declarations."

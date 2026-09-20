@@ -8,9 +8,10 @@ and improved square, fourth-power and sixth-power lower bounds.
 The research is pinned at Analytic-Lab commit
 `916d0d604fa36c511b73f7aa214e49c16b637796` (P0177–P0180).
 The current independently checked Lab square exponent is **0.75806770413**;
-the fourth and sixth exponents are **0.9142** and **0.95295**. These are written
-mathematics plus exact finite certificates. Their unconditional Lean proofs
-are under development, and no Palomar submission has occurred.
+the fourth and sixth exponents are **0.9142** and **0.95295**. The fourth
+and sixth bounds are now unconditional all-N Lean theorems. The square bound
+has written mathematics and independently checked exact finite certificates;
+its full Lean application remains in progress. No Palomar submission has occurred.
 
 The full general finite-family interval-moment transfer theorem now compiles,
 along with canonical closure/free-copy lifting and the underlying word, rank,

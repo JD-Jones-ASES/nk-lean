@@ -6,6 +6,7 @@ They are data for the formal development, not assumptions or Lean proofs.
 - `even.json`: P0177 fourth/sixth-power integer seed tables, target exponents
   4571/5000 and 19059/20000. `NK/Certificates/EvenGeometry.lean` checks every
   full modular power arc for these 18 literal seeds by kernel reduction.
+  `EvenMoments` and `EvenApplications` now close both all-N bounds in Lean.
 - `square/`: P0180 certificate and data pinned at Analytic-Lab commit
   `916d0d604fa36c511b73f7aa214e49c16b637796`, target exponent
   75806770413/100000000000. The odd437 witness SHA256 is

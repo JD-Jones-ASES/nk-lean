@@ -30,3 +30,7 @@ import NK.Certificates.EvenGeometry
 import NK.RationalPowerBounds
 import NK.RationalMomentCertificate
 import NK.RetainedCRTAlphabet
+import NK.ClosureProducts
+import NK.AlphabetSymmetries
+import NK.Certificates.EvenApplications
+import NK.Certificates.SquareChains
