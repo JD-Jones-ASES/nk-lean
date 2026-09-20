@@ -1,21 +1,23 @@
 # nk-lean
 
-Work in progress toward a coherent formalization of interval-moment constructions
-for sets avoiding power differences. This repository is private development,
-not a completed Palomar submission. No new theorem is claimed Lean-verified yet.
+A private development of interval-moment constructions for sets avoiding
+perfect-power differences. The intended Palomar package centers on a general
+transfer theorem, arbitrary-modulus/conductor reductions, binary capacity,
+and improved square, fourth-power and sixth-power lower bounds.
 
-The research inputs are Analytic-Lab P0177–P0179, currently pinned at
-`02e467c93722e9cfc0dcc670466901b4391c2868`. They contain written proofs and
-independent exact certificates for square exponent 0.75806759, fourth-power
-exponent 0.9142, and sixth-power exponent 0.95295. Further square research is
-active; the release exponent will be selected only from rigorously checked
-certificates, not floating-point search outputs.
+The research is pinned at Analytic-Lab commit
+`916d0d604fa36c511b73f7aa214e49c16b637796` (P0177–P0180).
+The current independently checked Lab square exponent is **0.75806770413**;
+the fourth and sixth exponents are **0.9142** and **0.95295**. These are written
+mathematics plus exact finite certificates. Their unconditional Lean proofs
+are under development, and no Palomar submission has occurred.
 
-The intended center is a general interval-moment transfer through arbitrary
-moduli, conductor compression, and the exceptional binary square recursion.
-Naslund's construction and the Krachun–Jones ranked/CRT lineage retain explicit
-attribution. The user's supplied consultation informed the even-power work.
+The full general finite-family interval-moment transfer theorem now compiles,
+along with canonical closure/free-copy lifting and the underlying word, rank,
+CRT and stopping arguments. [PROOF_STATUS.md](PROOF_STATUS.md)
+separates this formal coverage from outstanding work. [SUBMISSION_PLAN.md](SUBMISSION_PLAN.md)
+records the full mathematical target and release gates; [attribution](docs/ATTRIBUTION.md)
+credits Krachun, Jones, Naslund, the supplied consultation and Mathlib.
 
-See [SUBMISSION_PLAN.md](SUBMISSION_PLAN.md) for the complete target and release
-gates. Development status must distinguish written mathematics, exact Python/C++
-certificates, and kernel-checked Lean proofs.
+Build with `lake build` using the committed Lean4.33.0 toolchain and exact
+Mathlib/rk-lean dependency pins. The full project is MIT licensed.
