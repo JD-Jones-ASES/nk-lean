@@ -37,10 +37,11 @@ is claimed.
 - [Verification](docs/VERIFICATION.md): accepted replay, tool versions, and checks.
 - [AI assistance](DISCLOSURE.md): contributions, responsibility, and review status.
 
-The complete official local Comparator run accepted all 19 statements at
-proof commit `409bcef149ae96f40f69d38a17cf8bd7330dee98`, including Lean kernel
-and NanoDa replay. The verification report distinguishes that accepted run
-from later presentation changes and from Palomar's Linux intake checks.
+The [official Linux mechanical preflight](https://github.com/JD-Jones-ASES/nk-lean/actions/runs/35540659599)
+passed all 19 statements at `f324e33d76e5e578cd69c1d7909c0216df37517f`,
+including statement comparison, the axiom policy, Lean kernel checking, and
+NanoDa replay. Later documentation changes preserve all recorded proof and
+build inputs. Palomar submission and editorial review remain separate steps.
 
 ## Build
 

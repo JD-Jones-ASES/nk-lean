@@ -1,0 +1,710 @@
+{
+  "challenge": {
+    "bytes": 9188,
+    "canonical_olean_sha256": "87c3eb2eb6ad6251211b6c426a5f13eadc4c4f0779d5bde2e223689c9d53dfb1",
+    "dependencies": [
+      {
+        "provenance": "allowlisted",
+        "repository": "leanprover-community/mathlib4"
+      }
+    ],
+    "direct_imports": [
+      "Mathlib"
+    ],
+    "lines": 239,
+    "module": "NKChallenge",
+    "path": "NKChallenge.lean",
+    "sha256": "0d198112d0d0a1c0163c2cc6f890fcfa2b85bac512bc86a4220eb9631a9902a4",
+    "transitive_source_count": 2,
+    "trust_level": "high",
+    "untrusted_sources": []
+  },
+  "checked_at": "2026-09-20T23:41:36Z",
+  "classification": {
+    "arxiv": [
+      {
+        "code": "math.NT",
+        "name": "Number Theory"
+      },
+      {
+        "code": "math.CO",
+        "name": "Combinatorics"
+      }
+    ],
+    "msc2020": [
+      {
+        "code": "11B30",
+        "name": "Arithmetic combinatorics; higher degree uniformity"
+      },
+      {
+        "code": "11B75",
+        "name": "Other combinatorial number theory"
+      },
+      {
+        "code": "05C20",
+        "name": "Directed graphs (digraphs), tournaments"
+      }
+    ]
+  },
+  "comparator": {
+    "challenge_module": "NKChallenge",
+    "definition_names": [],
+    "path": "comparator.json",
+    "permitted_axioms": [
+      "propext",
+      "Quot.sound",
+      "Classical.choice"
+    ],
+    "sha256": "5bd66748541dfa6c56c02b42de0821b07a189bcec9e7aa410400132c1da33f14",
+    "solution_module": "NKSolution",
+    "theorem_names": [
+      "NK.powerLowerBound_of_intervalMoments",
+      "NK.dvd_pow_iff_perfectPowerClosure_dvd",
+      "NK.perfectPowerClosure_le_of_dvd_pow",
+      "NK.perfectPowerClosure_coprime_iff",
+      "NK.perfectPowerClosure_idempotent",
+      "NK.closure_interval_lift",
+      "NK.unitConductor_le_exponent_iff",
+      "NK.unitPower_stabilizes",
+      "NK.unitPower_stabilizes_block",
+      "NK.Certificates.square_power_bound",
+      "NK.Certificates.fourth_power_bound",
+      "NK.Certificates.sixth_power_bound",
+      "NK.BinaryCapacity.U_supermultiplicative",
+      "NK.BinaryCapacity.capacity_bounds",
+      "NK.BinaryCapacity.tendsto_capacity",
+      "NK.LexicographicCapacity.capacity_lex",
+      "NK.WordGraphCapacity.word_capacity",
+      "NK.prime_power_capacity",
+      "NK.IntervalAlphabet.moment_le_prime_power_capacity"
+    ]
+  },
+  "comparator_commit": "575674928e239f5bc452aab72d1dd7b0f1326494",
+  "comparator_log_tail": "Building PalomarCanonical35ea507d641e2d1514d95c5e.Challenge\nExporting #[Nat, String, String.mk, Char, Quot, Quot.mk, Quot.lift, Quot.ind, NK.powerLowerBound_of_intervalMoments, NK.dvd_pow_iff_perfectPowerClosure_dvd, NK.perfectPowerClosure_le_of_dvd_pow, NK.perfectPowerClosure_coprime_iff, NK.perfectPowerClosure_idempotent, NK.closure_interval_lift, NK.unitConductor_le_exponent_iff, NK.unitPower_stabilizes, NK.unitPower_stabilizes_block, NK.Certificates.square_power_bound, NK.Certificates.fourth_power_bound, NK.Certificates.sixth_power_bound, NK.BinaryCapacity.U_supermultiplicative, NK.BinaryCapacity.capacity_bounds, NK.BinaryCapacity.tendsto_capacity, NK.LexicographicCapacity.capacity_lex, NK.WordGraphCapacity.word_capacity, NK.prime_power_capacity, NK.IntervalAlphabet.moment_le_prime_power_capacity, propext, Quot.sound, Classical.choice, Nat.add, Nat.sub, Nat.mul, Nat.pow, Nat.gcd, Nat.div, Nat.mod, Nat.beq, Nat.ble, Nat.land, Nat.lor, Nat.xor, Nat.shiftLeft, Nat.shiftRight, String.ofList, Char.ofNat, List, eagerReduce] from PalomarCanonical35ea507d641e2d1514d95c5e.Challenge\nBuilding NKSolution\n\u2714 [8707/8782] Built NK.PerfectPowerClosure (2.2s)\n\u2714 [8708/8782] Built NK.Surplus (9.8s)\n\u2714 [8709/8782] Built NK.FixedPointNat (11s)\n\u2714 [8710/8782] Built NK.PrimePowerUnits (11s)\n\u2714 [8711/8782] Built NK.NumericBounds (12s)\n\u2714 [8712/8782] Built NK.ClosureProducts (1.8s)\n\u2714 [8713/8782] Built NK.Definitions (6.2s)\n\u2714 [8714/8782] Built NK.MomentProducts (6.4s)\n\u2714 [8715/8782] Built RK.Defs (6.6s)\n\u2714 [8716/8782] Built NK.FixedPointSeries (8.4s)\n\u2714 [8717/8782] Built NK.UniformBounds (7.1s)\n\u2714 [8718/8782] Built NK.BinarySquares (7.6s)\n\u2714 [8719/8782] Built NK.NumericReduction (7.6s)\n\u2714 [8720/8782] Built NK.Stopping (7.5s)\n\u2714 [8721/8782] Built NK.Intervals (6.0s)\n\u2714 [8722/8782] Built NK.Interpolation (6.8s)\n\u2714 [8723/8782] Built NK.ClosureLift (7.0s)\n\u2714 [8724/8782] Built RK.DiffMod (6.9s)\n\u2714 [8725/8782] Built NK.RationalPowerBounds (7.0s)\n\u2714 [8726/8782] Built NK.StoppingWords (8.2s)\n\u2714 [8727/8782] Built NK.UnitConductor (9.7s)\n\u2714 [8728/8782] Built NK.GraphIntervals (8.6s)\n\u2714 [8729/8782] Built NK.SubmissionExtras (6.7s)\n\u2714 [8730/8782] Built RK.RankedBlocks (6.6s)\n\u2714 [8731/8782] Built NK.BinaryArc (7.0s)\n\u2714 [8732/8782] Built NK.BinaryDepth (6.0s)\n\u2714 [8733/8782] Built NK.LexicographicCapacity (6.8s)\n\u2714 [8734/8782] Built RK.LemmaC (7.8s)\n\u2714 [8735/8782] Built RK.LemmaA (10s)\n\u2714 [8736/8782] Built NK.BinaryGlue (7.9s)\n\u2714 [8737/8782] Built NK.Certificates.BinaryDepth (7.6s)\n\u2714 [8738/8782] Built NK.WordGraphCapacity (5.7s)\n\u2714 [8739/8782] Built RK.LemmaB (6.1s)\n\u2714 [8740/8782] Built NK.RankedTransfer (3.9s)\n\u2714 [8741/8782] Built NK.IntervalRanks (4.2s)\n\u2714 [8742/8782] Built NK.CRTTransfer (4.2s)\n\u2714 [8743/8782] Built NK.WordIntervals (4.0s)\n\u2714 [8744/8782] Built NK.RetainedDigits (6.1s)\n\u2714 [8745/8782] Built NK.RankBudget (6.5s)\n\u2714 [8746/8782] Built NK.SelectedBlock (6.9s)\n\u2714 [8747/8782] Built NK.AlphabetSymmetries (7.9s)\n\u2714 [8748/8782] Built NK.RetainedFibers (7.3s)\n\u2714 [8749/8782] Built NK.BlockComposition (10s)\n\u2714 [8750/8782] Built NK.BinaryPolicy (7.8s)\n\u2714 [8751/8782] Built NK.PrimeBlockLex (6.9s)\n\u2714 [8752/8782] Built NK.IntervalTransfer (9.3s)\n\u2714 [8753/8782] Built NK.RetainedCRTAlphabet (7.6s)\n\u2714 [8754/8782] Built NK.BinaryPolicyGrowth (6.0s)\n\u2714 [8755/8782] Built NK.PrimeBlockCapacity (6.0s)\n\u2714 [8756/8782] Built NK.BinaryCapacity (7.0s)\n\u2714 [8757/8782] Built NK.RationalAlphabet (6.9s)\n\u2714 [8758/8782] Built NK.RetainedPairCertificate (7.4s)\n\u2714 [8759/8782] Built NK.RationalMomentCertificate (9.3s)\n\u2714 [8760/8782] Built NK.FastPairCertificate (19s)\n\u2714 [8761/8782] Built NK.Certificates.BinaryGeometry (85s)\n\u2714 [8762/8782] Built NK.PairMomentCertificate (23s)\n\u2714 [8763/8782] Built NK.Certificates.SquareChains (30s)\n\u2714 [8764/8782] Built NK.PairCertificateComposition (11s)\n\u2714 [8765/8782] Built NK.Certificates.Odd215Data (142s)\n\u2714 [8766/8782] Built NK.OneSidedPairMoment (11s)\n\u2714 [8767/8782] Built NK.Certificates.BinaryMoments (52s)\n\u2714 [8768/8782] Built NK.Certificates.EvenGeometry (253s)\n\u2714 [8769/8782] Built NK.Certificates.BinaryApplication (16s)\n\u2714 [8770/8782] Built NK.Certificates.EvenMoments (20s)\n\u2714 [8771/8782] Built NK.Certificates.EvenApplications (9.4s)\n\u2714 [8772/8782] Built NK.Certificates.Odd215Numeric (103s)\n\u2714 [8773/8782] Built NK.Certificates.Odd437Data (366s)\n\u2714 [8774/8782] Built NK.Certificates.Odd215Geometry (278s)\n\u2714 [8775/8782] Built NK.Certificates.Odd215Moments (5.9s)\n\u2714 [8776/8782] Built NK.Certificates.Odd437Numeric (258s)\n\u2714 [8777/8782] Built NK.Certificates.Odd437Geometry (1230s)\n\u2714 [8778/8782] Built NK.Certificates.Odd437Moments (3.9s)\n\u2714 [8779/8782] Built NK.Certificates.SquareApplication (4.2s)\n\u2714 [8780/8782] Built NK (3.8s)\n\u2714 [8781/8782] Built NKSolution (3.8s)\nBuild completed successfully (8782 jobs).\nExporting #[Nat, String, String.mk, Char, Quot, Quot.mk, Quot.lift, Quot.ind, NK.powerLowerBound_of_intervalMoments, NK.dvd_pow_iff_perfectPowerClosure_dvd, NK.perfectPowerClosure_le_of_dvd_pow, NK.perfectPowerClosure_coprime_iff, NK.perfectPowerClosure_idempotent, NK.closure_interval_lift, NK.unitConductor_le_exponent_iff, NK.unitPower_stabilizes, NK.unitPower_stabilizes_block, NK.Certificates.square_power_bound, NK.Certificates.fourth_power_bound, NK.Certificates.sixth_power_bound, NK.BinaryCapacity.U_supermultiplicative, NK.BinaryCapacity.capacity_bounds, NK.BinaryCapacity.tendsto_capacity, NK.LexicographicCapacity.capacity_lex, NK.WordGraphCapacity.word_capacity, NK.prime_power_capacity, NK.IntervalAlphabet.moment_le_prime_power_capacity, propext, Quot.sound, Classical.choice, Nat.add, Nat.sub, Nat.mul, Nat.pow, Nat.gcd, Nat.div, Nat.mod, Nat.beq, Nat.ble, Nat.land, Nat.lor, Nat.xor, Nat.shiftLeft, Nat.shiftRight, String.ofList, Char.ofNat, List, eagerReduce] from NKSolution\nRunning nanoda kernel on solution\nnanoda kernel accepts the solution\nRunning Lean default kernel on solution.\nLean default kernel accepts the solution\nYour solution is okay!",
+  "errors": [],
+  "existing_id": null,
+  "formalization": {
+    "automation_method_count": 2,
+    "path": "formalization.yaml",
+    "project_name": "Lower bounds for sets without perfect-power differences",
+    "review_status": "agent-reviewed",
+    "sha256": "485a26ee9c5f53d9795ac09d575f071ba8b257d8d90656fc4511fa0be9389da5",
+    "source_count": 4
+  },
+  "lake_manifest": {
+    "path": "lake-manifest.json",
+    "sha256": "42a2df1e84962efbc9d7776f94e0bf668bf27c4f33e5f3199f57853c9e066b09"
+  },
+  "lakefile": {
+    "format": "toml",
+    "path": "lakefile.toml",
+    "sha256": "9e65c657130bdf0ebca0a7d32416bc8fa0b568d37c9865b539ea9754a55ff6bf"
+  },
+  "landrun_commit": "811cfff51ceaf3d9843708aa6d22e9b84ccac8b4",
+  "lean4export_commit": "15f6055e299ad5b89345e533cc2192f4cc00f659",
+  "lean_toolchain": "leanprover/lean4:v4.33.0",
+  "lean_toolchain_path": "lean-toolchain",
+  "license": {
+    "declared_identifier": "MIT",
+    "detected_identifier": "MIT",
+    "path": "LICENSE",
+    "sha256": "8d464f723696204001f7ef63b6146ffc544aa6837aa74c53f6f9c53d8a18b0f0"
+  },
+  "mathlib_cache": {
+    "available": true,
+    "required": true
+  },
+  "mathlib_toolchain": [
+    {
+      "revision": "db584cd6d46c92f209a44c0f1c829460d327499d",
+      "toolchain": "leanprover/lean4:v4.33.0"
+    }
+  ],
+  "nanoda_commit": "68d5ca9db226849b41a6fff59d796ff19d0a8840",
+  "orcid_validation": {
+    "checked_at": "2026-09-20T22:07:31Z",
+    "records": [],
+    "registry": "https://orcid.org",
+    "schema_version": 1
+  },
+  "phase": "verification",
+  "project_dependencies": [
+    {
+      "name": "rkLean",
+      "repository": "JD-Jones-ASES/rk-lean",
+      "revision": "4bf2e3a56b6a522764a4d03e5dc606c12376185e",
+      "url": "https://github.com/JD-Jones-ASES/rk-lean.git"
+    },
+    {
+      "name": "mathlib",
+      "repository": "leanprover-community/mathlib4",
+      "revision": "db584cd6d46c92f209a44c0f1c829460d327499d",
+      "url": "https://github.com/leanprover-community/mathlib4.git"
+    },
+    {
+      "name": "plausible",
+      "repository": "leanprover-community/plausible",
+      "revision": "b7eb3304aeae834b12dda98993a37f6a41f6f0bb",
+      "url": "https://github.com/leanprover-community/plausible"
+    },
+    {
+      "name": "LeanSearchClient",
+      "repository": "leanprover-community/LeanSearchClient",
+      "revision": "5f4d51b81cbd3f6b32b156bfad9056621a040404",
+      "url": "https://github.com/leanprover-community/LeanSearchClient"
+    },
+    {
+      "name": "importGraph",
+      "repository": "leanprover-community/import-graph",
+      "revision": "16f02aa7642864af59f1ff0e384a015994db9118",
+      "url": "https://github.com/leanprover-community/import-graph"
+    },
+    {
+      "name": "proofwidgets",
+      "repository": "leanprover-community/ProofWidgets4",
+      "revision": "4be2e3d5087eeb272cf5a8853b8f9dd025ef5957",
+      "url": "https://github.com/leanprover-community/ProofWidgets4"
+    },
+    {
+      "name": "aesop",
+      "repository": "leanprover-community/aesop",
+      "revision": "3448c0bcc5ce01b2d1546e483ec3620e32df3d0e",
+      "url": "https://github.com/leanprover-community/aesop"
+    },
+    {
+      "name": "Qq",
+      "repository": "leanprover-community/quote4",
+      "revision": "92c15be17b7caf78c2ad767ec40f89052d908d81",
+      "url": "https://github.com/leanprover-community/quote4"
+    },
+    {
+      "name": "batteries",
+      "repository": "leanprover-community/batteries",
+      "revision": "4488d40d070b9700d4d5a6aa342f0d40c31b2a2d",
+      "url": "https://github.com/leanprover-community/batteries"
+    },
+    {
+      "name": "Cli",
+      "repository": "leanprover/lean4-cli",
+      "revision": "6130a47896ce867c6a4a55373441e59e565bad0f",
+      "url": "https://github.com/leanprover/lean4-cli"
+    }
+  ],
+  "provenance": {
+    "mathematical_sources": [
+      {
+        "author_endorsement": "not-contacted",
+        "authors": [
+          {
+            "name": "Eric Naslund"
+          }
+        ],
+        "location": "https://github.com/enaslund/sarkozy-lower-bound-0.758/blob/e5d693729e23762b063a55015ad79ccaf28a3217/papers/square-difference-free-sets-of-exponent-0.75806746.tex",
+        "note": "Source of the square interval criterion, odd retained supports, and 25-state binary transition rules. This formalization generalizes the criterion to positive k, changes odd supports and widths, and gives a new exact allocation. The binary transition rules are unchanged.",
+        "relationship": "adapts",
+        "title": "Square-difference-free sets of exponent 0.75806746",
+        "type": "paper"
+      },
+      {
+        "author_endorsement": "not-contacted",
+        "authors": [
+          {
+            "name": "Dmitry Krachun"
+          }
+        ],
+        "identifier": "arXiv:2608.01325",
+        "note": "Ranked modular blocks, word construction and CRT are the ancestry of the pinned rk-lean dependency. The source treats squares; its original numerical theorem is not rederived as a separate result here.",
+        "relationship": "adapts",
+        "title": "Square-Difference-Free Sets beyond the Three-Quarter Barrier",
+        "type": "paper"
+      },
+      {
+        "author_endorsement": "not-contacted",
+        "authors": [
+          {
+            "name": "Imre Z. Ruzsa"
+          }
+        ],
+        "identifier": "doi:10.1007/BF02454169",
+        "note": "Classical residue and digit constructions for power-difference-free sets.",
+        "relationship": "background",
+        "title": "Difference sets without squares",
+        "type": "paper"
+      },
+      {
+        "author_endorsement": "not-contacted",
+        "authors": [
+          {
+            "name": "Khalid Younis"
+          }
+        ],
+        "identifier": "arXiv:1908.06058",
+        "note": "Prior perfect-degree-base transfer and coprime prime-power/free-copy reductions. These unweighted antecedents are not claimed new.",
+        "relationship": "background",
+        "title": "Lower bounds in the polynomial Szemeredi theorem",
+        "type": "paper"
+      }
+    ],
+    "related_formalizations": [
+      {
+        "identifier": "https://github.com/JD-Jones-ASES/rk-lean/tree/4bf2e3a56b6a522764a4d03e5dc606c12376185e",
+        "note": "Pinned MIT dependency for ranked modular blocks, word constructions, and CRT. The interval transfer and the exact numerical certificates are proved in this repository.",
+        "relationship": "builds-on"
+      },
+      {
+        "identifier": "https://github.com/JD-Jones-ASES/fs-lower-bound/tree/d1294519dfdcc5f7e139e77336a7d042f390b9e7",
+        "note": "Square predecessor and ancestry of rk-lean; not a direct dependency.",
+        "relationship": "builds-on"
+      },
+      {
+        "identifier": "https://github.com/JD-Jones-ASES/ns-lean/tree/035e9b0c147630e35631e4401433660f695d1fba",
+        "note": "Related function-field result cited by Naslund. No theorem from this project is used as a dependency.",
+        "relationship": "other"
+      }
+    ],
+    "repository_role": "substantive-development",
+    "responsible_maintainers": [
+      {
+        "name": "JD Jones"
+      }
+    ],
+    "result_origin": "source-based"
+  },
+  "resource_usage": [
+    {
+      "elapsed_seconds": 0.005,
+      "max_rss_kib": 13184,
+      "peak_tasks_observed": 1,
+      "phase": "confinement-initial",
+      "returncode": 0,
+      "system_cpu_seconds": 0.004,
+      "user_cpu_seconds": 0.001,
+      "workspace_disk_peak_bytes": 0
+    },
+    {
+      "elapsed_seconds": 0.007,
+      "max_rss_kib": 13368,
+      "peak_tasks_observed": 1,
+      "phase": "confinement-initial",
+      "returncode": 0,
+      "system_cpu_seconds": 0.007,
+      "user_cpu_seconds": 0.002,
+      "workspace_disk_peak_bytes": 0
+    },
+    {
+      "elapsed_seconds": 0.005,
+      "max_rss_kib": 13204,
+      "peak_tasks_observed": 1,
+      "phase": "confinement-initial",
+      "returncode": 1,
+      "system_cpu_seconds": 0.004,
+      "user_cpu_seconds": 0.001,
+      "workspace_disk_peak_bytes": 0
+    },
+    {
+      "cpu_usage_nanoseconds": 53178000,
+      "exec_main_code": "1",
+      "exec_main_status": "1",
+      "memory_events": {
+        "oom": 0,
+        "oom_kill": 0
+      },
+      "memory_peak_bytes": 262144,
+      "phase": "confinement-initial:cgroup",
+      "supervisor_timeout": false,
+      "systemd_active_state": "failed",
+      "systemd_result": "exit-code"
+    },
+    {
+      "elapsed_seconds": 0.025,
+      "max_rss_kib": 13368,
+      "peak_tasks_observed": 1,
+      "phase": "confinement-initial",
+      "returncode": 0,
+      "system_cpu_seconds": 0.009,
+      "user_cpu_seconds": 0.016,
+      "workspace_disk_peak_bytes": 0
+    },
+    {
+      "elapsed_seconds": 0.026,
+      "max_rss_kib": 13204,
+      "peak_tasks_observed": 1,
+      "phase": "confinement-initial",
+      "returncode": 1,
+      "system_cpu_seconds": 0.009,
+      "user_cpu_seconds": 0.017,
+      "workspace_disk_peak_bytes": 0
+    },
+    {
+      "cpu_usage_nanoseconds": 75721000,
+      "exec_main_code": "1",
+      "exec_main_status": "1",
+      "memory_events": {
+        "oom": 0,
+        "oom_kill": 0
+      },
+      "memory_peak_bytes": 262144,
+      "phase": "confinement-initial:cgroup",
+      "supervisor_timeout": false,
+      "systemd_active_state": "failed",
+      "systemd_result": "exit-code"
+    },
+    {
+      "elapsed_seconds": 0.026,
+      "max_rss_kib": 13204,
+      "peak_tasks_observed": 1,
+      "phase": "confinement-initial",
+      "returncode": 1,
+      "system_cpu_seconds": 0.005,
+      "user_cpu_seconds": 0.021,
+      "workspace_disk_peak_bytes": 0
+    },
+    {
+      "cpu_usage_nanoseconds": 74200000,
+      "exec_main_code": "1",
+      "exec_main_status": "1",
+      "memory_events": {
+        "oom": 0,
+        "oom_kill": 0
+      },
+      "memory_peak_bytes": 524288,
+      "phase": "confinement-initial:cgroup",
+      "supervisor_timeout": false,
+      "systemd_active_state": "failed",
+      "systemd_result": "exit-code"
+    },
+    {
+      "elapsed_seconds": 0.022,
+      "max_rss_kib": 13204,
+      "peak_tasks_observed": 1,
+      "phase": "confinement-initial",
+      "returncode": 1,
+      "system_cpu_seconds": 0.006,
+      "user_cpu_seconds": 0.017,
+      "workspace_disk_peak_bytes": 0
+    },
+    {
+      "cpu_usage_nanoseconds": 72351000,
+      "exec_main_code": "1",
+      "exec_main_status": "1",
+      "memory_events": {
+        "oom": 0,
+        "oom_kill": 0
+      },
+      "memory_peak_bytes": 262144,
+      "phase": "confinement-initial:cgroup",
+      "supervisor_timeout": false,
+      "systemd_active_state": "failed",
+      "systemd_result": "exit-code"
+    },
+    {
+      "elapsed_seconds": 2.167,
+      "max_rss_kib": 894428,
+      "peak_tasks_observed": 1,
+      "phase": "module-resolution",
+      "returncode": 0,
+      "system_cpu_seconds": 0.433,
+      "user_cpu_seconds": 1.792,
+      "workspace_disk_peak_bytes": 700416
+    },
+    {
+      "elapsed_seconds": 0.068,
+      "max_rss_kib": 92040,
+      "peak_tasks_observed": 1,
+      "phase": "module-resolution",
+      "returncode": 0,
+      "system_cpu_seconds": 0.037,
+      "user_cpu_seconds": 0.049,
+      "workspace_disk_peak_bytes": 0
+    },
+    {
+      "elapsed_seconds": 49.547,
+      "max_rss_kib": 1027156,
+      "peak_tasks_observed": 1,
+      "phase": "trusted-cache",
+      "returncode": 0,
+      "system_cpu_seconds": 43.75,
+      "user_cpu_seconds": 73.052,
+      "workspace_disk_peak_bytes": 7787704320
+    },
+    {
+      "elapsed_seconds": 7.281,
+      "max_rss_kib": 1020736,
+      "peak_tasks_observed": 1,
+      "phase": "trusted-cache",
+      "returncode": 0,
+      "system_cpu_seconds": 3.475,
+      "user_cpu_seconds": 7.5,
+      "workspace_disk_peak_bytes": 1466368
+    },
+    {
+      "elapsed_seconds": 2.68,
+      "max_rss_kib": 894916,
+      "peak_tasks_observed": 1,
+      "phase": "trusted-cache",
+      "returncode": 0,
+      "system_cpu_seconds": 0.627,
+      "user_cpu_seconds": 2.006,
+      "workspace_disk_peak_bytes": 700416
+    },
+    {
+      "elapsed_seconds": 12.643,
+      "max_rss_kib": 6759212,
+      "peak_tasks_observed": 1,
+      "phase": "canonical-challenge",
+      "returncode": 0,
+      "system_cpu_seconds": 2.962,
+      "user_cpu_seconds": 3.346,
+      "workspace_disk_peak_bytes": 24576
+    },
+    {
+      "elapsed_seconds": 0.115,
+      "max_rss_kib": 92008,
+      "peak_tasks_observed": 1,
+      "phase": "canonical-challenge",
+      "returncode": 0,
+      "system_cpu_seconds": 0.042,
+      "user_cpu_seconds": 0.048,
+      "workspace_disk_peak_bytes": 0
+    },
+    {
+      "elapsed_seconds": 0.066,
+      "max_rss_kib": 92052,
+      "peak_tasks_observed": 1,
+      "phase": "canonical-challenge",
+      "returncode": 0,
+      "system_cpu_seconds": 0.032,
+      "user_cpu_seconds": 0.045,
+      "workspace_disk_peak_bytes": 0
+    },
+    {
+      "elapsed_seconds": 0.004,
+      "max_rss_kib": 13368,
+      "peak_tasks_observed": 1,
+      "phase": "confinement-final",
+      "returncode": 0,
+      "system_cpu_seconds": 0.003,
+      "user_cpu_seconds": 0.001,
+      "workspace_disk_peak_bytes": 0
+    },
+    {
+      "elapsed_seconds": 0.007,
+      "max_rss_kib": 13368,
+      "peak_tasks_observed": 1,
+      "phase": "confinement-final",
+      "returncode": 0,
+      "system_cpu_seconds": 0.005,
+      "user_cpu_seconds": 0.002,
+      "workspace_disk_peak_bytes": 0
+    },
+    {
+      "elapsed_seconds": 0.004,
+      "max_rss_kib": 13204,
+      "peak_tasks_observed": 1,
+      "phase": "confinement-final",
+      "returncode": 1,
+      "system_cpu_seconds": 0.002,
+      "user_cpu_seconds": 0.002,
+      "workspace_disk_peak_bytes": 0
+    },
+    {
+      "cpu_usage_nanoseconds": 51918000,
+      "exec_main_code": "1",
+      "exec_main_status": "1",
+      "memory_events": {
+        "oom": 0,
+        "oom_kill": 0
+      },
+      "memory_peak_bytes": 262144,
+      "phase": "confinement-final:cgroup",
+      "supervisor_timeout": false,
+      "systemd_active_state": "failed",
+      "systemd_result": "exit-code"
+    },
+    {
+      "elapsed_seconds": 0.026,
+      "max_rss_kib": 13368,
+      "peak_tasks_observed": 1,
+      "phase": "confinement-final",
+      "returncode": 0,
+      "system_cpu_seconds": 0.007,
+      "user_cpu_seconds": 0.018,
+      "workspace_disk_peak_bytes": 0
+    },
+    {
+      "elapsed_seconds": 0.026,
+      "max_rss_kib": 13200,
+      "peak_tasks_observed": 1,
+      "phase": "confinement-final",
+      "returncode": 0,
+      "system_cpu_seconds": 0.004,
+      "user_cpu_seconds": 0.022,
+      "workspace_disk_peak_bytes": 0
+    },
+    {
+      "elapsed_seconds": 0.026,
+      "max_rss_kib": 13412,
+      "peak_tasks_observed": 1,
+      "phase": "confinement-final",
+      "returncode": 1,
+      "system_cpu_seconds": 0.006,
+      "user_cpu_seconds": 0.02,
+      "workspace_disk_peak_bytes": 0
+    },
+    {
+      "cpu_usage_nanoseconds": 75576000,
+      "exec_main_code": "1",
+      "exec_main_status": "1",
+      "memory_events": {
+        "oom": 0,
+        "oom_kill": 0
+      },
+      "memory_peak_bytes": 262144,
+      "phase": "confinement-final:cgroup",
+      "supervisor_timeout": false,
+      "systemd_active_state": "failed",
+      "systemd_result": "exit-code"
+    },
+    {
+      "elapsed_seconds": 0.026,
+      "max_rss_kib": 13368,
+      "peak_tasks_observed": 1,
+      "phase": "confinement-final",
+      "returncode": 1,
+      "system_cpu_seconds": 0.007,
+      "user_cpu_seconds": 0.019,
+      "workspace_disk_peak_bytes": 0
+    },
+    {
+      "cpu_usage_nanoseconds": 77359000,
+      "exec_main_code": "1",
+      "exec_main_status": "1",
+      "memory_events": {
+        "oom": 0,
+        "oom_kill": 0
+      },
+      "memory_peak_bytes": 262144,
+      "phase": "confinement-final:cgroup",
+      "supervisor_timeout": false,
+      "systemd_active_state": "failed",
+      "systemd_result": "exit-code"
+    },
+    {
+      "elapsed_seconds": 0.022,
+      "max_rss_kib": 13180,
+      "peak_tasks_observed": 1,
+      "phase": "confinement-final",
+      "returncode": 1,
+      "system_cpu_seconds": 0.005,
+      "user_cpu_seconds": 0.017,
+      "workspace_disk_peak_bytes": 0
+    },
+    {
+      "cpu_usage_nanoseconds": 74832000,
+      "exec_main_code": "1",
+      "exec_main_status": "1",
+      "memory_events": {
+        "oom": 0,
+        "oom_kill": 0
+      },
+      "memory_peak_bytes": 262144,
+      "phase": "confinement-final:cgroup",
+      "supervisor_timeout": false,
+      "systemd_active_state": "failed",
+      "systemd_result": "exit-code"
+    },
+    {
+      "elapsed_seconds": 1.285,
+      "max_rss_kib": 845720,
+      "peak_tasks_observed": 1,
+      "phase": "candidate-configuration",
+      "returncode": 0,
+      "system_cpu_seconds": 0.629,
+      "user_cpu_seconds": 0.695,
+      "workspace_disk_peak_bytes": 0
+    },
+    {
+      "elapsed_seconds": 1.292,
+      "max_rss_kib": 844572,
+      "peak_tasks_observed": 1,
+      "phase": "candidate-configuration",
+      "returncode": 0,
+      "system_cpu_seconds": 0.597,
+      "user_cpu_seconds": 0.732,
+      "workspace_disk_peak_bytes": 0
+    },
+    {
+      "elapsed_seconds": 5364.43,
+      "max_rss_kib": 9503180,
+      "peak_tasks_observed": 1,
+      "phase": "comparator",
+      "returncode": 0,
+      "system_cpu_seconds": 246.85,
+      "user_cpu_seconds": 6657.16,
+      "workspace_disk_peak_bytes": 977657856
+    }
+  ],
+  "schema_version": 1,
+  "solution": {
+    "module": "NKSolution",
+    "path": "NKSolution.lean",
+    "sha256": "df1721ab2d37966846da4ebb6f62a571f45b6ea854ce27d10d2fc0aacca919b1"
+  },
+  "source": {
+    "bytes": 5768632,
+    "commit": "f324e33d76e5e578cd69c1d7909c0216df37517f",
+    "repository": "JD-Jones-ASES/nk-lean",
+    "repository_url": "https://github.com/JD-Jones-ASES/nk-lean",
+    "tree_url": "https://github.com/JD-Jones-ASES/nk-lean/tree/f324e33d76e5e578cd69c1d7909c0216df37517f"
+  },
+  "stage": "complete",
+  "status": "pass",
+  "submission": {
+    "authorization": {
+      "relationship": "approved"
+    },
+    "requested_paths": {
+      "comparator_config_path": "comparator.json",
+      "formalization_metadata_path": "",
+      "project_path": ""
+    },
+    "submission_id": "nkrepair0001"
+  },
+  "verification_profile": {
+    "id": "palomar-standard-v1",
+    "limits": {
+      "execution_budget_seconds": 19800,
+      "file_size_max_bytes": 1099511627776,
+      "job_timeout_minutes": 350,
+      "memory_high_percent": 95,
+      "memory_max_percent": 98,
+      "minimum_host_memory_bytes": 15032385536,
+      "minimum_workspace_free_bytes": 21474836480,
+      "open_files_max": 1048576,
+      "tasks_max": 32768
+    },
+    "observed_host": {
+      "architecture": "x86_64",
+      "effective_cpus": 4.0,
+      "memory_bytes": 16766414848,
+      "memory_high_bytes": 15928094105,
+      "memory_max_bytes": 16431086551,
+      "workspace_free_bytes": 115219206144
+    },
+    "runner": {
+      "architecture": "x86_64",
+      "label": "ubuntu-24.04",
+      "provider": "github-hosted"
+    },
+    "sha256": "4131827553c344dc2bd49853ed3c1e651cdf74c5fb9cb2034ad90a38b9385c99",
+    "trusted_tools": {
+      "comparator_commit": "575674928e239f5bc452aab72d1dd7b0f1326494",
+      "landrun_commit": "811cfff51ceaf3d9843708aa6d22e9b84ccac8b4",
+      "lean4export": "release derived from the submitted Lean toolchain",
+      "nanoda_commit": "68d5ca9db226849b41a6fff59d796ff19d0a8840"
+    }
+  },
+  "warnings": [],
+  "workflow_url": "https://github.com/JD-Jones-ASES/nk-lean/actions/runs/35540659599",
+  "execution_profile": "palomar-standard-v1"
+}

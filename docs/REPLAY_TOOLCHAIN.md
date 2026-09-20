@@ -1,5 +1,26 @@
 # Independent replay toolchain
 
+The [manual Linux preflight](../.github/workflows/palomar-preflight.yml) runs
+Palomar's official verification workflow at
+`3561d237dcc4b28482558ad28a64d767d7cc8615`. Dispatch it from GitHub Actions
+on the desired branch; it verifies that branch's exact commit without
+submitting to the registry. It has no push or scheduled trigger.
+
+The [accepted Linux report](replay/linux-preflight-f324e33.json) records:
+
+| Tool | Revision |
+|---|---|
+| leanprover/comparator |575674928e239f5bc452aab72d1dd7b0f1326494|
+| leanprover/lean4export |15f6055e299ad5b89345e533cc2192f4cc00f659|
+| robsimmons/nanoda_lib |68d5ca9db226849b41a6fff59d796ff19d0a8840|
+| zouuup/landrun |811cfff51ceaf3d9843708aa6d22e9b84ccac8b4|
+
+The workflow builds Comparator with its own pinned Lean toolchain and builds
+lean4export with the project's Lean 4.33.0 toolchain. See
+[VERIFICATION.md](VERIFICATION.md) for the exact accepted commit and scope.
+
+## Earlier local replay
+
 The proof uses Lean 4.33.0 with the committed Mathlib/rk-lean pins.
 The following official tool revisions were fetched and built on 20 September 2026:
 

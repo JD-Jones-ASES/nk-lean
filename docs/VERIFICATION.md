@@ -1,5 +1,29 @@
 # Verification
 
+The [official Linux mechanical preflight](https://github.com/JD-Jones-ASES/nk-lean/actions/runs/35540659599)
+accepted commit `f324e33d76e5e578cd69c1d7909c0216df37517f` on
+20 September 2026. It ran Palomar's unchanged reusable verification workflow,
+pinned to `3561d237dcc4b28482558ad28a64d767d7cc8615`, with the standard Linux
+execution profile and sandbox.
+
+All 19 statements passed comparison, the permitted-axiom check, NanoDa,
+and the Lean kernel. The [mechanical report](replay/linux-preflight-f324e33.json)
+records `status: pass`, `stage: complete`, no warnings or errors, and high
+trust for the Mathlib-only challenge. It confirms that both configured
+modules resolved to this repository. The Comparator phase, including the
+solution build, took 5,364.43 seconds.
+
+The [module repair](MODULE_IDENTITY.md) explains the original failure and
+its regression checks. The [input manifest](replay/module-repair-inputs.json)
+records 121 source, build, generator, certificate, audit, and workflow inputs
+at the accepted commit. The following documentation and evidence commit
+preserves every recorded input and the unchanged `formalization.yaml`.
+It adds the verification record; no second full replay is claimed for those
+documentation changes. This successful preflight is not registry submission
+or editorial acceptance.
+
+## Earlier local replay
+
 The complete official Comparator run accepted proof commit
 `409bcef149ae96f40f69d38a17cf8bd7330dee98` on 20 September 2026.
 All 19 statements passed definition and statement comparison, the permitted
@@ -8,8 +32,8 @@ with the final message “Your solution is okay!” after 2,777.40 seconds.
 
 This was a local macOS run with the unchanged official tools and their
 unsandboxed development shim. It is distinct from Palomar's Linux intake
-and editorial review. The first public submission later failed during module
-resolution; the [repair record](MODULE_IDENTITY.md) gives the diagnosis and checks.
+and editorial review. The first public submission later failed because of
+module resolution; the repair and successful Linux preflight are recorded above.
 
 ## Retained evidence
 

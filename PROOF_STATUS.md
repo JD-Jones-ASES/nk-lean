@@ -36,9 +36,11 @@ The full build and audit passed with Lean 4.33.0. The transitive audit covers
 11,314 declarations and permits only `propext`, `Classical.choice`, and
 `Quot.sound`. All 25 saved control files passed.
 
-The unchanged official Comparator accepted proof commit
-`409bcef149ae96f40f69d38a17cf8bd7330dee98`: statement and definition matching,
-the axiom policy, Lean kernel checking, and NanoDa replay all passed.
+The official Linux mechanical preflight accepted commit
+`f324e33d76e5e578cd69c1d7909c0216df37517f`: all 19 statement comparisons,
+definition matching, the axiom policy, Lean kernel checking, and NanoDa
+replay passed. The subsequent documentation and evidence commit preserves
+all recorded proof and build inputs and the accepted metadata.
 [VERIFICATION.md](docs/VERIFICATION.md) records the exact evidence and the
 scope of subsequent presentation edits.
 
@@ -53,9 +55,9 @@ The capacity results concern interval constructions, not upper bounds for
 the unrestricted integer problem. The binary results do not give a computed
 capacity, optimal policy, Bellman identity, or effective convergence rate.
 
-The accepted replay was local on macOS using the official unsandboxed
-development shim. Palomar's Linux intake and editorial review are separate.
-The repository is public. Its first submission failed before proof comparison
-because Palomar resolved the dependency's statement module. The
-[module repair](docs/MODULE_IDENTITY.md) preserves every mathematical statement.
-A new intake run is required; registration is not claimed.
+The earlier local replay used macOS and the official unsandboxed development
+shim. The later Linux preflight used Palomar's sandboxed workflow. The
+repository is public. Its first submission failed before proof comparison
+because Palomar resolved the dependency's statement module; the
+[module repair](docs/MODULE_IDENTITY.md) fixes that collision.
+A new intake run and editorial review are required; registration is not claimed.

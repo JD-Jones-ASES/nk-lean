@@ -1,0 +1,50 @@
+{
+  "pipeline_commit": "3561d237dcc4b28482558ad28a64d767d7cc8615",
+  "candidate_commit": "718240e6a50f566b864f7c079e3670837fe0dc57",
+  "module_resolution": {
+    "Challenge": ".lake/packages/rkLean/Challenge.lean",
+    "Solution": ".lake/packages/rkLean/Solution.lean",
+    "NKChallenge": "NKChallenge.lean",
+    "NKSolution": "NKSolution.lean"
+  },
+  "guard_controls": [
+    {
+      "changed_field": null,
+      "exit_code": 0,
+      "stdout": "Module source: NKChallenge -> NKChallenge.lean\nModule source: NKSolution -> NKSolution.lean",
+      "stderr": ""
+    },
+    {
+      "changed_field": "challenge_module",
+      "exit_code": 1,
+      "stdout": "",
+      "stderr": "challenge_module Challenge: expected /private/tmp/nk-canonical-repair-718240e/negative-control/Challenge.lean, resolved /private/tmp/nk-lean-work/.lake/packages/rkLean/Challenge.lean"
+    },
+    {
+      "changed_field": "solution_module",
+      "exit_code": 1,
+      "stdout": "Module source: NKChallenge -> NKChallenge.lean",
+      "stderr": "solution_module Solution: expected /private/tmp/nk-canonical-repair-718240e/negative-control/Solution.lean, resolved /private/tmp/nk-lean-work/.lake/packages/rkLean/Solution.lean"
+    }
+  ],
+  "canonical_module": "PalomarCanonical5e102f75c6d1bd1f291df92d.Challenge",
+  "canonical_olean": "/private/tmp/nk-canonical-repair-718240e/canonical-challenge/PalomarCanonical5e102f75c6d1bd1f291df92d/Challenge.olean",
+  "canonical_sha256": "87c3eb2eb6ad6251211b6c426a5f13eadc4c4f0779d5bde2e223689c9d53dfb1",
+  "source_dependencies": [
+    "/Users/jjones/.elan/toolchains/leanprover--lean4---v4.33.0/src/lean/Init.lean",
+    "/private/tmp/nk-lean-work/.lake/packages/mathlib/Mathlib.lean"
+  ],
+  "trusted_paths": [
+    "/Users/jjones/.elan/toolchains/leanprover--lean4---v4.33.0/lib/lean",
+    "/private/tmp/nk-lean-work/.lake/packages/aesop/.lake/build/lib/lean",
+    "/private/tmp/nk-lean-work/.lake/packages/batteries/.lake/build/lib/lean",
+    "/private/tmp/nk-lean-work/.lake/packages/importGraph/.lake/build/lib/lean",
+    "/private/tmp/nk-lean-work/.lake/packages/LeanSearchClient/.lake/build/lib/lean",
+    "/private/tmp/nk-lean-work/.lake/packages/mathlib/.lake/build/lib/lean",
+    "/private/tmp/nk-lean-work/.lake/packages/plausible/.lake/build/lib/lean",
+    "/private/tmp/nk-lean-work/.lake/packages/proofwidgets/.lake/build/lib/lean",
+    "/private/tmp/nk-lean-work/.lake/packages/Qq/.lake/build/lib/lean"
+  ],
+  "protected_lean_path": "/private/tmp/nk-canonical-repair-718240e/canonical-challenge:/Users/jjones/.elan/toolchains/leanprover--lean4---v4.33.0/lib/lean:/private/tmp/nk-lean-work/.lake/packages/aesop/.lake/build/lib/lean:/private/tmp/nk-lean-work/.lake/packages/batteries/.lake/build/lib/lean:/private/tmp/nk-lean-work/.lake/packages/importGraph/.lake/build/lib/lean:/private/tmp/nk-lean-work/.lake/packages/LeanSearchClient/.lake/build/lib/lean:/private/tmp/nk-lean-work/.lake/packages/mathlib/.lake/build/lib/lean:/private/tmp/nk-lean-work/.lake/packages/plausible/.lake/build/lib/lean:/private/tmp/nk-lean-work/.lake/packages/proofwidgets/.lake/build/lib/lean:/private/tmp/nk-lean-work/.lake/packages/Qq/.lake/build/lib/lean:/private/tmp/nk-lean-work/.lake/packages/Cli/.lake/build/lib/lean:/private/tmp/nk-lean-work/.lake/packages/rkLean/.lake/build/lib/lean:/private/tmp/nk-lean-work/.lake/build/lib/lean",
+  "scope": "Official module resolution and canonical-challenge functions with local subprocess launcher, existing dependency builds, no sandbox or official intake claim."
+}

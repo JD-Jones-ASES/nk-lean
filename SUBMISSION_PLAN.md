@@ -28,7 +28,8 @@ The [mathematical account](PROOF.md) explains the full selected scope.
 [Attribution](docs/ATTRIBUTION.md) records the public mathematical and formal
 sources. [DISCLOSURE.md](DISCLOSURE.md) describes AI assistance and review.
 [Verification](docs/VERIFICATION.md) retains the successful local replay
-and distinguishes it from official intake.
+and the successful official Linux preflight. Registry intake remains a
+separate step.
 
 ## Remaining release steps
 
@@ -40,6 +41,7 @@ and distinguishes it from official intake.
 
 The submission of `0a2e7b8cb640ab3528fef6d0e44798940c4006fd` failed during
 mechanical verification. The [repair record](docs/MODULE_IDENTITY.md) explains
-the module-name collision and the replacement checks. A new submission is
-required; no registration is claimed. The [submission policy](https://github.com/PalomarRegistry/PalomarPolicy/blob/792c7c0b9e798bd02719e795ef11fa2b5929e067/CONTRIBUTING.md)
+the module-name collision. The replacement proof and build inputs passed the
+[official Linux preflight](https://github.com/JD-Jones-ASES/nk-lean/actions/runs/35540659599).
+A new submission is required; no registration is claimed. The [submission policy](https://github.com/PalomarRegistry/PalomarPolicy/blob/792c7c0b9e798bd02719e795ef11fa2b5929e067/CONTRIBUTING.md)
 sets the package and metadata requirements.

@@ -27,18 +27,43 @@ old names confirms that the dependency collision is rejected.
 
 ## Verification
 
-The renamed modules build successfully. The official resolver at pipeline
+The renamed modules build successfully, and the full audit passes: the
+source guard, module check, axiom audit, and all 25 saved Lean controls.
+The [audit record](replay/module-repair-audit.json) and
+[log](replay/module-repair-audit.log) retain the result. The
+[source comparison and input hashes](replay/module-repair-inputs.json)
+confirm unchanged code in all 96 Lean files, after accounting for the two
+renames and comment changes.
+
+The official resolver at pipeline
 commit `3561d237dcc4b28482558ad28a64d767d7cc8615` reproduces the old collision
 and resolves both new names correctly. Its canonical-challenge compilation
 and publication functions also succeed with the new challenge. These checks
 use a local process launcher and existing dependency builds on macOS; they do
 not reproduce the Linux sandbox or constitute a new Palomar intake result.
+The [canonical compilation record](replay/module-repair-canonical.json)
+also records a passing control with the new names and failing controls
+with each old name.
+
+The rebuilt `NKSolution` export is byte-for-byte identical to the accepted
+proof export: 232,434,222 bytes, SHA256
+`e12be5029a582cad015d4e0e4fef200e0b31fdcd1b0c16651f710233a544cc71`.
+The [export check](replay/module-repair-export.json) records the exact
+targets and tool revision. This establishes identity of the exported proof
+payload; it does not by itself repeat the kernel checks.
 
 The [manual preflight workflow](../.github/workflows/palomar-preflight.yml)
 calls Palomar's exact pinned Linux verification job in this repository. It
 checks the selected commit without creating a registry submission. The
 workflow runs only when manually dispatched.
 
-The [verification history](VERIFICATION.md) retains the earlier complete
-proof replay. Further repair checks are recorded here when complete. The
-replacement commit requires a new Palomar submission.
+The [official Linux preflight](https://github.com/JD-Jones-ASES/nk-lean/actions/runs/35540659599)
+passed at `f324e33d76e5e578cd69c1d7909c0216df37517f`. Its
+[mechanical report](replay/linux-preflight-f324e33.json) confirms the correct
+source paths, high challenge trust, and acceptance by both NanoDa and the
+Lean kernel. All 19 comparisons passed, with no warnings or errors.
+
+The following documentation and evidence commit preserves all 121 inputs
+in the repair manifest and the accepted metadata. The
+[verification history](VERIFICATION.md) distinguishes this Linux result
+from the earlier local replay. A new Palomar submission is still required.

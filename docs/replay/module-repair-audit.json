@@ -1,0 +1,11 @@
+{
+  "exit_code": 0,
+  "command": [
+    "bash",
+    "scripts/audit.sh"
+  ],
+  "scope": "Full Lake build, 11314-declaration axiom audit, source guard, module-resolution guard, and all 25 saved Lean control files. Run on the repair source before its first commit; the source files match the later repair input manifest. This record does not claim a fresh Comparator or NanoDa run.",
+  "source_input_manifest": "module-repair-inputs.json",
+  "log_sha256": "1375544f4e83ce7a88e590307302451f8bd62719774cdf324f4873a0f278f81a",
+  "control_file_count": 25
+}

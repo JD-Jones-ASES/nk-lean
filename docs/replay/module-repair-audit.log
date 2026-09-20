@@ -1,0 +1,177 @@
+Source guard: 70 proof files; 19 compared statements; no definition holes.
+Module source: NKChallenge -> NKChallenge.lean
+Module source: NKSolution -> NKSolution.lean
+⚠ [8782/8787] Replayed NKChallenge
+warning: NKChallenge.lean:66:8: declaration uses `sorry`
+warning: NKChallenge.lean:80:8: declaration uses `sorry`
+warning: NKChallenge.lean:86:8: declaration uses `sorry`
+warning: NKChallenge.lean:92:8: declaration uses `sorry`
+warning: NKChallenge.lean:98:8: declaration uses `sorry`
+warning: NKChallenge.lean:104:8: declaration uses `sorry`
+warning: NKChallenge.lean:117:8: declaration uses `sorry`
+warning: NKChallenge.lean:122:8: declaration uses `sorry`
+warning: NKChallenge.lean:129:8: declaration uses `sorry`
+warning: NKChallenge.lean:137:8: declaration uses `sorry`
+warning: NKChallenge.lean:140:8: declaration uses `sorry`
+warning: NKChallenge.lean:143:8: declaration uses `sorry`
+warning: NKChallenge.lean:157:8: declaration uses `sorry`
+warning: NKChallenge.lean:162:8: declaration uses `sorry`
+warning: NKChallenge.lean:166:8: declaration uses `sorry`
+warning: NKChallenge.lean:205:8: declaration uses `sorry`
+warning: NKChallenge.lean:217:8: declaration uses `sorry`
+warning: NKChallenge.lean:227:8: declaration uses `sorry`
+warning: NKChallenge.lean:233:8: declaration uses `sorry`
+ℹ [8784/8787] Replayed Audit
+info: Audit.lean:9:0: Axiom audit checked 11314 NK declarations.
+Build completed successfully (8787 jobs).
+'NK.FixedPointNat.enclose_ratio' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NK.FixedPointNat.enclose_mul' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NK.Certificates.square_power_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NK.Certificates.fourth_power_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NK.Certificates.sixth_power_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TransferControl.square_root_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NK.IntervalAlphabet.translate' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NK.IntervalAlphabet.translate_moment' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NK.IntervalAlphabet.reflect' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NK.IntervalAlphabet.reflect_moment' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NK.IntervalAlphabet.affine' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NK.IntervalAlphabet.affine_moment' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NK.AlphabetSymmetries.translate_one_parity' depends on axioms: [propext]
+'NK.AlphabetSymmetries.reflect_parity' depends on axioms: [propext, Quot.sound]
+NK.IntervalAlphabet.mem_translate_support {k M : ℕ} (A : NK.IntervalAlphabet k M) (t x : ℕ) :
+  x ∈ (A.translate t).support ↔ ∃ a, (↑a + t) % M = x
+NK.IntervalAlphabet.translate_interval {k M : ℕ} (A : NK.IntervalAlphabet k M) (t : ℕ) (a : A.Letter)
+  (ha : (↑a + t) % M ∈ (A.translate t).support) : (A.translate t).interval ((↑a + t) % M) ha = A.letterInterval a
+NK.IntervalAlphabet.mem_reflect_support {k M : ℕ} (A : NK.IntervalAlphabet k M) (x : ℕ) :
+  x ∈ A.reflect.support ↔ ∃ a, (M - ↑a) % M = x
+NK.IntervalAlphabet.reflect_interval {k M : ℕ} (A : NK.IntervalAlphabet k M) (a : A.Letter)
+  (ha : (M - ↑a) % M ∈ A.reflect.support) : A.reflect.interval ((M - ↑a) % M) ha = (A.letterInterval a).reflect
+'NK.Certificates.binary_component' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NK.Certificates.binaryRows_valid' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NK.Certificates.binarySeeds' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NK.Certificates.binaryPolicy' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NK.BinaryPolicy.step' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NK.BinaryPolicy.step_fits' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NK.BinaryPolicy.step_moment' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NK.BinaryPolicy.Policy.moment_lower' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NK.BinaryPolicy.Policy.exists_half_depth' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NK.BinaryArc.same_branch_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NK.BinaryArc.cross_branch_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NK.BinaryArc.powerArc_fourBranch_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+NK.BinaryArc.powerArc_fourBranch_iff (m r s u v : ℕ) (hm : 1 ≤ m) (hr : r < 4) (hs : s < 4) (hu : u < 4 ^ m)
+  (hv : v < 4 ^ m) : NK.PowerArc 2 (4 ^ (m + 1)) (r + 4 * u) (s + 4 * v) ↔ NK.BinaryArc.fourBranchArc m r s u v
+'NK.BinaryGlue.ordered_of_cross_order' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NK.BinaryGlue.glue' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NK.BinaryGlue.glue_card' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NK.BinaryGlue.glue_moment' depends on axioms: [propext, Classical.choice, Quot.sound]
+NK.BinaryGlue.glue {m : ℕ} (A : Fin 4 → NK.IntervalAlphabet 2 (4 ^ m)) (hm : 1 ≤ m) (L R : Fin 8 → ℝ)
+  (hinside :
+    ∀ (p : NK.BinaryGlue.Point A),
+      L (NK.BinaryGlue.parityClass A p) ≤ (NK.BinaryGlue.pointInterval A p).left ∧
+        (NK.BinaryGlue.pointInterval A p).left + (NK.BinaryGlue.pointInterval A p).width ≤
+          R (NK.BinaryGlue.parityClass A p))
+  (hcycle :
+    ∀ (p q : NK.BinaryGlue.Point A),
+      (↑(NK.BinaryGlue.parityClass A p) + 1) % 8 = ↑(NK.BinaryGlue.parityClass A q) →
+        R (NK.BinaryGlue.parityClass A p) ≤ L (NK.BinaryGlue.parityClass A q)) :
+  NK.IntervalAlphabet 2 (4 ^ (m + 1))
+NK.BinaryGlue.glue_moment {m : ℕ} (A : Fin 4 → NK.IntervalAlphabet 2 (4 ^ m)) (hm : 1 ≤ m) (L R : Fin 8 → ℝ)
+  (hinside :
+    ∀ (p : NK.BinaryGlue.Point A),
+      L (NK.BinaryGlue.parityClass A p) ≤ (NK.BinaryGlue.pointInterval A p).left ∧
+        (NK.BinaryGlue.pointInterval A p).left + (NK.BinaryGlue.pointInterval A p).width ≤
+          R (NK.BinaryGlue.parityClass A p))
+  (hcycle :
+    ∀ (p q : NK.BinaryGlue.Point A),
+      (↑(NK.BinaryGlue.parityClass A p) + 1) % 8 = ↑(NK.BinaryGlue.parityClass A q) →
+        R (NK.BinaryGlue.parityClass A p) ≤ L (NK.BinaryGlue.parityClass A q))
+  (f : ℝ) : (NK.BinaryGlue.glue A hm L R hinside hcycle).moment f = ∑ r, (A r).moment f
+'NK.BinarySquares.exists_odd_square_add_three' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NK.BinarySquares.odd_square_iff_mod_eight' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NK.BinarySquares.square_four_mul_descent' depends on axioms: [propext, Classical.choice, Quot.sound]
+NK.BinarySquares.odd_square_iff_mod_eight (n u : ℕ) (hn : 3 ≤ n) (hu : u % 2 = 1) :
+  (∃ z, z * z % 2 ^ n = u % 2 ^ n) ↔ u % 8 = 1
+NK.BinarySquares.square_four_mul_descent (m u : ℕ) :
+  (∃ z, z * z % 4 ^ (m + 1) = 4 * u % 4 ^ (m + 1)) ↔ ∃ y, y * y % 4 ^ m = u % 4 ^ m
+'NK.BlockComposition.square_mul_descent' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NK.BlockComposition.ordered' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NK.BlockComposition.nested_card' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NK.BlockComposition.nested_moment' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NK.BinaryCapacity.U_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NK.BinaryCapacity.U_supermultiplicative' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NK.BinaryCapacity.two_pow_le_U' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NK.BinaryCapacity.U_le_four_pow' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NK.BinaryCapacity.exists_growth_limit' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NK.BinaryCapacity.capacity_bounds' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NK.BinaryCapacity.tendsto_capacity' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NK.perfectPowerClosure_eq_prod' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NK.dvd_perfectPowerClosure' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NK.dvd_pow_iff_perfectPowerClosure_dvd' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NK.perfectPowerClosure_coprime_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NK.perfectPowerClosure_idempotent' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NK.powerArc_mod_perfectPowerClosure' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NK.IntervalAlphabet.closureLift' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NK.IntervalAlphabet.closureLift_card' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NK.IntervalAlphabet.closureLift_moment' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NK.fastPrefixBlocks_sound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NK.PairCertificateTree.fastQuery_sound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NK.PairCertificateTree.fastGeometryValid_sound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NK.FixedPointSeries.taylorState_sound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NK.FixedPointSeries.oddState_sound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NK.FixedPointSeries.expBounds_sound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NK.FixedPointSeries.logBounds_sound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NK.geometric_witnesses_allN' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NK.powerLowerBound_of_geometric_witnesses' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NK.rankedBlock_geometric_witnesses' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NK.powerLowerBound_of_rankedBlock' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NK.DigraphAlphabet.product_moment' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NK.IntervalHull.hull_contains' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NK.IntervalHull.right_le_left' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NK.DigraphAlphabet.normalize_moment' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NK.LexicographicCapacity.outer' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NK.LexicographicCapacity.fiber_moment_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NK.LexicographicCapacity.capacity_lex' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NK.LexicographicCapacity.capacity_empty' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NK.LexicographicCapacity.capacity_edgeless' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NK.NumericBounds.expTaylor_eighth_bounds' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NK.NumericBounds.log_unit_bounds' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NK.NumericBounds.log_unit_bounds_forty' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NK.NumericBounds.rpow_bounds_of_log_bounds' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NK.NumericReduction.exists_log_dyadic_rat' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NK.NumericReduction.log_dyadic_bounds' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NK.NumericReduction.exists_exp_dyadic_rat' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NK.NumericReduction.exp_dyadic_bounds' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NK.NumericReduction.exp_neg_dyadic_bounds' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NK.OneSidedPairMoment.reciprocal_lower' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NK.OneSidedPairMoment.width_lower' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NK.OneSidedPairMoment.lowerSum_sound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NK.OneSidedPairMoment.moment_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NK.PairCertificateTree.valid_of_branch_eq' depends on axioms: [propext]
+'NK.PairCertificateTree.sorted_of_branch_eq' depends on axioms: [propext]
+'NK.PairCertificateTree.rows_all_of_branch_eq' depends on axioms: [propext]
+'NK.PairCertificateTree.rows_all_of_eq' does not depend on any axioms
+'NK.PairCertificateTree.fastGeometry_of_rows_all' depends on axioms: [propext]
+'NK.powerArc_of_first_block' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NK.powerArc_iff_firstDifference_block' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NK.blockWordEquiv' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NK.powerArc_iff_blockWord' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NK.binary_square_block_graph_counterexample' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NK.prime_power_capacity' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NK.prime_power_moment_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NK.IntervalAlphabet.toPowerDigraph_moment' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NK.IntervalAlphabet.moment_le_prime_power_capacity' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NK.RationalPowerBounds.logPosBounds_sound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NK.RationalPowerBounds.expPosBounds_sound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NK.RationalPowerBounds.rpowBounds_sound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NK.RationalPowerBounds.reciprocal_sound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NK.RationalPowerBounds.unitRpowBounds_sound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NK.unitPower_stabilizes' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NK.unitPower_stabilizes_block' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NK.unitConductor_le_exponent_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NK.binary_square_lookahead_counterexample' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NK.cyclic_power_image_preimage' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NK.binaryPrincipal_isCyclic' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NK.DigraphAlphabet.pullback_moment' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NK.LexicographicCapacity.capacity_equiv' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NK.WordGraphCapacity.wordArc_succ' depends on axioms: [propext, Quot.sound]
+'NK.WordGraphCapacity.word_capacity' depends on axioms: [propext, Classical.choice, Quot.sound]
