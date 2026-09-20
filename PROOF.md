@@ -1,7 +1,7 @@
 # Mathematical account
 
 The theorem `NK.powerLowerBound_of_intervalMoments` is a general finite-data
-criterion. For each of finitely many pairwise coprime bases b_i=s_i^k≥2,
+criterion for every k≥1. For each of finitely many pairwise coprime bases b_i=s_i^k≥2,
 choose a finite support of residues and a positive interval inside[0,1] at
 each residue. Every nonzero kth-power modular difference must order the
 corresponding intervals from left to right. All widths are strictly below1.
@@ -49,7 +49,7 @@ used as the digit base.
 
 ## Arbitrary seed moduli
 
-Define B_k(d)=∏p|d p^(k ceil(v_p(d)/k)). Mathlib's ceiling-root divisibility
+For k,d≥1, define B_k(d)=∏p|d p^(k ceil(v_p(d)/k)). Mathlib's ceiling-root divisibility
 adjunction gives d|z^k iff B_k(d)|z^k. Consequently copying a seed interval
 to every residue of its fiber in B_k(d) never collapses a nonzero power arc.
 The resulting interval alphabet has exactly B_k(d)/d copies of each seed
@@ -58,15 +58,92 @@ Both the actual copied alphabet and the factor identities are proved.
 For example d=9,k=6 gives B=729 and81 copies; lifting instead to an
 arbitrarily larger perfect power would fail zero detection.
 
-## Numerical applications remain separate
+## Which depth searches can matter
 
-Lab P0180 supplies the exact square target0.75806770413; P0177 supplies
-fourth0.9142 and sixth0.95295. Their external exact certificates are pinned at
-Analytic-Lab `916d0d604fa36c511b73f7aa214e49c16b637796` and independently replayable.
-The finite geometry, numerical evaluator, conductor reductions and binary
-policy still need complete Lean proofs before these targets may be claimed
-as formalized applications. The general theorem above does not fill that gap.
+For a prime p and k≥1 the unit kth-power image stabilizes at the sufficient
+conductor s_p(k)=v_p(k)+1 for odd p, at1 for p=2 and odd k, and at
+v_2(k)+2 for p=2 and even k. This covers singular primes p|k as well as
+ordinary Hensel lifting. These are standard unit-group facts, now proved in
+the interface used here. The conductor satisfies s_p(k)≤k except at (2,2).
+No minimal-conductor claim is needed.
 
-Naslund's interval method is a source theorem, not a novelty claim here.
-The new formal theorem consolidates that method with the arbitrary-modulus
-and general-k framework. Credit and exact source pins are in docs/ATTRIBUTION.md.
+Outside that exception, take the first unequal base-p^k digit of two
+residues modulo p^(ke). A nonzero kth power in a single p^k block is a unit:
+a nonunit root would already give zero in that block. Conversely the unit
+conductor theorem extends the first-block kth-power condition through all
+remaining digits. This proves an actual graph isomorphism with the e-fold
+lexicographic power of the one-block graph, including nonunit differences
+whose first unequal block occurs later.
+
+For any finite digraph G, let M_f(G) be the supremum of interval moments
+over all selected vertices and all positive intervals contained in[0,1]
+and ordered by its arcs; full width1 is allowed in this capacity definition.
+Actual nesting proves M_f(G∘H)≥M_f(G)M_f(H). For the reverse inequality,
+take the hull of each occupied G-fiber and normalize its H-intervals inside
+that hull. The hulls form a G-alphabet and each normalized fiber has moment
+at most M_f(H). Therefore, for f≥0,
+
+    M_f(G∘H)=M_f(G)M_f(H),
+    M_f(G_k(p^(ke)))=M_f(G_k(p^k))^e,       e≥1, (p,k)≠(2,2).
+
+The formal result ranges over every support and every admissible width
+assignment. Thus extra depth at a single such prime cannot improve the
+normalized interval capacity. This is a barrier for this interval method at
+p^(ke) and f≥0, not an upper bound on the integer extremal function D_k(N).
+It does not rule out coupled-prime gains.
+Binary squares have conductor3 greater than block length2: five is a square
+modulo4 but not modulo16. The extra bit explains why the binary depth
+problem is different.
+
+## Binary capacity and the finite witness
+
+Let U_m(f) be the supremum of actual square-interval moments modulo4^m.
+Nesting gives U_(m+n)≥U_m U_n; choosing the binary digits0 and2 gives
+U_m≥2^m, and widths≤1 give U_m≤4^m. Applying the subadditive limit theorem
+to −log U_m proves
+
+    Λ(f)=lim_m U_m(f)^(1/m)=sup_(m≥1) U_m(f)^(1/m),   2≤Λ(f)≤4.
+
+These statements are formalized for f≥0. They do not assert an attained
+stationary optimizer, a Bellman identity, or a quantitative convergence rate.
+The stronger factor-two/Bellman statements in the Lab research notes are
+outside the present formal comparison surface.
+
+The numerical lower witness uses Naslund's actual25-state,94-branch policy.
+Its geometry, positive rational weights and all weighted row inequalities
+are checked in Lean. A proved induction constructs a real interval alphabet
+at every finite depth. At m=10^15 its moment is at least
+2^(−f) a^(m−1)/4, with
+
+    f=15494199041779/10^14,
+    a=1430119207986461/(5·10^14).
+
+The initialization and final shrink are charged explicitly. A logarithmic
+certificate proves that this finite alphabet meets the required moment at
+α=75806770413/10^11; no infinite-policy optimizer is assumed.
+
+## Numerical applications and their scope
+
+Fourth powers at exponent0.9142 and sixth powers at0.95295 are closed
+all-N Lean theorems. The square target0.75806770413 has independently
+replayed exact Lab certificates. Its binary and six chain components are
+formalized, as is the full215 component and the437 numerical moment.
+The437 geometry and final assembly remain in progress. PROOF_STATUS.md records the current verification boundary.
+
+The square gain starts with P0179's four support replacements and width
+optimization over the pinned Naslund0.75806746 witness. P0180 adds cooperative
+three-vertex changes in the437=19·23 retained alphabet, further width
+reoptimization, and reallocation of all nine moment exponents. The215 component and binary
+transition geometry are unchanged. Ten final support positions differ from
+the prior P0179 certificate. This is a small numerical improvement with a
+new exact witness, not a global optimum. A fixed-geometry numerical boundary
+near0.7580677041313194 explains the last digits but does not bound other
+supports, reoptimized widths even on the same support, other policies or
+prime couplings, or the unrestricted integer problem.
+
+The research evidence is pinned at Analytic-Lab commit
+916d0d604fa36c511b73f7aa214e49c16b637796. Naslund's interval method is a source
+theorem; classical unit groups, CRT and Mathlib's ceiling-root adjunction
+are prior theory. The development combines them with the general-k transfer,
+canonical copying, exact capacity statements and improved applications.
+Credit and source pins are in docs/ATTRIBUTION.md.

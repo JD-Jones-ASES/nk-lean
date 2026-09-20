@@ -35,7 +35,23 @@ run_cmd do
       `NK.RationalMomentCertificate.moment_bound,
       `NK.RationalPowerBounds.unitRpowBounds_sound,
       `NK.Certificates.fourth_power_bound,
-      `NK.Certificates.sixth_power_bound] do
+      `NK.Certificates.sixth_power_bound,
+      `NK.BinaryPolicy.Policy.exists_half_depth,
+      `NK.BinaryCapacity.tendsto_capacity,
+      `NK.PairCertificateTree.toAlphabet_moment,
+      `NK.Certificates.binaryPolicy,
+      `NK.Certificates.binary_depth_moment,
+      `NK.Certificates.square_power_bound,
+      `NK.Certificates.odd215_component,
+      `NK.Certificates.odd437_component,
+      `NK.closure_interval_lift,
+      `NK.unitConductor_le_exponent_iff,
+      `NK.unitPower_stabilizes,
+      `NK.unitPower_stabilizes_block,
+      `NK.LexicographicCapacity.capacity_lex,
+      `NK.WordGraphCapacity.word_capacity,
+      `NK.prime_power_capacity,
+      `NK.IntervalAlphabet.moment_le_prime_power_capacity] do
     unless env.contains name do
       logError m!"Required development theorem missing: {name}"
   logInfo m!"Axiom audit checked {checked} NK declarations."

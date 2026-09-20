@@ -1,0 +1,16 @@
+{
+  "status": "PASS_PYTHON_ONLY",
+  "production_reproduced_normal_and_optimized": true,
+  "mutations_rejected_in_both_modes": [
+    "literal_width",
+    "flat_width",
+    "root_alias"
+  ],
+  "exact_lower_sum": 12261338816591850911384777125,
+  "top_upper": 1023251062646099248047894233394829623,
+  "multiplicity": 83453453,
+  "integer_comparison_surplus": 1424402168362429321833002,
+  "production_sha256": "d84ce9c5c3c8f49f3cf3822e9c889774c48d1a0e5629e1cb14a8871ce5e20266",
+  "lean_builds_run": 0,
+  "proof_statement_changes": 0
+}

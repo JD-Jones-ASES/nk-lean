@@ -34,3 +34,17 @@ import NK.ClosureProducts
 import NK.AlphabetSymmetries
 import NK.Certificates.EvenApplications
 import NK.Certificates.SquareChains
+import NK.BinaryPolicyGrowth
+import NK.BinaryCapacity
+import NK.RetainedPairCertificate
+import NK.PairMomentCertificate
+import NK.BinaryDepth
+import NK.Certificates.BinaryGeometry
+import NK.Certificates.BinaryDepth
+import NK.Certificates.BinaryApplication
+import NK.UnitConductor
+import NK.LexicographicCapacity
+import NK.WordGraphCapacity
+import NK.SubmissionExtras
+import NK.PrimeBlockCapacity
+import NK.Certificates.SquareApplication

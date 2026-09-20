@@ -42,19 +42,38 @@ These declarations have compiled using Lean4.33.0 and the pinned Mathlib.
 The development axiom audit permits only propext, Classical.choice and
 Quot.sound. The final release still needs exhaustive independent replay.
 
+## Compiled structural and binary companions
+
+- Full unit-power stabilization at conductor v_p(k)+1 for odd primes, 1 for
+  binary odd powers, and v_2(k)+2 for binary even powers. The conductor fits
+  inside one k-digit block exactly outside (p,k)=(2,2); a literal square
+  counterexample proves the extra binary lookahead is real.
+- Exact interval-moment multiplicativity for finite directed lexicographic
+  products, including empty vertex types and loops, for every f≥0.
+- Actual binary finite-policy iteration, all 25 states and 94 transition
+  branches, all weighted row inequalities, and the depth-10^15 component.
+- Exact prime-block graph factorization and unrestricted prime-local
+  moment capacity at all positive depths, outside the binary-square exception.
+- Intrinsic binary capacity: supermultiplicativity of finite-depth moments,
+  bounds 2≤Λ(f)≤4, and convergence of U_m(f)^(1/m) to their supremum for f≥0.
+  No factor-two finite-horizon estimate or Bellman identity is claimed yet.
+- Retained-word CRT construction, exact fibers, and a sound tree certificate
+  checker for the two large odd alphabets.
+
 ## Work in progress
-- Prime-power conductor companions and binary finite-policy iteration.
-  Retained-word CRT interval construction and its exact moment factor are proved.
-- Unconditional square numerical application at the strongest exact Lab target,
-  currently0.75806770413; two large retained-word alphabets and the binary
-  finite-policy growth certificate remain to be assembled.
-- Binary capacity, its two-sided finite-depth estimates, and the remaining
-  structural companion statements selected for the final comparator.
+
+- Unconditional square numerical application at 75806770413/100000000000.
+  The binary, six chain and full Odd215 components are complete. Odd215
+  geometry compiled in168 seconds and its component in15 seconds. Odd437
+  numerical moments also passed in188 seconds. Its geometry and the final
+  square assembly remain under verification.
+
 
 ## Release requirements
 
-No Challenge/Solution pair yet claims the numerical bounds. The final public
-Challenge must have only permitted imports and ordinary mathematical content;
+The draft Challenge/Solution pair selects19 statements, including all three
+numerical targets, with the square proof still pending. Challenge imports only
+Mathlib and contains complete ordinary mathematical definitions;
 all finite data and certificate proofs belong in Solution. Completion requires
 matching statement comparison, a complete axiom audit, and NanoDa replay on
 an exact commit. Public release and registration have not occurred.

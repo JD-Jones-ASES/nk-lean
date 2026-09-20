@@ -15,7 +15,8 @@ of interval constructions for power-difference-free integer sets.
   odd mixed-prime supports and binary transition geometry used in the square
   application. The square source is
   https://github.com/enaslund/sarkozy-lower-bound-0.758 .
-- The user-supplied CONSULT.md and even_power_research_package.zip informed
+- Claude suggested the initial even-k port. GPT 6 Pro produced the user-supplied
+  CONSULT.md and even_power_research_package.zip, which informed
   the general even-power direction. Analytic-Lab P0177 independently checked
   the supplied targets and developed conductor/closure extensions.
 - Analytic-Lab P0177–P0180 contain the written general arguments, improved
@@ -29,3 +30,18 @@ of interval constructions for power-difference-free integer sets.
 AI assistance and JD's responsibility must be described honestly in release
 metadata. Mechanical verification and AI review are distinct from human peer
 review, editorial endorsement and mathematical priority.
+
+Relevant arithmetic and graph precedents include Keith Conrad's exposition
+of prime-power unit groups; Younis, *Lower bounds in the polynomial Szemeredi
+theorem*, arXiv:1908.06058 (perfect-degree transfer and coprime compression);
+Podesta–Videla, *Waring numbers over finite commutative local rings*,
+arXiv:2212.12396 (coprime unit-power Cayley graph blow-ups); Nguyen–Tan,
+*On certain properties of the p-unitary Cayley graph over a finite ring*,
+arXiv:2403.05635 (a singular-prime unit-graph special case); and
+Podesta–Videla, *On k-th unitary Cayley graphs over finite commutative rings*,
+arXiv:2606.06774 (including the sixth-power directed9-cycle example).
+Their unit-only results and hypotheses differ from the full-image,
+multiple-depth interval-capacity statements here. These antecedents prevent
+an attribution of every local compression ingredient to this development.
+The supplied consultation already proposed the prime-local moment barrier;
+its independent proof and formalization here do not establish worldwide novelty.

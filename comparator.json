@@ -1,0 +1,32 @@
+{
+  "challenge_module": "Challenge",
+  "solution_module": "Solution",
+  "theorem_names": [
+    "NK.powerLowerBound_of_intervalMoments",
+    "NK.dvd_pow_iff_perfectPowerClosure_dvd",
+    "NK.perfectPowerClosure_le_of_dvd_pow",
+    "NK.perfectPowerClosure_coprime_iff",
+    "NK.perfectPowerClosure_idempotent",
+    "NK.closure_interval_lift",
+    "NK.unitConductor_le_exponent_iff",
+    "NK.unitPower_stabilizes",
+    "NK.unitPower_stabilizes_block",
+    "NK.Certificates.square_power_bound",
+    "NK.Certificates.fourth_power_bound",
+    "NK.Certificates.sixth_power_bound",
+    "NK.BinaryCapacity.U_supermultiplicative",
+    "NK.BinaryCapacity.capacity_bounds",
+    "NK.BinaryCapacity.tendsto_capacity",
+    "NK.LexicographicCapacity.capacity_lex",
+    "NK.WordGraphCapacity.word_capacity",
+    "NK.prime_power_capacity",
+    "NK.IntervalAlphabet.moment_le_prime_power_capacity"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
+  ],
+  "enable_nanoda": true
+}

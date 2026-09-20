@@ -7,7 +7,7 @@ steps; the current remote remains private.
 
 ## Mathematical scope
 
-- General interval-moment transfer for k>=2, pairwise coprime perfect-power
+- General interval-moment transfer for k>=1, pairwise coprime perfect-power
   bases, positive widths below one, nonnegative exponents, and strict global
   moment surplus; conclude an all-N power-difference-free lower bound.
 - Perfect-power closure of arbitrary seed moduli and the exact free-copy lift.
@@ -54,7 +54,9 @@ substitutes. Kernel trust must be limited to the permitted standard axioms.
 3. Committed matching toolchain/Mathlib pins and dependency manifest, license,
    honest formalization metadata, comparator configuration and readable account.
 4. Required independent Comparator/Lean/NanoDa replay on the exact release,
-   with no placeholders, admissions or unreviewed assertion substitution.
+   with no admissions or unreviewed assertion substitution in Solution or its
+   imports. Challenge has only the explicitly labelled theorem placeholders
+   required by the comparison protocol, with complete ordinary definitions.
 5. Verified release on default branch main; public visibility and registry
    intake handled only at the authorized release step, with registration
    distinguished from mechanical verification and editorial review.

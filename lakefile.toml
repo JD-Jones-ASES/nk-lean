@@ -1,7 +1,7 @@
 name = "nkLean"
 version = "0.1.0"
 keywords = ["mathematics", "combinatorics", "number-theory", "palomar"]
-defaultTargets = ["NK", "Audit"]
+defaultTargets = ["NK", "Challenge", "Solution", "Audit"]
 
 [leanOptions]
 autoImplicit = false
@@ -23,3 +23,9 @@ name = "NK"
 
 [[lean_lib]]
 name = "Audit"
+
+[[lean_lib]]
+name = "Challenge"
+
+[[lean_lib]]
+name = "Solution"

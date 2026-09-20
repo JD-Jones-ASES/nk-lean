@@ -1,4 +1,6 @@
 import NK.Certificates.EvenApplications
+import NK.Certificates.SquareApplication
+#print axioms NK.Certificates.square_power_bound
 #print axioms NK.Certificates.fourth_power_bound
 #print axioms NK.Certificates.sixth_power_bound
 open NK NK.RationalMomentCertificate
