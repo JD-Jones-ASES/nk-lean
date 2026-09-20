@@ -5,7 +5,7 @@ project:
   description: A general interval-moment criterion for sets of integers avoiding nonzero kth-power differences,
     for every k >= 1. Finite interval alphabets on pairwise coprime perfect-kth-power bases, local moment
     inequalities and a strict sum-of-exponents surplus imply a uniform lower bound c N^alpha for every
-    N >= 1. The target applications have exact exponents 0.75806770413 for squares, 0.9142 for fourth
+    N >= 1. The proved applications have exact exponents 0.75806770413 for squares, 0.9142 for fourth
     powers and 0.95295 for sixth powers. Structural results prove canonical perfect-power closure and
     free copying from arbitrary seed moduli; full unit-power conductor stabilization including singular
     primes; exact interval-moment capacity multiplication under lexicographic graph products; an exact
@@ -13,7 +13,7 @@ project:
     as the limit of finite-depth roots. The square witness combines Naslund's binary policy and odd supports
     with cooperative support changes, new widths, and a fresh exact global allocation. No global optimality
     or worldwide record claim is made. The private candidate remains under verification; PROOF_STATUS.md
-    records remaining numerical checks and release gates.
+    records the remaining independent replay and release gates.
   authors:
   - JD Jones
   responsible_maintainers:
@@ -115,8 +115,7 @@ automation:
     Claude contributed predecessor work and the initial port suggestion. See docs/ATTRIBUTION.md.
 status:
   scope: 'Private candidate: 19 selected theorem statements, complete ordinary definitions and no definition
-    holes. The zero sorry counts refer to the proof-bearing Solution import closure; Challenge has 19 intentional theorem placeholders. Fourth/sixth applications and structural theorems are proved; square odd geometry/final assembly
-    and complete independent release replay remain pending. No global optimum, numerical binary capacity,
+    holes. The zero sorry counts refer to the proof-bearing Solution import closure; Challenge has 19 intentional theorem placeholders. All three numerical applications and the selected structural theorems are proved; complete independent release replay remains pending. No global optimum, numerical binary capacity,
     Bellman identity, factor-two finite-depth estimate, public release or Palomar acceptance is claimed.'
   sorry_count: 0
   sorry_in_definitions: 0

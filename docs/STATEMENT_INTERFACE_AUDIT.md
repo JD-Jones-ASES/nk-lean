@@ -41,15 +41,24 @@ Challenge deliberately contains the 19 statement placeholders.
 
 ## Verification boundary
 
-At this review, the complete chunked Odd215 geometry and moment component and
-the chunked Odd437 numerical certificate had compiled. Odd437 geometry was
-running. `SquareApplication.lean` had **not yet compiled**. The source-level
-square statement and proposed assembly therefore remain conditional on those
-development checks completing.
+Following the initial source review, both complete odd components and
+`SquareApplication.lean` compiled, with the final square application
+warning-free. The completed project build and transitive axiom audit cover
+10,794 NK declarations and admit only the three permitted standard axioms.
+The 19 intentional Challenge placeholders are the only theorem placeholders.
+These build results were recorded by the main verification lane; this reviewer
+did not rerun them.
 
-The final aggregate build, transitive axiom audit, exact Comparator comparison,
-and NanoDa replay on the final candidate remain separate gates. This audit
-does not discharge them. The installed-tool smoke test described in
-`REPLAY_TOOLCHAIN.md` covers only the official small control, not nk-lean.
-See `PROOF_STATUS.md` and `VERIFICATION.md` for subsequent results; their later
-dated evidence may supersede this review-time status.
+A subsequent read-only check confirmed that the sole square-assembly proof
+change introduces `hpower (n : ℕ) : Nat.Coprime (4 ^ n) b` from the already
+proved `Nat.Coprime 4 b`, using `Nat.Coprime.pow_left`, then specializes n to
+10^15. This keeps the large power symbolic. It changes no theorem statement,
+component, exponent, coprimality premise, or moment-surplus calculation, and
+introduces no additional assumption.
+
+Exact Comparator comparison and NanoDa replay on the final candidate remain
+separate pending gates. The saved-control audit rerun is recorded separately
+by the main verification lane. This source review does not discharge these
+mechanical checks. The installed-tool smoke test in `REPLAY_TOOLCHAIN.md`
+covers only the official small control, not nk-lean. See `PROOF_STATUS.md` and
+`VERIFICATION.md` for subsequent results.

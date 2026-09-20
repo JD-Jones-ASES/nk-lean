@@ -124,11 +124,11 @@ certificate proves that this finite alphabet meets the required moment at
 
 ## Numerical applications and their scope
 
-Fourth powers at exponent0.9142 and sixth powers at0.95295 are closed
-all-N Lean theorems. The square target0.75806770413 has independently
-replayed exact Lab certificates. Its binary and six chain components are
-formalized, as is the full215 component and the437 numerical moment.
-The437 geometry and final assembly remain in progress. PROOF_STATUS.md records the current verification boundary.
+Square differences at exponent0.75806770413, fourth powers at0.9142 and
+sixth powers at0.95295 are closed all-N Lean theorems. The square proof
+assembles the actual binary, six chain and two odd components through the
+general criterion. Exact geometry and numerical checks have all passed.
+PROOF_STATUS.md records the remaining independent verification gates.
 
 The square gain starts with P0179's four support replacements and width
 optimization over the pinned Naslund0.75806746 witness. P0180 adds cooperative

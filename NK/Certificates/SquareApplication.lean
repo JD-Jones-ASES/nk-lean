@@ -25,7 +25,8 @@ theorem square_power_bound : PowerLowerBound 2 (75806770413 / 100000000000 : ℝ
     · intro b hb
       have hsmall : ∀ b ∈ [9, 49, 121, 961, 3481, 10609, 215^6, 437^6],
           Nat.Coprime 4 b := by decide
-      exact (hsmall b hb).pow_left 1000000000000000
+      have hpower (n : ℕ) : Nat.Coprime (4 ^ n) b := (hsmall b hb).pow_left n
+      exact hpower 1000000000000000
     · decide
   · change (75806770413 / 100000000000 : ℝ) <
       [(15494199041779 / 100000000000000 : ℝ),

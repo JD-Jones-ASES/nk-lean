@@ -1,5 +1,10 @@
 # Lean reuse and Palomar contract audit
 
+This is the initial source and policy audit. Its proposed theorem list records
+an earlier planning stage, including the earlier square exponent and stronger
+binary targets. The current comparison surface is `Challenge.lean`;
+`STATEMENT_DESIGN.md` and `PROOF_STATUS.md` record its actual scope and status.
+
 Read-only audit on 2026-09-20. Sources were fetched from the explicitly named
 GitHub projects into this directory; no project below `~/Documents/repos`
 was inspected. No Lean build, Comparator run, or NanoDa replay was performed
@@ -110,7 +115,7 @@ the new interval-moment bound. The old construction charges H at each
 word digit. The P0177 sharp transfer uses a shared rank cost after stopping
 at a common interval scale; this extra argument must actually be proved.
 
-### CRT already proved; arbitrary-modulus closure is new
+### CRT already proved; arbitrary-modulus closure needs new formalization
 
 `RK/LemmaC.lean:142` proves `lemmaC`: coprime ranked blocks of heights Hp,Hq
 glue to modulus P·Q, support `crtBlock P Q Cp Cq`, sum rank

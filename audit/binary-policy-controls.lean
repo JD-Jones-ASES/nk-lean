@@ -30,7 +30,8 @@ private theorem even_valid : RowValid (fun _ : Fin 1 => evenState) evenState eve
   cycle := by
     intro c d I J hI hJ hnext
     rw [windows_exact] at hI hJ
-    split_ifs at hI hJ with hc hd <;> grind
+    split_ifs at hI hJ with hc hd
+    grind
 
 private def evenPolicy : Policy (Fin 1) where
   windows := fun _ => evenState

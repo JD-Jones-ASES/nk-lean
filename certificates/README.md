@@ -17,6 +17,8 @@ They are data for the formal development, not assumptions or Lean proofs.
   the data and `docs/ATTRIBUTION.md`.
 
 The square witnesses have independent integer geometry and numerical replays
-recorded in the Lab; the numerical application is not yet closed in Lean.
+recorded in the Lab; the numerical application is now closed in Lean through
+`NK.Certificates.square_power_bound`. Independent release replay is tracked
+separately in `docs/VERIFICATION.md`.
 No global optimum is claimed. The finite geometry, rational-power evaluator,
 full transfer, and final unconditional applications are separate proof gates.

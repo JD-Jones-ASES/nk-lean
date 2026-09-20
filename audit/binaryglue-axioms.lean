@@ -12,4 +12,4 @@ example {m : ℕ} (A : Fin 4 → NK.IntervalAlphabet 2 (4^m))
   intro x hx
   obtain ⟨r, u, hu, _⟩ := (NK.BinaryGlue.mem_support A x).mp hx
   rw [hEmpty r] at hu
-  simpa using hu
+  simp at hu

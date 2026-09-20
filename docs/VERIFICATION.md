@@ -1,55 +1,86 @@
-# Development verification, 20 September 2026
+# Verification, 20 September 2026
 
-The general interval-moment transfer, canonical closure, stopping-word and CRT
-constructions, exact numerical evaluator, 18 even seed geometries and moments,
-and the unconditional fourth/sixth all-N applications compile with the pinned
-Lean4.33.0/Mathlib toolchain. `scripts/audit.sh` passed, including the complete
-imported-declaration transitive axiom scan and all saved boundary controls.
-That control run scanned1,068 NK declarations. A subsequent full build and
-axiom scan, including the six square-chain components, passed with1,136. Both numerical theorems use
-only propext, Classical.choice and Quot.sound. Six square-chain components
-have separately compiled. Subsequent binary and structural checks are recorded below.
+## Complete Lean development checks
 
-Controls reject zero widths, invalid dyadic shifts and false numerical upper
-endpoints. An out-of-tree planted custom axiom was rejected by Audit.lean.
-No custom axiom, native_decide or admitted proof is used in the development.
+The full `lake build` passes with Lean 4.33.0 and the committed Mathlib/rk-lean
+pins. It compiles NK, Challenge, Solution and Audit. All three unconditional
+all-N applications are proved: squares at 0.75806770413, fourth powers at
+0.9142 and sixth powers at 0.95295. The square modulus at binary depth 10^15
+remains symbolic; no enormous integer expansion is required.
 
-This is development validation. The final package still requires statement
-comparison and exhaustive independent kernel replay (including NanoDa) on
-the exact release commit. No public release or registry submission occurred.
+The transitive audit checks **10,794 NK declarations**, including required
+headline names, and allows only `propext`, `Classical.choice` and `Quot.sound`.
+Separate axiom reports for all three numerical bounds give the same list.
+The source guard checks 70 proof files, with no prohibited tokens, Challenge
+imports in proofs, or definition holes. It is supplementary to kernel replay.
 
-## Subsequent completed development checks
+`scripts/audit.sh` passes, including all 25 saved Lean control files. The controls
+cover transfer/interpolation, zero widths, false numerical endpoints, dyadic
+range conditions, binary geometry, tree summaries and cross-child queries,
+residue masks, closure, graph products, empty/looped graphs, and the binary
+prime-conductor exception. An earlier out-of-tree custom-axiom mutation was
+rejected by the declaration audit. Two minor test-file lint cleanups were
+replayed separately and passed warning-free before freezing the candidate;
+they change no library declaration.
 
-The actual 25-state/94-transition binary geometry, all weighted growth rows,
-finite-depth logarithmic certificate and binary MomentComponent now compile
-and pass standard-axiom audits. The full unit conductor, exact prime-block
-graph isomorphism, generic lexicographic/word capacity and prime-depth
-capacity barrier also compile warning-free. Their saved controls are in audit/.
-The prime-structure audits contain24 positive/negative controls and15 axiom
-reports; all use only the permitted standard axioms. Binary capacity has its
-actual-alphabet supermultiplicativity and limit proof.
+Challenge deliberately has 19 theorem placeholders and complete ordinary
+mathematical definitions. Its 19 placeholder warnings are expected. Solution
+does not import Challenge and has no admissions. `comparator.json` selects
+19 theorem names, keeps `definition_names` empty and enables NanoDa.
 
-The last aggregate build before those final additions checked2,404 NK
-declarations. A new aggregate audit is still required for the enlarged import
-surface. Odd215's numerical moment certificate passed; Odd437's monolithic
-numerical check was stopped for memory pressure and split into smaller
-kernel checks; two chunks plus their parent assembly now pass. The first
-fixed-target geometry chunk also passes. A sampled monolithic geometry
-process reached12.8GB and was canceled in favor of the same chunk strategy. This cancellation is not a failed mathematical check.
-The complete chunked Odd215 geometry subsequently passed in168 seconds,
-and its actual MomentComponent passed in15 seconds. All256 source chunks
-for Odd437 and64 for Odd215 were independently checked by the generator audit
-against the complete target tree. The full chunked Odd437 numerical certificate subsequently passed in188
-seconds. Its generator exactly reproduces the checked source. Odd437 geometry
-and unconditional square assembly remain pending. Subsequent large modules
-disable asynchronous theorem elaboration to avoid overlapping kernel reductions.
+## Exact finite certificates
 
-The fast geometry checker has a proved refinement to the original checker.
-Production residue masks and deliberately corrupted mask/prefix/tree controls
-pass; no original geometry assumption was removed. Metadata passes the official
-upstream v0.4 schema (PyYAML6.0.3, jsonschema4.26.0). The supplementary source
-guard passes; it is not a substitute for the transitive axiom scan or replay.
+| Final production check | Outcome | Observed build time |
+|---|---|---:|
+| Odd215 geometry, serial elaboration | passed | 173 s |
+| Odd215 actual component | passed | 4.9 s |
+| Odd437 numerical moment | passed | 188 s |
+| Odd437 geometry | passed | 927 s |
+| Odd437 actual component | passed | 6.4 s |
+| SquareApplication, warning-free | passed | 4.0 s |
 
-The official Comparator/Lean/NanoDa installation smoke test passed. It covered
-the official simple_match control only. See REPLAY_TOOLCHAIN.md; the complete
-nk-lean comparison and independent replay are still pending.
+These are development timings on this host, not performance guarantees.
+The actual 25-state/94-branch binary policy, all weighted growth inequalities,
+finite-depth logarithmic certificate and actual binary MomentComponent also
+compile and pass the standard-axiom audit. The 18 fourth/sixth seed geometries
+and their exact moment certificates are included in the full build.
+
+The geometry checker has a proved refinement to the original full-arc
+condition. Its chunking partitions sources only; every source still queries
+the complete target tree. Python normal/optimized modes reproduce the generated
+geometry deterministically and reject 14 data/tree corruptions. The numerical
+generator likewise reproduces the production source exactly in both modes and
+rejects altered literal widths, flat widths and root aliases. These generator
+controls are reproducibility evidence, not substitutes for the Lean proofs.
+See CHUNK_GEOMETRY_AUDIT.md, NUMERIC_GENERATOR_AUDIT.json and CERTIFICATE_REPLAY.md.
+
+Earlier monolithic numerical/geometry runs were stopped for memory pressure;
+a sampled geometry process reached 12.8 GB. This was a resource limitation,
+not a failed mathematical certificate. Bounded proof obligations, generic
+assembly and serial theorem elaboration gave the successful production runs.
+No axiom policy, endpoint, data row or mathematical hypothesis was weakened.
+
+## Review and metadata
+
+Distinct agents reviewed statement/definition fidelity, exact square assembly,
+prime structure, and generator coverage. The review reports state their scope;
+agent review is not human peer review or source-author endorsement. The final
+symbolic coprimality helper was separately reviewed. Unit conductors and exact
+prime-block/lexicographic capacities have their own boundary and negative
+controls. Stronger Bellman/factor-two claims remain outside the 19 statements.
+
+`formalization.yaml` passes the official upstream v0.4 schema with PyYAML 6.0.3
+and jsonschema 4.26.0. Python compilation and `git diff --check` pass. The
+metadata's zero-sorry counts refer to the proof-bearing Solution closure.
+
+## Independent candidate replay
+
+The official Comparator/Lean/NanoDa installation smoke test passed on its
+`simple_match` control. The complete nk-lean comparison and independent replay
+are the remaining verification gate and must identify the exact candidate
+commit. REPLAY_TOOLCHAIN.md pins all tools and gives the command. On this
+macOS host the official development Landrun shim provides no sandbox; a local
+run is developer-controlled source replay, distinct from Palomar's Linux gate.
+
+The repository remains private. Public release, submission and registration
+have not occurred and are separate from mathematical verification.

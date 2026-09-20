@@ -11,8 +11,7 @@ Solution; they must not appear as unproved hypotheses of the numerical claims.
    ordinary finite alphabets on pairwise coprime perfect-kth-power moduli,
    positive widths below1, full modular kth-power arc ordering, local moment
    bounds, and strict sum-of-moment-exponents surplus imply the all-N lower bound.
-2. Square differences: exponent75806770413/100000000000, once the remaining
-   Odd437 composite certificate and final assembly close in Lean.
+2. Square differences: exponent75806770413/100000000000 (proved).
 3. Fourth-power differences: exponent4571/5000 (proved).
 4. Sixth-power differences: exponent19059/20000 (proved).
 

@@ -87,8 +87,8 @@ lake build NK.Certificates.SquareApplication
 ```
 
 The complete Odd215 geometry and component, and the complete chunked
-Odd437 numerical certificate, have passed. Odd437 geometry and the square
-assembly remain under validation. Generated large modules disable asynchronous
+Odd437 numerical certificate, have passed. Odd437 geometry and the final
+unconditional square assembly have also compiled successfully. Generated large modules disable asynchronous
 theorem elaboration so bounded kernel checks do not overlap in memory.
 PROOF_STATUS.md and VERIFICATION.md must record the actual final outcomes.
 Generators, Python controls and an external exact research replay do not by

@@ -60,23 +60,24 @@ Quot.sound. The final release still needs exhaustive independent replay.
 - Retained-word CRT construction, exact fibers, and a sound tree certificate
   checker for the two large odd alphabets.
 
-## Work in progress
+## Compiled square application
 
-- Unconditional square numerical application at 75806770413/100000000000.
-  The binary, six chain and full Odd215 components are complete. Odd215
-  geometry compiled in168 seconds and its component in15 seconds. Odd437
-  numerical moments also passed in188 seconds. Its geometry and the final
-  square assembly remain under verification.
+`NK.Certificates.square_power_bound` proves the unconditional all-N square
+bound at75806770413/100000000000. All nine actual components are complete.
+The final serial Odd215 geometry/component replay took173/4.9 seconds;
+Odd437 numerical moments took188 seconds, geometry927 seconds, and its
+component6.4 seconds. SquareApplication compiled warning-free in4 seconds.
+The binary modulus remains symbolic throughout.
 
 
 ## Release requirements
 
 The draft Challenge/Solution pair selects19 statements, including all three
-numerical targets, with the square proof still pending. Challenge imports only
+proved numerical targets. Challenge imports only
 Mathlib and contains complete ordinary mathematical definitions;
 all finite data and certificate proofs belong in Solution. Completion requires
-matching statement comparison, a complete axiom audit, and NanoDa replay on
-an exact commit. Public release and registration have not occurred.
+matching statement comparison and NanoDa replay on an exact commit. The
+complete project build and transitive audit of10,794 NK declarations pass. Public release and registration have not occurred.
 
 See SUBMISSION_PLAN.md and docs/SOURCE_AND_POLICY_AUDIT.md for the complete
 scope and the pinned current intake contract. Do not describe this list of
