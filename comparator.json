@@ -1,6 +1,6 @@
 {
-  "challenge_module": "Challenge",
-  "solution_module": "Solution",
+  "challenge_module": "NKChallenge",
+  "solution_module": "NKSolution",
   "theorem_names": [
     "NK.powerLowerBound_of_intervalMoments",
     "NK.dvd_pow_iff_perfectPowerClosure_dvd",

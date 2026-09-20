@@ -1,0 +1,79 @@
+{
+  "status": "fail",
+  "stage": "comparator",
+  "source": {
+    "bytes": 5757723,
+    "commit": "0a2e7b8cb640ab3528fef6d0e44798940c4006fd",
+    "repository": "JD-Jones-ASES/nk-lean",
+    "repository_url": "https://github.com/JD-Jones-ASES/nk-lean",
+    "tree_url": "https://github.com/JD-Jones-ASES/nk-lean/tree/0a2e7b8cb640ab3528fef6d0e44798940c4006fd"
+  },
+  "challenge": {
+    "bytes": 12550,
+    "canonical_olean_sha256": "447ee67a309f5d893aaa417de3935c4b0c56becc42d83e79ee37978f0f1de574",
+    "dependencies": [
+      {
+        "provenance": "allowlisted",
+        "repository": "leanprover-community/mathlib4"
+      }
+    ],
+    "direct_imports": [
+      "Mathlib"
+    ],
+    "lines": 212,
+    "module": "Challenge",
+    "path": ".lake/packages/rkLean/Challenge.lean",
+    "sha256": "bde8ddf505d923dcfe25cb7fac5f91aa6b28cf5ef3f5070499733053324cd0f5",
+    "transitive_source_count": 2,
+    "trust_level": "high",
+    "untrusted_sources": []
+  },
+  "solution": {
+    "module": "Solution",
+    "path": ".lake/packages/rkLean/Solution.lean",
+    "sha256": "976fe06a0fc69103dc27de83a5793ca58c753471f91f28faddff9f2f94c41ac7"
+  },
+  "comparator": {
+    "challenge_module": "Challenge",
+    "definition_names": [],
+    "path": "comparator.json",
+    "permitted_axioms": [
+      "propext",
+      "Quot.sound",
+      "Classical.choice"
+    ],
+    "sha256": "2a4f27412b0038e970243fe9d5cdd3d3db02c69daf3813a447f796b621649683",
+    "solution_module": "Solution",
+    "theorem_names": [
+      "NK.powerLowerBound_of_intervalMoments",
+      "NK.dvd_pow_iff_perfectPowerClosure_dvd",
+      "NK.perfectPowerClosure_le_of_dvd_pow",
+      "NK.perfectPowerClosure_coprime_iff",
+      "NK.perfectPowerClosure_idempotent",
+      "NK.closure_interval_lift",
+      "NK.unitConductor_le_exponent_iff",
+      "NK.unitPower_stabilizes",
+      "NK.unitPower_stabilizes_block",
+      "NK.Certificates.square_power_bound",
+      "NK.Certificates.fourth_power_bound",
+      "NK.Certificates.sixth_power_bound",
+      "NK.BinaryCapacity.U_supermultiplicative",
+      "NK.BinaryCapacity.capacity_bounds",
+      "NK.BinaryCapacity.tendsto_capacity",
+      "NK.LexicographicCapacity.capacity_lex",
+      "NK.WordGraphCapacity.word_capacity",
+      "NK.prime_power_capacity",
+      "NK.IntervalAlphabet.moment_le_prime_power_capacity"
+    ]
+  },
+  "comparator_commit": "575674928e239f5bc452aab72d1dd7b0f1326494",
+  "lean4export_commit": "15f6055e299ad5b89345e533cc2192f4cc00f659",
+  "nanoda_commit": "68d5ca9db226849b41a6fff59d796ff19d0a8840",
+  "landrun_commit": "811cfff51ceaf3d9843708aa6d22e9b84ccac8b4",
+  "lean_toolchain": "leanprover/lean4:v4.33.0",
+  "comparator_log_tail": "Building PalomarCanonicald5a6928e42dbc659bdfed74f.Challenge\nExporting #[Nat, String, String.mk, Char, Quot, Quot.mk, Quot.lift, Quot.ind, NK.powerLowerBound_of_intervalMoments, NK.dvd_pow_iff_perfectPowerClosure_dvd, NK.perfectPowerClosure_le_of_dvd_pow, NK.perfectPowerClosure_coprime_iff, NK.perfectPowerClosure_idempotent, NK.closure_interval_lift, NK.unitConductor_le_exponent_iff, NK.unitPower_stabilizes, NK.unitPower_stabilizes_block, NK.Certificates.square_power_bound, NK.Certificates.fourth_power_bound, NK.Certificates.sixth_power_bound, NK.BinaryCapacity.U_supermultiplicative, NK.BinaryCapacity.capacity_bounds, NK.BinaryCapacity.tendsto_capacity, NK.LexicographicCapacity.capacity_lex, NK.WordGraphCapacity.word_capacity, NK.prime_power_capacity, NK.IntervalAlphabet.moment_le_prime_power_capacity, propext, Quot.sound, Classical.choice, Nat.add, Nat.sub, Nat.mul, Nat.pow, Nat.gcd, Nat.div, Nat.mod, Nat.beq, Nat.ble, Nat.land, Nat.lor, Nat.xor, Nat.shiftLeft, Nat.shiftRight, String.ofList, Char.ofNat, List, eagerReduce] from PalomarCanonicald5a6928e42dbc659bdfed74f.Challenge\n\nPANIC at dumpConstant Export:237:48: Constant NK.powerLowerBound_of_intervalMoments not found in environment.\nbacktrace:\n/home/runner/work/_temp/lean4export/.lake/build/bin/lean4export(+0x95c2ff5) [0x564da5327ff5]\n/home/runner/work/_temp/lean4export/.lake/build/bin/lean4export(+0x95ba707) [0x564da531f707]\n/home/runner/work/_temp/lean4export/.lake/build/bin/lean4export(lean_panic_fn_borrowed+0x2b) [0x564da531f7eb]\n/home/runner/work/_temp/lean4export/.lake/build/bin/lean4export(panic spec at dumpConstant (lean4export)+0x2ae) [0x564d9f105a5e]\n/home/runner/work/_temp/lean4export/.lake/build/bin/lean4export(List.forIn'.loop [arity\u2193] spec at main (lean4export)+0x2a1) [0x564d9f0f7b21]\n/home/runner/work/_temp/lean4export/.lake/build/bin/lean4export(main [\u03bb] (lean4export)+0x167) [0x564d9f0f7ff7]\n/home/runner/work/_temp/lean4export/.lake/build/bin/lean4export(main [boxed, \u03bb] (lean4export)+0x13) [0x564d9f0f8273]\n/home/runner/work/_temp/lean4export/.lake/build/bin/lean4export(<apply/3>+0x970) [0x564da532f220]\n/home/runner/work/_temp/lean4export/.lake/build/bin/lean4export(M.run [arity\u2193] (lean4export)+0x30) [0x564d9f0fa090]\n/home/runner/work/_temp/lean4export/.lake/build/bin/lean4export(+0x957b8b7) [0x564da52e08b7]\n/home/runner/work/_temp/lean4export/.lake/build/bin/lean4export(+0x957bd85) [0x564da52e0d85]\n/lib/x86_64-linux-gnu/libc.so.6(+0x9cb84) [0x7fcb8369cb84]\n/lib/x86_64-linux-gnu/libc.so.6(+0x129d6c) [0x7fcb83729d6c]\nuncaught exception: Child exited with 134",
+  "workflow_url": "https://github.com/PalomarRegistry/PalomarSubmission/actions/runs/35539225340",
+  "errors": [
+    "Comparator rejected the project (exit 1)"
+  ]
+}

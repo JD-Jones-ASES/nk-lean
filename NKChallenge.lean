@@ -11,7 +11,7 @@ lexicographic multiplicativity, and the binary-square capacity limit. They are
 statements about this construction method, not upper bounds on D_k(N).
 
 This Mathlib-only statement file has intentional theorem placeholders.
-Solution does not import it. Every definition below has its ordinary complete
+NKSolution does not import it. Every definition below has its ordinary complete
 body; no definition holes or certificate assumptions replace the headlines.
 -/
 namespace NK

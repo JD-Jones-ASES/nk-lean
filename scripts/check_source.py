@@ -26,15 +26,15 @@ def code_only(s):
     return ''.join(out)
 
 def main():
-    paths=sorted((ROOT/'NK').rglob('*.lean'))+[ROOT/'NK.lean',ROOT/'Solution.lean',ROOT/'Audit.lean']
+    paths=sorted((ROOT/'NK').rglob('*.lean'))+[ROOT/'NK.lean',ROOT/'NKSolution.lean',ROOT/'Audit.lean']
     errors=[]
     for p in paths:
         s=code_only(p.read_text())
         if m:=BANNED.search(s):errors.append(f'{p.relative_to(ROOT)}: forbidden proof token {m[0]}')
-        if re.search(r'^import\s+Challenge\b',s,re.M):errors.append(f'{p}: proof imports Challenge')
-    challenge=ROOT/'Challenge.lean';s=challenge.read_text();code=code_only(s)
-    if len(s.encode())>100*1024 or len(s.splitlines())>1000:errors.append('Challenge exceeds size limit')
-    if re.findall(r'^import\s+(.+)$',code,re.M)!=['Mathlib']:errors.append('Challenge import policy changed')
+        if re.search(r'^import\s+NKChallenge\b',s,re.M):errors.append(f'{p}: proof imports NKChallenge')
+    challenge=ROOT/'NKChallenge.lean';s=challenge.read_text();code=code_only(s)
+    if len(s.encode())>100*1024 or len(s.splitlines())>1000:errors.append('NKChallenge exceeds size limit')
+    if re.findall(r'^import\s+(.+)$',code,re.M)!=['Mathlib']:errors.append('NKChallenge import policy changed')
     cfg=json.loads((ROOT/'comparator.json').read_text())
     if cfg.get('definition_names')!=[]:errors.append('No definition holes are permitted')
     if cfg.get('enable_nanoda') is not True:errors.append('NanoDa must remain enabled')

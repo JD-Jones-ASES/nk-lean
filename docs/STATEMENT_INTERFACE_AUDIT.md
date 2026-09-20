@@ -1,7 +1,7 @@
 # Statement interface review
 
-This AI-assisted source review compares [Challenge.lean](../Challenge.lean),
-[Solution.lean](../Solution.lean), [comparator.json](../comparator.json),
+This AI-assisted source review compares [NKChallenge.lean](../NKChallenge.lean),
+[NKSolution.lean](../NKSolution.lean), [comparator.json](../comparator.json),
 [formalization.yaml](../formalization.yaml), and the corresponding library
 definitions and theorem interfaces. It found no blocking mathematical
 fidelity or coverage issue. Source review is distinct from mechanical
@@ -11,9 +11,9 @@ recorded in [VERIFICATION.md](VERIFICATION.md).
 ## Interface findings
 
 The Comparator selects 19 distinct theorems, matching the 19 intentional
-statement placeholders in Challenge. Challenge imports Mathlib alone and
-gives ordinary, complete bodies to its definitions. Solution imports the
-substantive NK library and square application, without importing Challenge.
+statement placeholders in NKChallenge. NKChallenge imports Mathlib alone and
+gives ordinary, complete bodies to its definitions. NKSolution imports the
+substantive NK library and square application, without importing NKChallenge.
 The selected interfaces agree with their library counterparts.
 
 - `PowerLowerBound` asserts one positive constant, independent of `N`,
@@ -44,7 +44,7 @@ coprimality condition, or surplus.
 
 ## Scope of assurance
 
-The proof-bearing Solution closure contains no `sorry`; Challenge
+The proof-bearing NKSolution closure contains no `sorry`; NKChallenge
 deliberately contains the 19 theorem placeholders used for comparison.
 Agent review is not human peer review, source-author endorsement, or
 Palomar acceptance. The mathematical account makes no global optimality

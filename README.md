@@ -31,8 +31,8 @@ is claimed.
 ## Proof and verification
 
 - [Mathematical account](PROOF.md): statements, construction, and proof outline.
-- [Challenge.lean](Challenge.lean): the 19 statements selected for comparison.
-- [Solution.lean](Solution.lean): imports the complete proofs and certificates.
+- [NKChallenge.lean](NKChallenge.lean): the 19 statements selected for comparison.
+- [NKSolution.lean](NKSolution.lean): imports the complete proofs and certificates.
 - [Proof status](PROOF_STATUS.md): formal coverage and limits.
 - [Verification](docs/VERIFICATION.md): accepted replay, tool versions, and checks.
 - [AI assistance](DISCLOSURE.md): contributions, responsibility, and review status.
@@ -57,5 +57,6 @@ Independent replay instructions are in [REPLAY_TOOLCHAIN.md](docs/REPLAY_TOOLCHA
 The project uses the MIT license.
 
 [Submission details](SUBMISSION_PLAN.md) give the entry title, abstract, and
-remaining release steps. The repository is currently private and has not
-been submitted to Palomar.
+remaining release steps. The first Palomar submission failed because its
+module names collided with those of a dependency. The submission now uses
+`NKChallenge` and `NKSolution`; see the [repair record](docs/MODULE_IDENTITY.md).

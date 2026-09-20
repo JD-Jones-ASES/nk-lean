@@ -42,8 +42,8 @@ the axiom policy, Lean kernel checking, and NanoDa replay all passed.
 [VERIFICATION.md](docs/VERIFICATION.md) records the exact evidence and the
 scope of subsequent presentation edits.
 
-`Challenge.lean` has 19 intentional theorem placeholders and complete
-mathematical definitions. `Solution.lean` does not import Challenge; its
+`NKChallenge.lean` has 19 intentional theorem placeholders and complete
+mathematical definitions. `NKSolution.lean` does not import NKChallenge; its
 proof dependencies contain no admissions or definition holes.
 
 ## Limits
@@ -55,4 +55,7 @@ capacity, optimal policy, Bellman identity, or effective convergence rate.
 
 The accepted replay was local on macOS using the official unsandboxed
 development shim. Palomar's Linux intake and editorial review are separate.
-Public release, submission, and registration have not occurred.
+The repository is public. Its first submission failed before proof comparison
+because Palomar resolved the dependency's statement module. The
+[module repair](docs/MODULE_IDENTITY.md) preserves every mathematical statement.
+A new intake run is required; registration is not claimed.

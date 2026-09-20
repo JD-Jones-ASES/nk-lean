@@ -9,9 +9,9 @@ attributed dependencies. Only the standard permitted Lean axioms may occur
 transitively in submitted proofs. Do not introduce admissions, custom axioms,
 native evaluation assumptions, or weaker replacement statements.
 
-Challenge.lean may contain labelled theorem placeholders for independent
-comparison. Its definitions must have complete bodies. Solution and NK must
-not import Challenge. Keep all 19 comparisons and NanoDa enabled.
+NKChallenge.lean may contain labelled theorem placeholders for independent
+comparison. Its definitions must have complete bodies. NKSolution and NK must
+not import NKChallenge. Keep all 19 comparisons and NanoDa enabled.
 
 Record the scope and exact commit of verification. Coordinate file ownership
 between agents. Keep hosted checks controlled. Do not make the repository

@@ -8,7 +8,8 @@ with the final message “Your solution is okay!” after 2,777.40 seconds.
 
 This was a local macOS run with the unchanged official tools and their
 unsandboxed development shim. It is distinct from Palomar's Linux intake
-and editorial review. Public release and submission have not occurred.
+and editorial review. The first public submission later failed during module
+resolution; the [repair record](MODULE_IDENTITY.md) gives the diagnosis and checks.
 
 ## Retained evidence
 
@@ -27,15 +28,15 @@ The raw records preserve the actual commands and host paths used in that run.
 
 ## Proof checks
 
-The full build compiles NK, Challenge, Solution, and Audit with Lean 4.33.0
+The full build compiles NK, NKChallenge, NKSolution, and Audit with Lean 4.33.0
 and pinned dependencies. The transitive audit covers 11,314 declarations;
 only `propext`, `Classical.choice`, and `Quot.sound` are permitted. All 25
 saved control files pass. They cover the transfer theorem, arithmetic and
 rounding, interval geometry, tree queries, binary policies, graph products,
 and invalid certificate inputs.
 
-`Challenge.lean` imports Mathlib alone, has complete definitions, and contains
-19 intentional theorem placeholders. Solution does not import Challenge;
+`NKChallenge.lean` imports Mathlib alone, has complete definitions, and contains
+19 intentional theorem placeholders. NKSolution does not import NKChallenge;
 its proof dependencies contain no admissions. The single comparison selects
 all 19 statements, leaves `definition_names` empty, and enables NanoDa.
 The source guard checks 70 proof files as a supplementary check.
@@ -54,7 +55,7 @@ metadata only. The [edit audit](replay/submission-edit-audit.json) checks every
 Lean file against the accepted source with comments removed, checks every
 certificate value, and confirms unchanged build pins and comparison settings.
 Generator changes affect documentation and emitted comments only.
-The [current input manifest](replay/submission-inputs.json) records all 118
+The [presentation input manifest](replay/submission-inputs.json) records all 118
 source, build, generator, and certificate inputs after those edits.
 
 The accepted source manifest above remains a historical record. Some file
@@ -70,9 +71,12 @@ Its freshly compiled Solution export is byte-for-byte identical to the
 232,434,222-byte accepted export above, using the same targets and tools.
 The [export record](replay/submission-export.json) and
 [identity check](replay/submission-export-identity.json) retain the evidence.
-No second full Comparator or NanoDa run is claimed. Later packaging changes
-only documentation and these verification records; all 118 inputs in the
-current manifest remain unchanged.
+No second full Comparator or NanoDa run is claimed for that presentation edit.
+Commit `0a2e7b8cb640ab3528fef6d0e44798940c4006fd` changes only documentation
+and verification records from that source; all 118 inputs in the presentation
+manifest match that submitted commit. The subsequent module repair changes
+file names, Lake targets, and the two configured module names; its checks are
+recorded separately in [MODULE_IDENTITY.md](MODULE_IDENTITY.md).
 
 The metadata validates against the official v0.4 schema. The title and
 abstract describe the compared result families; the mathematical account

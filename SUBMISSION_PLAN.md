@@ -18,9 +18,9 @@ transition rules. All selected statements are proved in Lean.
 
 ## Submission files
 
-Use this repository at the exact 40-character commit on `main` approved
-for release. `formalization.yaml` contains the entry metadata. The single
-`comparator.json` selects 19 theorems in `Challenge.lean`; `Solution.lean`
+Use this public repository at the exact 40-character replacement commit on
+`main`. `formalization.yaml` contains the entry metadata. The single
+`comparator.json` selects 19 theorems in `NKChallenge.lean`; `NKSolution.lean`
 imports their proofs. The Lean toolchain, Lake manifest, and MIT license
 are committed.
 
@@ -32,13 +32,14 @@ and distinguishes it from official intake.
 
 ## Remaining release steps
 
-1. Obtain JD Jones's direction to make the repository public and submit it.
-2. Confirm the exact main commit, current entry metadata, and source links.
-3. Submit the public repository, that full commit hash, and `comparator.json`
+1. Confirm the exact replacement main commit and its verification record.
+2. Submit the public repository, that full commit hash, and `comparator.json`
    through the current Palomar intake. Its Linux mechanical checks and
    editorial review are distinct from the completed local verification.
-4. Record the resulting entry and version only after registration is confirmed.
+3. Record the resulting entry and version only after registration is confirmed.
 
-The repository remains private. No Palomar entry has been submitted or
-registered. The current [submission policy](https://github.com/PalomarRegistry/PalomarPolicy/blob/792c7c0b9e798bd02719e795ef11fa2b5929e067/CONTRIBUTING.md)
+The submission of `0a2e7b8cb640ab3528fef6d0e44798940c4006fd` failed during
+mechanical verification. The [repair record](docs/MODULE_IDENTITY.md) explains
+the module-name collision and the replacement checks. A new submission is
+required; no registration is claimed. The [submission policy](https://github.com/PalomarRegistry/PalomarPolicy/blob/792c7c0b9e798bd02719e795ef11fa2b5929e067/CONTRIBUTING.md)
 sets the package and metadata requirements.

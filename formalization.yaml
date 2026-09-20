@@ -90,10 +90,11 @@ automation:
     are disclosed in DISCLOSURE.md.
 status:
   scope: All 19 selected theorem statements are proved, including the three unconditional numerical bounds.
-    The proof-bearing Solution has no admissions or definition holes. Challenge has 19 intentional theorem
+    The proof-bearing NKSolution has no admissions or definition holes. NKChallenge has 19 intentional theorem
     placeholders. The complete official local Comparator replay accepted proof commit 409bcef149ae96f40f69d38a17cf8bd7330dee98.
-    See docs/VERIFICATION.md for presentation changes and the macOS host scope. Public release and Palomar
-    intake have not occurred. No global optimum, computed binary capacity, Bellman identity, or effective
+    See docs/VERIFICATION.md for later checks and the macOS host scope. The first Palomar submission failed
+    because its module names collided with a dependency; the renamed modules require a new intake run.
+    No global optimum, computed binary capacity, Bellman identity, or effective
     convergence rate is claimed.
   sorry_count: 0
   sorry_in_definitions: 0
