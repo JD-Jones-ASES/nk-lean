@@ -34,6 +34,11 @@ and publication functions also succeed with the new challenge. These checks
 use a local process launcher and existing dependency builds on macOS; they do
 not reproduce the Linux sandbox or constitute a new Palomar intake result.
 
+The [manual preflight workflow](../.github/workflows/palomar-preflight.yml)
+calls Palomar's exact pinned Linux verification job in this repository. It
+checks the selected commit without creating a registry submission. The
+workflow runs only when manually dispatched.
+
 The [verification history](VERIFICATION.md) retains the earlier complete
 proof replay. Further repair checks are recorded here when complete. The
 replacement commit requires a new Palomar submission.
