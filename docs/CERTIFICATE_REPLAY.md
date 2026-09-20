@@ -34,37 +34,49 @@ for each odd width. The one-sided reciprocal theorem retains exactly the
 original lower endpoint S²/upper. It avoids computing a lower bound on the
 reciprocal power that the required moment inequality never uses.
 
-Odd437 has19,683 distinct widths;215 has1,861 distinct widths among its4,913
-rows. The437 calculation is divided into256 chunks of76/77 widths. Each
-chunk proves validity and an exact natural lower sum; generic congruence
-lemmas assemble the parent sums. Python computes candidate literals, which
-are checked in Lean. The root sum is
-12261338816591850911384777125; the final scaled natural comparison has
-positive surplus1424402168362429321833002. These integers concern the local
-437 moment certificate, not the global exponent surplus.
+Odd437 has 19,683 distinct widths; Odd215 has 1,861 distinct widths among
+its 4,913 rows. Both production numerical wrappers are now chunked: 64 chunks
+for 215 and 256 for 437, each containing 76 or 77 widths. Each chunk proves
+validity and an exact natural lower sum; generic congruence lemmas assemble
+the parent sums. Python computes candidate literals, which Lean must check.
 
-An inexpensive Python-only replay reproduces the production numeric wrapper
-without overwriting it or launching Lean. From the repository root:
+| Component | Exact root lower sum | Local scaled comparison surplus |
+|---|---:|---:|
+| Odd215 | 4088483319740695586635924782 | 56253318137051129930389 |
+| Odd437 | 12261338816591850911384777125 | 1424402168362429321833002 |
+
+These integers concern the individual local moment certificates, not the
+global exponent surplus. Odd215's input data and public moment inequality
+are unchanged; its former monolithic proof is now assembled from chunks.
+
+An inexpensive Python-only replay reproduces both production numeric wrappers
+without overwriting them or launching Lean. From the repository root:
 
 ```sh
-python3 scripts/generate_chunked_odd_moments.py --q 437 --out scratch/odd437-numeric-normal
-python3 -O scripts/generate_chunked_odd_moments.py --q 437 --out scratch/odd437-numeric-optimized
-cmp NK/Certificates/Odd437Numeric.lean scratch/odd437-numeric-normal/Odd437NumericChunked.lean
-cmp scratch/odd437-numeric-normal/Odd437NumericChunked.lean scratch/odd437-numeric-optimized/Odd437NumericChunked.lean
+for q in 215 437; do
+  python3 scripts/generate_chunked_odd_moments.py --q "$q" --out "scratch/odd$q-numeric-normal"
+  python3 -O scripts/generate_chunked_odd_moments.py --q "$q" --out "scratch/odd$q-numeric-optimized"
+  cmp "NK/Certificates/Odd${q}Numeric.lean" "scratch/odd$q-numeric-normal/Odd${q}NumericChunked.lean"
+  cmp "scratch/odd$q-numeric-normal/Odd${q}NumericChunked.lean" "scratch/odd$q-numeric-optimized/Odd${q}NumericChunked.lean"
+done
 ```
 
-Both byte comparisons passed. The reproduced production file has SHA-256
-`d84ce9c5c3c8f49f3cf3822e9c889774c48d1a0e5629e1cb14a8871ce5e20266`.
-Each output directory also contains `report.json` with the exact sum, upper
+All byte comparisons passed. The reproduced production SHA-256 values are:
+
+- Odd215Numeric: `ff1a13b2073ee32937e2bbe4be74fca58c2a6e7532082feb49ee04073cd00bfb`
+- Odd437Numeric: `d84ce9c5c3c8f49f3cf3822e9c889774c48d1a0e5629e1cb14a8871ce5e20266`
+
+Each output directory contains `report.json` with the exact sum, upper
 endpoint, multiplicity and comparison surplus. Compare the Lean files rather
 than report bytes: reports include output paths and elapsed time.
 
 The production generator's arithmetic and generic proof assembly were checked
-against the earlier audited prototype. Changes concern portable paths,
-documentation and serial elaboration. Separate normal and `-O` mutation
-controls rejected an altered literal width, an altered flat-data width and an
-incorrect root alias before creating any output. Python success remains a
-reproducibility check; the numerical proof still comes from Lean replay.
+against the earlier audited prototype. The main generation path now dispatches
+both components to this chunked generator and leaves their application
+wrappers unchanged. Separate normal and `-O` mutation controls rejected an
+altered literal width, an altered flat-data width and an incorrect root alias
+for each component before output creation. Python success is reproducibility
+evidence; the numerical proof still comes from Lean replay.
 
 The main generators are:
 
@@ -79,6 +91,7 @@ checks. Run the large Lean builds sequentially on memory-constrained hosts:
 
 ```sh
 lake build NK.Certificates.Odd215Geometry
+lake build NK.Certificates.Odd215Numeric
 lake build NK.Certificates.Odd215Moments
 lake build NK.Certificates.Odd437Numeric
 lake build NK.Certificates.Odd437Geometry
@@ -86,10 +99,10 @@ lake build NK.Certificates.Odd437Moments
 lake build NK.Certificates.SquareApplication
 ```
 
-The complete Odd215 geometry and component, and the complete chunked
-Odd437 numerical certificate, have passed. Odd437 geometry and the final
-unconditional square assembly have also compiled successfully. Generated large modules disable asynchronous
-theorem elaboration so bounded kernel checks do not overlap in memory.
-PROOF_STATUS.md and VERIFICATION.md must record the actual final outcomes.
-Generators, Python controls and an external exact research replay do not by
-themselves establish that the full Lean square application has closed.
+Generated large modules disable asynchronous theorem elaboration so bounded
+kernel checks do not overlap in memory. The production Odd215 numerical
+representation has changed; this document records its generator replay,
+not completion of the post-change aggregate or independent verifier checks.
+PROOF_STATUS.md and VERIFICATION.md record actual Lean, Comparator and NanoDa
+outcomes. Generator controls and an external exact research replay do not
+substitute for those checks or establish that NanoDa's resource issue is resolved.

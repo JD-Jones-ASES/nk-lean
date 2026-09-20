@@ -1,16 +1,75 @@
 {
   "status": "PASS_PYTHON_ONLY",
-  "production_reproduced_normal_and_optimized": true,
-  "mutations_rejected_in_both_modes": [
-    "literal_width",
-    "flat_width",
-    "root_alias"
+  "scope": "Production byte replay and corruption rejection; no claim of completed post-change Lean/Comparator/NanoDa verification.",
+  "components": [
+    {
+      "q": 215,
+      "production_reproduced_normal_and_optimized": true,
+      "mutations_rejected_in_both_modes": [
+        "literal_width",
+        "flat_width",
+        "root_alias"
+      ],
+      "rows": 4913,
+      "frontier_chunks": 64,
+      "chunk_leaf_counts": [
+        76,
+        77
+      ],
+      "upper_branch_nodes": 63,
+      "distinct_widths": 1861,
+      "scale": 1000000000000000000000000,
+      "reduction_depth": 3,
+      "denominator": 99999974386028,
+      "f": "26536176765267/1000000000000000",
+      "alpha": "75806770413/100000000000",
+      "exact_lower_sum": 4088483319740695586635924782,
+      "top_upper": 40632880412771682182695757825378861,
+      "multiplicity": 9938375,
+      "integer_comparison_surplus": 56253318137051129930389,
+      "production_sha256": "ff1a13b2073ee32937e2bbe4be74fca58c2a6e7532082feb49ee04073cd00bfb"
+    },
+    {
+      "q": 437,
+      "production_reproduced_normal_and_optimized": true,
+      "mutations_rejected_in_both_modes": [
+        "literal_width",
+        "flat_width",
+        "root_alias"
+      ],
+      "rows": 19683,
+      "frontier_chunks": 256,
+      "chunk_leaf_counts": [
+        76,
+        77
+      ],
+      "upper_branch_nodes": 255,
+      "distinct_widths": 19683,
+      "scale": 1000000000000000000000000,
+      "reduction_depth": 3,
+      "denominator": 100000118525840,
+      "f": "67878931321877/1000000000000000",
+      "alpha": "75806770413/100000000000",
+      "exact_lower_sum": 12261338816591850911384777125,
+      "top_upper": 1023251062646099248047894233394829623,
+      "multiplicity": 83453453,
+      "integer_comparison_surplus": 1424402168362429321833002,
+      "production_sha256": "d84ce9c5c3c8f49f3cf3822e9c889774c48d1a0e5629e1cb14a8871ce5e20266"
+    }
   ],
-  "exact_lower_sum": 12261338816591850911384777125,
-  "top_upper": 1023251062646099248047894233394829623,
-  "multiplicity": 83453453,
-  "integer_comparison_surplus": 1424402168362429321833002,
-  "production_sha256": "d84ce9c5c3c8f49f3cf3822e9c889774c48d1a0e5629e1cb14a8871ce5e20266",
+  "main_generator_dispatches_chunked_numeric": [
+    215,
+    437
+  ],
+  "main_generator_transient_monolithic_numeric_write": false,
+  "main_generator_moments_wrappers_unchanged": true,
+  "odd215_public_moment_type_matches_frozen": "99de2ade1fe572407d0295481b36f07167fa9e2e",
+  "main_generator_routing_test": "Writes, subprocess execution, and file copies intercepted in memory.",
   "lean_builds_run": 0,
-  "proof_statement_changes": 0
+  "exports_run": 0,
+  "public_moment_statement_changes": 0,
+  "generator_sha256": {
+    "scripts/generate_chunked_odd_moments.py": "c821254099399e999f93374931e9b01100fbab3706e8e17251c584e96d080fbf",
+    "scripts/generate_odd_moments.py": "646073c397530b500346cba85e3bd95239bc337bac9b77018585be9689e68321"
+  }
 }

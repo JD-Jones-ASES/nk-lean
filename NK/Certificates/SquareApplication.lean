@@ -15,7 +15,7 @@ theorem square_power_bound : PowerLowerBound 2 (75806770413 / 100000000000 : ℝ
   apply powerLowerBound_of_intervalMoments 2 (75806770413 / 100000000000 : ℝ)
     (by decide) (by norm_num) cs
   · simp [cs]
-  · change [4 ^ 1000000000000000, perfectPowerClosure 2 3, perfectPowerClosure 2 7,
+  · change [4 ^ binaryDepth, perfectPowerClosure 2 3, perfectPowerClosure 2 7,
       perfectPowerClosure 2 11, perfectPowerClosure 2 31, perfectPowerClosure 2 59,
       perfectPowerClosure 2 103, 215^6, 437^6].Pairwise Nat.Coprime
     rw [square_chain3_closure, square_chain7_closure, square_chain11_closure,
@@ -26,7 +26,7 @@ theorem square_power_bound : PowerLowerBound 2 (75806770413 / 100000000000 : ℝ
       have hsmall : ∀ b ∈ [9, 49, 121, 961, 3481, 10609, 215^6, 437^6],
           Nat.Coprime 4 b := by decide
       have hpower (n : ℕ) : Nat.Coprime (4 ^ n) b := (hsmall b hb).pow_left n
-      exact hpower 1000000000000000
+      exact hpower binaryDepth
     · decide
   · change (75806770413 / 100000000000 : ℝ) <
       [(15494199041779 / 100000000000000 : ℝ),

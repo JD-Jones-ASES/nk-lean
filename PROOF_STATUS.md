@@ -77,7 +77,7 @@ proved numerical targets. Challenge imports only
 Mathlib and contains complete ordinary mathematical definitions;
 all finite data and certificate proofs belong in Solution. Completion requires
 matching statement comparison and NanoDa replay on an exact commit. The
-complete project build and transitive audit of10,794 NK declarations pass. Public release and registration have not occurred.
+complete project build and transitive audit of11,314 NK declarations pass. Public release and registration have not occurred.
 
 See SUBMISSION_PLAN.md and docs/SOURCE_AND_POLICY_AUDIT.md for the complete
 scope and the pinned current intake contract. Do not describe this list of

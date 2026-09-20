@@ -1,6 +1,6 @@
 # One-sided retained-pair moment checker audit
 
-The only repository file authored in this increment is `NK/OneSidedPairMoment.lean`. Existing numerical dependencies, generated data, and running certificate proofs were not modified or stopped.
+The initial checker increment authored only `NK/OneSidedPairMoment.lean`. Its mathematical argument and small-module verification are recorded below. A later production update applies the same checker and chunked proof representation to both retained-pair components; its Python-only audit is distinguished from full verifier acceptance.
 
 ## Mathematical argument
 
@@ -20,7 +20,7 @@ Read-only counts found 4,913 leaves and 1,861 distinct widths for the 215 compon
 
 No giant rational-exponent evaluation was found. Width computations use fixed 40-term logarithm and 31-term exponential series, with exactly three squarings. Width shifts are 8–12 for 215 and 6–13 for 437. The original monolithic proof checks every width and separately reduces the complete lower sum. The new checker removes the lower-power endpoint calculation from the validity pass; it does not promise a particular speedup.
 
-A robust complementary fallback is already supported by the existing named tree: 437 has 256 frontier chunks of 76 or 77 leaves. Prove local validity and exact literal lowerSum equalities for each chunk, then assemble the 255 upper branches from child theorems and literal additions. The final comparison should rewrite by the proved root sum and check only the resulting small integer inequality. Avoid a second root-wide `decide` that recomputes the original sum.
+Both production numerical wrappers now use the existing named-tree chunks. Odd215 has 64 frontier chunks and 63 assembled parents; Odd437 has 256 frontier chunks and 255 assembled parents. Every frontier contains 76 or 77 leaves. Local validity and exact literal `lowerSum` equalities are checked separately. Generic congruence lemmas combine child theorems and literal additions; the final comparison transports the proved root sum into a literal natural-number inequality. There is no root-wide `decide` that recomputes the complete sum.
 
 ## Verification scope
 
@@ -29,3 +29,16 @@ The new module builds without warnings. Small exact controls are in `audit/one-s
 Final result: the entire controls file exits successfully. The four printed soundness theorems have exactly `propext`, `Classical.choice`, and `Quot.sound`. The first scratch-control attempt needed explicit simplification of casts of 0 and 1 in two example conclusions; the final rerun is clean, and the repository module required no change. `git diff --check` is clean for the new module. No further Lean invocations are running in this lane.
 
 Module SHA256: `a24b52b0dd10981da9226627f8f7fd38f5fdd5fe087c8587560f91bb156e84a5`.
+
+## Production Odd215 representation update
+
+Odd215 previously used a monolithic `PairMomentCertificate.moment_bound` proof. It now uses the same `OneSidedPairMoment` checker and bounded numerical proof assembly as Odd437, with serial elaboration. The literal geometry, widths, scale, fixed three-squaring endpoint, exponent allocation and public `odd215_moment` statement are unchanged. The exact public statement was compared with frozen commit `99de2ade1fe572407d0295481b36f07167fa9e2e`.
+
+Normal and optimized Python reproduce both production Numeric files byte-for-byte. Three mutations per component—an imported literal width, a flat-file width and the root alias—are rejected in both modes before output creation. An intercepted main-generation run confirms chunked numeric generation for both 215 and 437, unchanged application wrappers, and no temporary monolithic Numeric write.
+
+| Component | Exact integer lower sum | Local comparison surplus |
+|---|---:|---:|
+| Odd215 | 4088483319740695586635924782 | 56253318137051129930389 |
+| Odd437 | 12261338816591850911384777125 | 1424402168362429321833002 |
+
+These surpluses are the local scaled natural comparisons, not the global exponent surplus. `NUMERIC_GENERATOR_AUDIT.json` records parameters and hashes; `CERTIFICATE_REPLAY.md` gives portable commands. This update ran no Lean builds or exports. It does not establish completion of the post-change aggregate build, Comparator or NanoDa replay, and does not claim that the representation change resolves NanoDa's resource behavior.

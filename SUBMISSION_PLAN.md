@@ -1,66 +1,84 @@
-# nk-lean target and completion gates
+# nk-lean submission plan
 
-User authorization, 20 September 2026: press the square exponent further,
-create a private remote, begin Lean work, and build a coherent Palomar package
-for the broader project. Public release and actual registry intake are later
-steps; the current remote remains private.
+JD authorized the private repository and Lean development on 20 September 2026.
+The proposed single Palomar entry is **Interval moments for power-difference-free
+sets: a general criterion, local capacity laws, and three numerical applications**.
+Public release and registry intake remain separate steps requiring JD's direction.
 
-## Mathematical scope
+## Mathematical case for the entry
 
-- General interval-moment transfer for k>=1, pairwise coprime perfect-power
-  bases, positive widths below one, nonnegative exponents, and strict global
-  moment surplus; conclude an all-N power-difference-free lower bound.
-- Perfect-power closure of arbitrary seed moduli and the exact free-copy lift.
-- Conductor compression for prime powers, with the (2,2) exception explicit;
-  lexicographic moment multiplicativity and the prime-local depth restriction.
-- Binary square transition soundness and finite-depth growth certificates.
-- Exact applications at the strongest certified square exponent reached,
-  fourth powers at least 0.9142, and sixth powers at least 0.95295.
-- Useful structural companion results from P0178–P0179: separated windows,
-  binary Bellman reduction and capacity bounds. Their final comparison scope
-  must reflect completed Lean proofs, with unfinished parts plainly tracked.
+Lead with the reusable finite-family interval-moment theorem for every k≥1.
+Its hypotheses describe ordinary finite alphabets, pairwise coprime
+perfect-kth-power bases, exact local moment inequalities and strict global
+surplus. Its conclusion is the unconditional lower bound c N^α for every N≥1.
+The selected applications are:
 
-These are the target, not a list of currently formalized results. No substitute
-conditional theorem with the substantive transfer or numerical claims assumed
-may be presented as completion of the requested unconditional applications.
+| Forbidden differences | Exact exponent |
+|---|---:|
+| Squares | 75806770413/100000000000 = 0.75806770413 |
+| Fourth powers | 4571/5000 = 0.9142 |
+| Sixth powers | 19059/20000 = 0.95295 |
 
-## Research track
+The square improvement over the pinned Naslund witness is small but exact.
+The broader mathematical contribution makes the package useful beyond its last
+digits: canonical perfect-power closure and free copying from arbitrary seeds;
+unit-power stabilization including singular primes; unrestricted interval-moment
+multiplicativity under lexicographic graph products; the exact prime-depth law
+outside binary squares; and existence of intrinsic binary capacity as a limit.
+The prime-depth theorem explains where further local searches cannot help this
+method. It neither bounds the unrestricted integer extremal function nor rules
+out coupled-prime or binary-policy improvements.
 
-Preserve the certified P0179 bound while searching cooperative support changes,
-broader word replacements, and improved binary policies. Any candidate requires
-full directed geometry, exact moment inequalities, all displaced components in
-the allocation, independent replays, and the all-N transfer. A bounded failed
-search is not global optimality. Record the reason for stopping each search and
-what meaningful directions remain.
+## Comparison and evidence
 
-## Formalization track
+Use the single master `comparator.json`, selecting 19 statements in
+`Challenge.lean`. Challenge imports only Mathlib, has complete ordinary
+definitions, and contains 19 intentional theorem placeholders. Solution imports
+the actual proved library and certificates. Keep `definition_names` empty,
+NanoDa enabled, and exactly the three standard permitted axioms.
 
-Audit explicitly named user-owned rk-lean, ns-lean and fs sources for useful
-interfaces, exact pins, licenses and toolchain compatibility. Keep Lean outside
-Analytic-Lab. Build a small, readable Challenge using allowed statement imports;
-Solution must prove the exact corresponding types. Choose only genuine theorem
-statements, not definitions designed to hide the desired conclusions.
+All 19 statements and all three numerical applications compile in Lean. The
+full transitive declaration audit and saved controls pass. The final independent
+replay remains a required gate: statement/definition matching, the axiom policy,
+Lean replay and NanoDa must each accept the exact candidate. The first aggregate
+run passed all but NanoDa, which encountered an infeasible closed natural-power
+reduction; the corrected representation is undergoing verification.
+See `docs/VERIFICATION.md` and `docs/REPLAY_TOOLCHAIN.md` for actual run scope.
 
-Prove checker soundness before trusting data. Python/C++ output, source hashes,
-floating-point values, custom axioms and native evaluation axioms are not proof
-substitutes. Kernel trust must be limited to the permitted standard axioms.
+Retain the exact input files, source pins, generator replay controls and sound
+Lean checkers in this repository. No access to the private Analytic-Lab is needed
+to build the proofs. Keep its research commit
+`916d0d604fa36c511b73f7aa214e49c16b637796` as provenance, with release backlinks
+recorded in the Lab. Python and floating-point search are witness-discovery
+tools, not proof oracles.
 
-## Submission gates
+## Release sequence
 
-1. Current official Palomar policy audited and pinned; source/provenance and
-   research-interest narrative checked against actual mathematical content.
-2. All headline statements proved in Lean; build, transitive axiom audit and
-   statement comparison pass on the exact commit.
-3. Committed matching toolchain/Mathlib pins and dependency manifest, license,
-   honest formalization metadata, comparator configuration and readable account.
-4. Required independent Comparator/Lean/NanoDa replay on the exact release,
-   with no admissions or unreviewed assertion substitution in Solution or its
-   imports. Challenge has only the explicitly labelled theorem placeholders
-   required by the comparison protocol, with complete ordinary definitions.
-5. Verified release on default branch main; public visibility and registry
-   intake handled only at the authorized release step, with registration
-   distinguished from mechanical verification and editorial review.
+1. Freeze the proved candidate; finish and record the complete independent
+   replay, exact tool revisions, source/export hashes and host limitations.
+2. Consolidate the private default branch, metadata, license, proof account,
+   attribution and verification report. Preserve one coherent comparison
+   configuration covering the 19 statements.
+3. When JD authorizes public release, refresh the official intake policy and
+   current numerical literature, publish the approved private candidate, and
+   run the official Linux verification gate. The macOS development shim is
+   unsandboxed and must not be described as that gate.
+4. Submit the same approved source and metadata to Palomar. Distinguish a
+   submitted or registered entry from mechanical acceptance and editorial review.
+   Link the resulting release back to the Lab without removing research evidence.
 
-No gate is complete merely because the repository scaffolding or a small
-preliminary theorem builds. Keep the broader goal active until the requested
-package is genuinely coherent, proved and verified.
+## Honest boundaries and next research
+
+No global optimality or worldwide record claim is made. The numerical boundary
+near 0.7580677041313194 is for the current fixed geometry, not arbitrary supports,
+reoptimized widths or policies. The strongest certified endpoint is the rational
+number displayed above. The binary transition geometry remains Naslund's;
+the gain comes from odd support changes, widths and a new allocation across all
+nine components.
+
+The unformalized Bellman identity and factor-two finite-depth estimates stay
+outside this entry's selected claims. Further exponent research should target
+new coupled-prime geometry and better binary policies, rather than depth alone
+at one of the primes covered by the exact capacity law. Source attribution
+belongs beside these claims: see `docs/ATTRIBUTION.md`, `DISCLOSURE.md`, and the
+complete mathematical account in `PROOF.md`.

@@ -120,7 +120,10 @@ at every finite depth. At m=10^15 its moment is at least
 
 The initialization and final shrink are charged explicitly. A logarithmic
 certificate proves that this finite alphabet meets the required moment at
-α=75806770413/10^11; no infinite-policy optimizer is assumed.
+α=75806770413/10^11; no infinite-policy optimizer is assumed. The formal depth
+is chosen from the singleton {10^15}, with its exact equality proved. Thus
+the natural powers remain symbolic even in an eager independent kernel. This
+is a representation choice, not an added hypothesis or a change of witness.
 
 ## Numerical applications and their scope
 

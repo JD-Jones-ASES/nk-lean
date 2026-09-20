@@ -34,10 +34,10 @@ def main():
           f'    simpa using odd{q}_moment','',
           'end NK.Certificates','']
         text='\n'.join(lines);i=text.index(f'noncomputable def odd{q}Low')
-        (ROOT/f'NK/Certificates/Odd{q}Numeric.lean').write_text(text[:i].replace(f'import NK.Certificates.Odd{q}Geometry',f'import NK.Certificates.Odd{q}Data')+'\nend NK.Certificates\n')
         (ROOT/f'NK/Certificates/Odd{q}Moments.lean').write_text(f'import NK.Certificates.Odd{q}Geometry\nimport NK.Certificates.Odd{q}Numeric\n\nnamespace NK.Certificates\n\n'+text[i:])
     out = ROOT/'scratch/chunked-odd'
-    subprocess.run([sys.executable, str(ROOT/'scripts/generate_chunked_odd_moments.py'),
-                    '--q', '437', '--out', str(out)], check=True)
-    shutil.copyfile(out/'Odd437NumericChunked.lean', ROOT/'NK/Certificates/Odd437Numeric.lean')
+    for q in (215, 437):
+        subprocess.run([sys.executable, str(ROOT/'scripts/generate_chunked_odd_moments.py'),
+                        '--q', str(q), '--out', str(out/str(q))], check=True)
+        shutil.copyfile(out/str(q)/f'Odd{q}NumericChunked.lean', ROOT/f'NK/Certificates/Odd{q}Numeric.lean')
 if __name__=='__main__':main()

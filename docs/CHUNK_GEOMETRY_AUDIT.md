@@ -27,7 +27,7 @@ The main `generate_odd_geometry.py --q Q --emit` path no longer writes a tempora
 
 Both standalone chunk generation and the documented main generation path were exercised with `Path.write_text` intercepted in memory. For Q=215 and437, final Data bytes match the current files exactly, and final Geometry bytes match after ignoring only the separately added `Elab.async` line. Main generation's costly Python geometry visit counter was replaced by a zero-returning stub during this routing check; this was a determinism and write-routing test, not a new geometry search. Each main run performed exactly one captured Geometry write, with chunked content.
 
-The separate numerical regeneration script replaces Odd437Numeric with the chunked moment wrapper; Odd215Numeric retains its previously tested numerical wrapper. This does not affect geometry chunking.
+The separate numerical regeneration script now replaces both Odd215Numeric and Odd437Numeric with chunked moment wrappers. This changes only numerical proof boundaries and does not affect geometry chunking.
 
 ## Python controls
 
