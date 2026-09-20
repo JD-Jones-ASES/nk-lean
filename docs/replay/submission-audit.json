@@ -1,0 +1,42 @@
+{
+  "source_commit": "3ad62e0a7147f3f5587ccb66342566559034cddb",
+  "command": [
+    "bash",
+    "scripts/audit.sh"
+  ],
+  "exit_code": 0,
+  "elapsed_seconds": 160.319653249986,
+  "scope": "Full Lake build, transitive declaration audit, source guard, all saved Lean control files, and diff check. No new Comparator or NanoDa run.",
+  "input_manifest": "submission-inputs.json",
+  "input_manifest_sha256": "805c52be944d024c882fe6fa0157cc9ce377126a982014cd9e17825a6c9fdd99",
+  "unchanged_input_count": 118,
+  "control_files": [
+    "audit/FixedPoint.lean",
+    "audit/NumericalApplications.lean",
+    "audit/TransferExample.lean",
+    "audit/alphabetsymmetries-axioms.lean",
+    "audit/binary-application-controls.lean",
+    "audit/binary-geometry-audit.lean",
+    "audit/binary-policy-controls.lean",
+    "audit/binaryarc-axioms.lean",
+    "audit/binaryglue-axioms.lean",
+    "audit/binarysquares-axioms.lean",
+    "audit/capacity-axioms.lean",
+    "audit/closure-controls.lean",
+    "audit/closure-lift-controls.lean",
+    "audit/fast-pair-controls.lean",
+    "audit/fixed-point-series-controls.lean",
+    "audit/interpolation-controls.lean",
+    "audit/lexicographic-axioms.lean",
+    "audit/numeric-controls.lean",
+    "audit/numeric-reduction-controls.lean",
+    "audit/one-sided-pair-controls.lean",
+    "audit/pair-composition-controls.lean",
+    "audit/prime-block-audit.lean",
+    "audit/rational-power-controls.lean",
+    "audit/unit-conductor-audit.lean",
+    "audit/wordgraph-axioms.lean"
+  ],
+  "log": "submission-audit.log",
+  "log_sha256": "5972c08457c7184ebc9f23a199f272108c31a1dff771e30e252c44a32b090df8"
+}

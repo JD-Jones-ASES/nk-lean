@@ -60,7 +60,19 @@ source, build, generator, and certificate inputs after those edits.
 The accepted source manifest above remains a historical record. Some file
 hashes change when their comments or descriptions change. The accepted full
 Comparator run is attributed to its actual commit, not to a later edited
-commit. Current build and export checks are recorded separately.
+commit.
+
+The edited source at `3ad62e0a7147f3f5587ccb66342566559034cddb` was rebuilt
+successfully. The complete audit, including all 25 saved control files,
+passed again: [audit log](replay/submission-audit.log) and
+[run metadata](replay/submission-audit.json).
+Its freshly compiled Solution export is byte-for-byte identical to the
+232,434,222-byte accepted export above, using the same targets and tools.
+The [export record](replay/submission-export.json) and
+[identity check](replay/submission-export-identity.json) retain the evidence.
+No second full Comparator or NanoDa run is claimed. Later packaging changes
+only documentation and these verification records; all 118 inputs in the
+current manifest remain unchanged.
 
 The metadata validates against the official v0.4 schema. The title and
 abstract describe the compared result families; the mathematical account

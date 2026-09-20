@@ -1,0 +1,12 @@
+{
+  "accepted_proof_commit": "409bcef149ae96f40f69d38a17cf8bd7330dee98",
+  "rebuilt_source_commit": "3ad62e0a7147f3f5587ccb66342566559034cddb",
+  "full_comparator_run_on_rebuilt_commit": false,
+  "export_byte_identity": "PASS",
+  "target_and_tool_identity": "PASS",
+  "export_bytes": 232434222,
+  "export_sha256": "e12be5029a582cad015d4e0e4fef200e0b31fdcd1b0c16651f710233a544cc71",
+  "input_manifest": "submission-inputs.json",
+  "unchanged_input_count": 118,
+  "scope": "A full rebuild and audit of the edited sources passed. Its exported proof is byte-identical to the proof accepted by the earlier unchanged official Comparator, Lean kernel, and NanoDa run. No second full independent replay is claimed."
+}
