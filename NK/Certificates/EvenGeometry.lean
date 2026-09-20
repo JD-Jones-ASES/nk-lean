@@ -1,10 +1,9 @@
 import NK.RationalAlphabet
 
-/-! Literal finite interval geometry from Analytic-Lab P0177, pinned in the
-research source at916d0d604fa36c511b73f7aa214e49c16b637796.
-These are kernel-checked geometry certificates, not yet the numerical
-fourth/sixth exponent applications. All modular roots, including nonunits,
-are checked. The actual integer input is preserved in certificates/even.json. -/
+/-! Literal interval geometry for fourth- and sixth-power differences.
+The kernel checks all modular roots, including nonunits.
+The integer input is preserved in certificates/even.json;
+EvenApplications assembles the unconditional numerical bounds. -/
 set_option maxRecDepth 16384
 set_option maxHeartbeats 0
 namespace NK.Certificates

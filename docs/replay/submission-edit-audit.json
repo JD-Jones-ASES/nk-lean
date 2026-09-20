@@ -1,0 +1,90 @@
+{
+  "accepted_proof_commit": "409bcef149ae96f40f69d38a17cf8bd7330dee98",
+  "scope": "Presentation edits only; this comparison does not perform a new Lean build or independent kernel replay.",
+  "lean_files_checked": 96,
+  "lean_code_unchanged_after_comment_removal": true,
+  "comment_only_lean_changes": [
+    {
+      "path": "NK/Certificates/BinaryGeometry.lean",
+      "before_sha256": "726a5d9677bdaed8d37b03120be6acfe8d0c72950663a32eb0e55efbe0f34ff2",
+      "after_sha256": "b5d85a4a978bc22da9788f61cd4706015b8d995b90be2a341a905be923dae85d"
+    },
+    {
+      "path": "NK/Certificates/BinaryMoments.lean",
+      "before_sha256": "777f3f51c73698e5ea4f6d31605c2461b71e4bf18380577daf658d596a0ea79e",
+      "after_sha256": "bb93a1de64caeafa26ac006df6fd75014bcf702e482d9d4ec20d41c5f519fb09"
+    },
+    {
+      "path": "NK/Certificates/EvenGeometry.lean",
+      "before_sha256": "278fb5e9bee76809831b5ce22b003b848d0b09298f69b0f9494ac3df69da736f",
+      "after_sha256": "75a22d72a38df6f75c2dd48683c8c586b3d05d0a0610d4a9e548d70a2d3bd924"
+    },
+    {
+      "path": "NK/Certificates/EvenMoments.lean",
+      "before_sha256": "c848b6f60e1fdf604c5d0b22042d8ab2d5638e8ee2274514dd2b63f9ee1c5eb0",
+      "after_sha256": "1c3c15e6edc1fbf72675ed73dc5dfdf672cfc10fd97b012c899c07300e7c8527"
+    },
+    {
+      "path": "NK/Certificates/Odd215Data.lean",
+      "before_sha256": "2d90d7381b9f9999045e6c4de8c9eb861fcb9705ab7c67eac0592181ecd107b4",
+      "after_sha256": "ddf089a653b94f43d80fd2889e7bcaaebef20f3b5b0c3e142db4fc19e2bfcd1d"
+    },
+    {
+      "path": "NK/Certificates/Odd437Data.lean",
+      "before_sha256": "d9e417efa20fa4d23b4a2ae1d284f9c2430d4656aaced0088aab192a43a323d5",
+      "after_sha256": "66fbc7646d211a7ad2cb4d452d7e3b0132bd2a0f29a34ab8e2d5760f2f20a233"
+    },
+    {
+      "path": "NK/Certificates/SquareApplication.lean",
+      "before_sha256": "66351271211bd0a3d10c4f5226e4cd897c23c265c6c6c4516e53b6f35ee1b814",
+      "after_sha256": "9ad33f903eb36def93a42e11d60552cc9872abeeace2e4c26455bfcf431a155f"
+    },
+    {
+      "path": "NK/Certificates/SquareChains.lean",
+      "before_sha256": "3f4684410c2c29d06436a7717ee5a643ee0b6bbc9ed363d1748f0f5f21d33a48",
+      "after_sha256": "2d780135cb6b3fb72e933613245c0c0944d315afe9bbd89edbd73fa6e322d940"
+    },
+    {
+      "path": "NK/NumericBounds.lean",
+      "before_sha256": "4068cbd53ee1872d568319cfe3d6c71784b04f2b3cb4b226a003aa5c998c849c",
+      "after_sha256": "9d9c2a649aca890de6abdcbc1671d72d38ba6dd1f77b5f26ccf191c5898e4c9c"
+    },
+    {
+      "path": "NK/NumericReduction.lean",
+      "before_sha256": "e6387049be44a899ccccb122eec0cea278b712e46242b008ad7589ea59bb7fd8",
+      "after_sha256": "cb135b0d7025fb8c1e86669b08769bc63bca009f740314d0a598c592a23bde16"
+    }
+  ],
+  "certificate_values_unchanged": true,
+  "certificate_description_changes": [
+    {
+      "path": "certificates/even.json",
+      "changed_fields": [
+        "source_sha256",
+        "status",
+        "title"
+      ],
+      "before_sha256": "6f01ab24ece68fcae9a47514786fffe40c967b750641f3f147a9149da1b7f2c2",
+      "after_sha256": "b9945d18eb134b756b5decce97b30a1a4ba72b53f86b2f59d5b503caf00fe022"
+    },
+    {
+      "path": "certificates/square/data/binary_policy.json",
+      "changed_fields": [
+        "provenance"
+      ],
+      "before_sha256": "2f43d95884dec55655dbd1f463fb4636831ef443b78248ca538e825c253721a7",
+      "after_sha256": "0c7a47db2a19b619b42d731a9ab78013c2235e8f3ec90d2bfd7a1fe9114712c5"
+    }
+  ],
+  "generator_computation_unchanged": true,
+  "generator_description_changes": [
+    "scripts/generate_binary_depth.py",
+    "scripts/generate_binary_moments.py",
+    "scripts/generate_even_certificates.py",
+    "scripts/generate_odd_geometry.py",
+    "scripts/generate_square_chains.py"
+  ],
+  "build_pins_and_comparison_unchanged": true,
+  "metadata_schema": "v0.4 PASS",
+  "internal_reference_scan": "PASS"
+}

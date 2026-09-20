@@ -2,7 +2,7 @@ import NK.BinaryPolicyGrowth
 
 /-! Exact binary policy geometry, generated from the supplied mathematical witness.
 Source: Naslund, commit e5d693729e23762b063a55015ad79ccaf28a3217.
-Input SHA256: 2f43d95884dec55655dbd1f463fb4636831ef443b78248ca538e825c253721a7.
+Input SHA256: 0c7a47db2a19b619b42d731a9ab78013c2235e8f3ec90d2bfd7a1fe9114712c5.
 All containment, cyclic ordering, and seed bounds are proved below in Lean. -/
 set_option maxHeartbeats 0
 set_option maxRecDepth 32768

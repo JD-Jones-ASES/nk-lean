@@ -1,28 +1,31 @@
-# Assistance, provenance and responsibility
+# AI assistance and responsibility
 
-JD Jones selected the problem and directed the research and formalization.
-The work was carried out with substantial AI assistance: OpenAI Codex agents
-performed mathematical development, proof construction, exact search and
-certificate generation, independent arithmetic/geometry replays, Lean
-formalization and scope review. A separate GPT 6 Pro consultation supplied by
-JD and Claude's initial even-power suggestion informed the research direction.
-Claude's predecessor rk-lean work and Grok's original Analytic-Lab engineering
-retain their attribution. No AI system is listed as a human author or maintainer.
+JD Jones selected the problem, directed the work, and is responsible for the
+submission. The mathematical development, computational search, certificate
+generation, Lean formalization, and review received substantial AI assistance.
+OpenAI Codex agents carried out proof construction, exact arithmetic and
+geometry checks, and reviews of theorem statements and scope. GPT 6 Pro,
+Claude, and Grok also contributed mathematical suggestions, formalization
+assistance, or computational tooling. AI systems are not listed as human
+authors or maintainers.
 
-Distinct agents reviewed theorem scope and definition/signature agreement.
-The finite research witnesses were checked by independent implementations,
-including literal integer pair enumeration and a separate rational enclosure
-engine. These checks and the generator outputs are not substitutes for Lean
-checker-soundness proofs or independent kernel replay.
+Different agents reviewed the theorem statements and the agreement between
+definitions and proof signatures. Independent implementations checked the
+finite witnesses, including literal integer pair enumeration and a separate
+rational enclosure calculation. Generator output and numerical search were
+accepted only through the required exact checks and formal soundness proofs.
+These roles are distinct from independent Lean and NanoDa kernel replay.
 
-The development explicitly preserves Naslund's interval criterion and binary
-geometry, Krachun's ranked construction, Jones's predecessor formal work,
-classical unit-group theory, and Mathlib's existing arithmetic ingredients.
-The improved square certificate changes cooperative odd supports, widths and
-the global allocation. No global optimum or exhaustive priority search is
-claimed. See docs/ATTRIBUTION.md, PROOF.md and PROOF_STATUS.md.
+The mathematical attribution is explicit: Naslund supplies the interval
+criterion and binary geometry, Krachun the ranked construction, and Jones
+the formal ranked-construction dependency. Classical unit-group theory and
+Mathlib supply additional arithmetic and analysis. The square improvement
+comes from cooperative changes to an odd support, interval widths, and the
+global moment allocation. See [ATTRIBUTION.md](docs/ATTRIBUTION.md) and the
+[mathematical account](PROOF.md).
 
 Token and monetary accounting was not retained in a form suitable for an
-accurate total. No independent human peer review or source-author endorsement
-is recorded. Mechanical correctness, agent review and eventual registry
-review are separate matters. Public release and registration have not occurred.
+accurate total. No independent human peer review or endorsement by the cited
+authors is recorded. Mechanical correctness, AI-assisted review, mathematical
+priority, and registry status are separate matters. The
+[proof status](PROOF_STATUS.md) records the verification boundary.

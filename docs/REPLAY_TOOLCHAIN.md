@@ -1,7 +1,7 @@
 # Independent replay toolchain
 
-The private development uses Lean4.33.0 with the committed Mathlib/rk-lean pins.
-The following official tool revisions were fetched and built on20 September2026:
+The proof uses Lean 4.33.0 with the committed Mathlib/rk-lean pins.
+The following official tool revisions were fetched and built on 20 September 2026:
 
 | Tool | Revision |
 |---|---|
@@ -9,11 +9,11 @@ The following official tool revisions were fetched and built on20 September2026:
 | leanprover/lean4export |15f6055e299ad5b89345e533cc2192f4cc00f659|
 | ammkrn/nanoda_lib |4c544ed4099c8227f07d5de77ad1e69fb0740a27|
 
-Comparator and lean4export use the matching Lean4.33.0 toolchain. NanoDa is
+Comparator and lean4export use the matching Lean 4.33.0 toolchain. NanoDa is
 built from its committed Cargo.lock. The official Comparator `simple_match`
 control, with NanoDa enabled, passed statement comparison, the axiom policy,
 NanoDa replay and the builtin Lean replay. This verifies the installation;
-it is not a replay of nk-lean.
+it is an installation check.
 
 On this macOS host the official `scripts/fake-landrun.sh` development shim is
 needed because Linux Landrun is unavailable. The shim provides no sandbox.
@@ -35,7 +35,7 @@ Comparator instructions. Never disable NanoDa or broaden permitted axioms
 merely to obtain a successful result. `definition_names` remains empty: all
 ordinary definition bodies must match, rather than being accepted as holes.
 
-The full nk-lean run subsequently accepted proof commit
+The full proof replay accepted commit
 409bcef149ae96f40f69d38a17cf8bd7330dee98 with all checks enabled.
 See VERIFICATION.md and the retained replay log for the actual result; this
 supersedes the installation-only boundary for that exact candidate.

@@ -1,17 +1,48 @@
-# Retained-pair certificate composition audit
+# Retained-pair composition review
 
-The new module `NK/PairCertificateComposition.lean` is the only repository file edited in this increment. It builds without warnings. No existing checker, data file, or mathematical statement was changed.
+[PairCertificateComposition.lean](../NK/PairCertificateComposition.lean)
+assembles proofs about smaller trees into proofs about their parent.
+This AI-assisted review concerns the generic assembly interface and its
+controls. The accepted official replay appears in
+[VERIFICATION.md](VERIFICATION.md).
 
-All public lemmas are in `NK.PairCertificateTree`:
+## Proof interface
 
-- `valid_of_branch_eq p q e D t a b s l r hshape hpLeft hpRight hqLeft hqRight hminLeft hminRight hValidLeft hValidRight` assembles validity from six summary facts and two child proofs.
-- `sorted_of_branch_eq key t a b s l r hshape hgap hSortedLeft hSortedRight` assembles sortedness from the child boundary key gap and child proofs.
-- `rows_all_of_branch_eq test t a b s l r hshape hAllLeft hAllRight` assembles an arbitrary, identical Boolean test across both source-row lists.
-- `rows_all_of_eq test t u hshape h` transports the source-row check across a tree alias.
-- `fastGeometry_of_rows_all k p q pMask qMask t h` packages the assembled literal global-query predicate as `FastGeometryValid` without reducing the full source list.
+The public lemmas lie in `NK.PairCertificateTree`:
 
-The branch lemmas use `hshape : t = .branch a b s l r`; alias transport uses `hshape : t = u`. The row-test argument is fixed and opaque in the generic proof. For geometry it must query each source against the same full target tree. Child-local geometry checks cannot replace these hypotheses, because they omit cross-child arcs.
+- `valid_of_branch_eq` requires six local summary facts and both child
+  validity proofs.
+- `sorted_of_branch_eq` requires a strict child-boundary key gap and both
+  child sortedness proofs.
+- `rows_all_of_branch_eq` combines the same arbitrary Boolean test over
+  both source-row lists.
+- `rows_all_of_eq` transports a source-row check across a tree alias.
+- `fastGeometry_of_rows_all` packages the assembled global-query predicate
+  as `FastGeometryValid`.
 
-Exact controls in `/private/tmp/nk-pair-composition-controls.lean` pass for valid parent assembly, sortedness, source partition, alias transport, and final geometry packaging. Negative controls reject a false prefix summary, false minimum-start summary, reversed key gap, and a false row test. A substantive cross-child control has both singleton child-local geometry checks true, but rejects their overlapping parent and rejects the corresponding source chunk queried against that full parent. This confirms the required scope of the shared row test.
+The branch lemmas use an equality `t = .branch a b s l r`; alias transport
+uses `t = u`. The row predicate is fixed throughout the generic proof.
+For geometry, every source must be queried against the same full target
+tree. Child-local geometry omits cross-child arcs and cannot replace this
+hypothesis.
 
-Axiom printouts: `valid_of_branch_eq`, `sorted_of_branch_eq`, `rows_all_of_branch_eq`, and `fastGeometry_of_rows_all` depend only on `propext`; `rows_all_of_eq` is axiom-free. `git diff --check` passes. No large certificate was launched and no Lean process remains in this lane.
+## Controls and axioms
+
+[audit/pair-composition-controls.lean](../audit/pair-composition-controls.lean)
+checks parent validity, sortedness, source partition, alias transport, and
+geometry packaging. Negative controls reject a false prefix summary, a false
+minimum-start summary, a reversed key gap, and a false row predicate.
+
+The cross-child control is substantive: both singleton children pass their
+own geometry checks, while their overlapping parent fails. Querying the
+source chunk against that full parent also fails. This tests the required
+global target scope.
+
+The axiom reports for `valid_of_branch_eq`, `sorted_of_branch_eq`,
+`rows_all_of_branch_eq`, and `fastGeometry_of_rows_all` contain only
+`propext`; `rows_all_of_eq` is axiom-free.
+
+```sh
+lake build NK.PairCertificateComposition
+lake env lean audit/pair-composition-controls.lean
+```

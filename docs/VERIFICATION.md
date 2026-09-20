@@ -1,119 +1,77 @@
-# Verification, 20 September 2026
+# Verification
 
-**The complete official Comparator run passed** on proof commit
-409bcef149ae96f40f69d38a17cf8bd7330dee98. Statement and ordinary-definition matching,
-the standard-axiom policy, Lean default-kernel replay and NanoDa all accepted.
-The run exited zero with its final success message after 2777.40 seconds.
+The complete official Comparator run accepted proof commit
+`409bcef149ae96f40f69d38a17cf8bd7330dee98` on 20 September 2026.
+All 19 statements passed definition and statement comparison, the permitted
+axiom check, Lean kernel checking, and NanoDa replay. The run exited zero
+with the final message “Your solution is okay!” after 2,777.40 seconds.
 
-The same single master configuration selected all 19 statements; no subset
-replays, definition holes, enlarged axiom list or modified checker were used.
-This was developer-controlled source replay on macOS using the official
-unsandboxed Landrun shim. It is not the separate Palomar Linux intake gate.
+This was a local macOS run with the unchanged official tools and their
+unsandboxed development shim. It is distinct from Palomar's Linux intake
+and editorial review. Public release and submission have not occurred.
 
-- Full replay log: [comparator-409bcef.log](replay/comparator-409bcef.log).
-- Run metadata: [comparator-409bcef.json](replay/comparator-409bcef.json).
-- Log SHA256: 55b8007b6deb5185cf708e4cdf5998decb61700cf9f4e87c7bfd7a591a5f0a23.
-- Full Solution export: 232,434,222 bytes; SHA256
-  e12be5029a582cad015d4e0e4fef200e0b31fdcd1b0c16651f710233a544cc71.
-- Export provenance: [solution-export-409bcef.json](replay/solution-export-409bcef.json).
-- All 118 source/build/certificate input hashes:
-  [proof-inputs-409bcef.json](replay/proof-inputs-409bcef.json).
-- Complete development audit log:
-  [development-audit-409bcef.log](replay/development-audit-409bcef.log).
+## Retained evidence
 
-The later packaging checkpoint changes documentation and verification records,
-not these proof inputs or the compared statements. The accepted run is attributed
-to the exact proof commit above; it is not relabeled as a separate run on a
-documentation-only commit. REPLAY_TOOLCHAIN.md pins all tools and gives the
-replay command.
+- [Full Comparator log](replay/comparator-409bcef.log).
+- [Run metadata](replay/comparator-409bcef.json).
+- [Accepted source and certificate hashes](replay/proof-inputs-409bcef.json).
+- [Solution export metadata](replay/solution-export-409bcef.json).
+- [Full build and audit log](replay/development-audit-409bcef.log).
+- [Tool versions and replay instructions](REPLAY_TOOLCHAIN.md).
 
-## Complete Lean development checks
+The accepted log has SHA256
+`55b8007b6deb5185cf708e4cdf5998decb61700cf9f4e87c7bfd7a591a5f0a23`.
+The Solution export has 232,434,222 bytes and SHA256
+`e12be5029a582cad015d4e0e4fef200e0b31fdcd1b0c16651f710233a544cc71`.
+The raw records preserve the actual commands and host paths used in that run.
 
-The full `lake build` passes with Lean 4.33.0 and the committed Mathlib/rk-lean
-pins. It compiles NK, Challenge, Solution and Audit. All three unconditional
-all-N applications are proved: squares at 0.75806770413, fourth powers at
-0.9142 and sixth powers at 0.95295. The square modulus at binary depth 10^15
-remains symbolic; no enormous integer expansion is required.
+## Proof checks
 
-The transitive audit checks **11,314 NK declarations**, including required
-headline names, and allows only `propext`, `Classical.choice` and `Quot.sound`.
-Separate axiom reports for all three numerical bounds give the same list.
-The source guard checks 70 proof files, with no prohibited tokens, Challenge
-imports in proofs, or definition holes. It is supplementary to kernel replay.
+The full build compiles NK, Challenge, Solution, and Audit with Lean 4.33.0
+and pinned dependencies. The transitive audit covers 11,314 declarations;
+only `propext`, `Classical.choice`, and `Quot.sound` are permitted. All 25
+saved control files pass. They cover the transfer theorem, arithmetic and
+rounding, interval geometry, tree queries, binary policies, graph products,
+and invalid certificate inputs.
 
-`scripts/audit.sh` passes, including all 25 saved Lean control files. The controls
-cover transfer/interpolation, zero widths, false numerical endpoints, dyadic
-range conditions, binary geometry, tree summaries and cross-child queries,
-residue masks, closure, graph products, empty/looped graphs, and the binary
-prime-conductor exception. An earlier out-of-tree custom-axiom mutation was
-rejected by the declaration audit. Two minor test-file lint cleanups were
-replayed separately and passed warning-free before freezing the candidate;
-they change no library declaration.
+`Challenge.lean` imports Mathlib alone, has complete definitions, and contains
+19 intentional theorem placeholders. Solution does not import Challenge;
+its proof dependencies contain no admissions. The single comparison selects
+all 19 statements, leaves `definition_names` empty, and enables NanoDa.
+The source guard checks 70 proof files as a supplementary check.
 
-Challenge deliberately has 19 theorem placeholders and complete ordinary
-mathematical definitions. Its 19 placeholder warnings are expected. Solution
-does not import Challenge and has no admissions. `comparator.json` selects
-19 theorem names, keeps `definition_names` empty and enables NanoDa.
+Finite data are checked by proved Lean verifiers. External generators merely
+supply literals. The [certificate replay instructions](CERTIFICATE_REPLAY.md)
+explain their deterministic output and corruption controls. The large odd
+certificates divide source rows into chunks while retaining the full target
+tree, so cross-chunk arcs are checked.
 
-## Exact finite certificates
+## Presentation edits for submission
 
-| Final production check | Outcome | Observed build time |
-|---|---|---:|
-| Odd215 geometry, serial elaboration | passed | 173 s |
-| Odd215 numerical moment, chunked | passed | 77 s |
-| Odd215 actual component after numeric chunking | passed | 7.6 s |
-| Odd437 numerical moment | passed | 188 s |
-| Odd437 geometry | passed | 927 s |
-| Odd437 actual component | passed | 6.4 s |
-| SquareApplication after numeric chunking | passed | 5.2 s |
+The submission documents now state the results directly and cite public
+sources. Lean edits are comments only; certificate edits change descriptive
+metadata only. The [edit audit](replay/submission-edit-audit.json) checks every
+Lean file against the accepted source with comments removed, checks every
+certificate value, and confirms unchanged build pins and comparison settings.
+Generator changes affect documentation and emitted comments only.
+The [current input manifest](replay/submission-inputs.json) records all 118
+source, build, generator, and certificate inputs after those edits.
 
-These are development timings on this host, not performance guarantees.
-The actual 25-state/94-branch binary policy, all weighted growth inequalities,
-finite-depth logarithmic certificate and actual binary MomentComponent also
-compile and pass the standard-axiom audit. The 18 fourth/sixth seed geometries
-and their exact moment certificates are included in the full build.
+The accepted source manifest above remains a historical record. Some file
+hashes change when their comments or descriptions change. The accepted full
+Comparator run is attributed to its actual commit, not to a later edited
+commit. Current build and export checks are recorded separately.
 
-The geometry checker has a proved refinement to the original full-arc
-condition. Its chunking partitions sources only; every source still queries
-the complete target tree. Python normal/optimized modes reproduce the generated
-geometry deterministically and reject 14 data/tree corruptions. The numerical
-generator likewise reproduces the production source exactly in both modes and
-rejects altered literal widths, flat widths and root aliases. These generator
-controls are reproducibility evidence, not substitutes for the Lean proofs.
-See CHUNK_GEOMETRY_AUDIT.md, NUMERIC_GENERATOR_AUDIT.json and CERTIFICATE_REPLAY.md.
+The metadata validates against the official v0.4 schema. The title and
+abstract describe the compared result families; the mathematical account
+explains every selected theorem. AI assistance and agent review are disclosed
+separately from human peer review and source-author endorsement.
 
-Earlier monolithic numerical/geometry runs were stopped for memory pressure;
-a sampled geometry process reached 12.8 GB. This was a resource limitation,
-not a failed mathematical certificate. Bounded proof obligations, generic
-assembly and serial theorem elaboration gave the successful production runs.
-No axiom policy, endpoint, data row or mathematical hypothesis was weakened.
+## Binary depth representation
 
-## Review and metadata
-
-Distinct agents reviewed statement/definition fidelity, exact square assembly,
-prime structure, and generator coverage. The review reports state their scope;
-agent review is not human peer review or source-author endorsement. The final
-symbolic coprimality helper was separately reviewed. Unit conductors and exact
-prime-block/lexicographic capacities have their own boundary and negative
-controls. Stronger Bellman/factor-two claims remain outside the 19 statements.
-
-`formalization.yaml` passes the official upstream v0.4 schema with PyYAML 6.0.3
-and jsonschema 4.26.0. Python compilation and `git diff --check` pass. The
-metadata's zero-sorry counts refer to the proof-bearing Solution closure.
-
-## Resource diagnosis and corrected proof representation
-
-The earlier run at 99de2ade1fe572407d0295481b36f07167fa9e2e passed comparison,
-the axiom policy and Lean replay, but NanoDa was killed. A logging-only diagnostic
-copy subsequently confirmed attempted computation of 4^(10^15) in a binary
-component proof. Chunking the Odd215 numerical proof alone did not resolve it.
-
-The accepted candidate proves that a noncomputing chosen depth equals exactly
-10^15, and uses that depth inside natural powers. Its scalar logarithmic
-certificate and all mathematical conclusions are unchanged. The remedy passed
-the unchanged official checker; the diagnostic checker was not used as the
-acceptance authority. NANODA_POWER_REDUCTION.md retains the failed-run and
-diagnostic evidence, including their precise limits.
-
-The repository remains private. Public release, submission and registration
-have not occurred and are separate from this mathematical verification.
+The finite binary certificate uses depth 10^15. To avoid expanding the
+natural number 4^(10^15) during independent replay, the proof uses a chosen
+depth and proves it equal to that exact value. All powers retain the chosen
+depth symbolically. No theorem, numerical endpoint, or axiom is changed.
+[The diagnostic note](NANODA_POWER_REDUCTION.md) records the earlier failed
+replay and the correction accepted by the unchanged official checker.

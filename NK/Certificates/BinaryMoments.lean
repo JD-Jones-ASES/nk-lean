@@ -1,7 +1,7 @@
 import NK.Certificates.BinaryGeometry
 import NK.RationalMomentCertificate
 
-/-! Exact weighted-row certificate at the P0180 square allocation. -/
+/-! Exact weighted-row certificate at the certified square allocation. -/
 set_option maxHeartbeats 0
 set_option maxRecDepth 32768
 namespace NK.Certificates

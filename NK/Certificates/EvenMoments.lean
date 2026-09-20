@@ -1,7 +1,7 @@
 import NK.Certificates.EvenGeometry
 import NK.RationalMomentCertificate
 
-/-! Exact numerical moments for the P0177 seeds. Generated certificate
+/-! Exact numerical moments for the fourth- and sixth-power seeds. Generated certificate
 input is proved by ordinary kernel reduction; no native evaluator is trusted. -/
 set_option maxRecDepth 32768
 set_option maxHeartbeats 0

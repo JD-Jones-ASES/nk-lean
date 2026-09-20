@@ -1,5 +1,5 @@
 {
-  "provenance": "Naslund published mathematical witness, e5d693729e23762b063a55015ad79ccaf28a3217; independently transcribed into Lab notation. No external program imported.",
+  "provenance": "Naslund's published mathematical witness at e5d693729e23762b063a55015ad79ccaf28a3217, independently transcribed. The transition geometry is unchanged; the weights and growth certificate are updated.",
   "moment_power": "15494199041779/100000000000000",
   "growth_lower": "1430119207986461/500000000000000",
   "root_state": 1,

@@ -9,8 +9,8 @@ logarithm argument and every nonnegative exponential argument. They do not
 claim to verify a particular bit-length or halving implementation.
 
 For logarithms, `NumericBounds.log_unit_bounds` uses the larger Mathlib
-atanh tail, without the additional factor `1/(2*n+1)` in P0179's Python
-checker. Regenerated certificates must use that proved larger tail unless
+atanh tail, without the sharper factor `1/(2*n+1)`.
+Generated certificates must use that proved larger tail unless
 the sharper remainder is separately proved. Fixed-point rounding remains
 outside this module.
 -/

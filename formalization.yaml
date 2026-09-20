@@ -1,20 +1,14 @@
 # yaml-language-server: $schema=https://raw.githubusercontent.com/mathlib-initiative/formalization.yaml/main/schema/formalization.schema.json
 version: v0.4
 project:
-  name: 'Interval moments for power-difference-free sets: square, fourth and sixth power bounds'
-  description: A general interval-moment criterion for sets of integers avoiding nonzero kth-power differences,
-    for every k >= 1. Finite interval alphabets on pairwise coprime perfect-kth-power bases, local moment
-    inequalities and a strict sum-of-exponents surplus imply a uniform lower bound c N^alpha for every
-    N >= 1. The proved applications have exact exponents 0.75806770413 for squares, 0.9142 for fourth
-    powers and 0.95295 for sixth powers. Structural results prove canonical perfect-power closure and
-    free copying from arbitrary seed moduli; full unit-power conductor stabilization including singular
-    primes; exact interval-moment capacity multiplication under lexicographic graph products; an exact
-    prime-depth capacity law outside binary squares; and existence of intrinsic binary interval capacity
-    as the limit of finite-depth roots. The square witness combines Naslund's binary policy and odd supports
-    with cooperative support changes, new widths, and a fresh exact global allocation. No global optimality
-    or worldwide record claim is made. The private candidate passed the complete official local Comparator replay
-    at proof commit 409bcef149ae96f40f69d38a17cf8bd7330dee98. PROOF_STATUS.md records the
-    host scope and the remaining public release and Palomar intake gates.
+  name: Lower bounds for sets without perfect-power differences
+  description: Let D_k(N) be the largest size of a subset of {1, ..., N} with no positive k-th-power difference.
+    We prove D_k(N) >= c_k N^alpha_k for every N >= 1, with positive constants c_k and exponents 0.75806770413,
+    0.9142, and 0.95295 for squares, fourth powers, and sixth powers. The proofs use a general interval-moment
+    criterion for every positive integer k. We also prove arithmetic lifting results, exact product and
+    prime-depth laws for interval capacity, and existence of the binary square capacity limit. The square
+    construction refines Naslund's published example while retaining its binary transition rules. All
+    selected statements are proved in Lean.
   authors:
   - JD Jones
   responsible_maintainers:
@@ -36,10 +30,9 @@ sources:
   location: https://github.com/enaslund/sarkozy-lower-bound-0.758/blob/e5d693729e23762b063a55015ad79ccaf28a3217/papers/square-difference-free-sets-of-exponent-0.75806746.tex
   relationship: adapts
   author_endorsement: not-contacted
-  note: Pinned source commit e5d693729e23762b063a55015ad79ccaf28a3217. Interval-moment criterion, stopping-word
-    method, odd retained supports and 25-state binary transition geometry. The general-k transfer and
-    new exact square allocation extend this source. Binary geometry is unchanged; the exponent improvement
-    is not attributed to a new binary policy.
+  note: Source of the square interval criterion, odd retained supports, and 25-state binary transition
+    rules. This formalization generalizes the criterion to positive k, changes odd supports and widths,
+    and gives a new exact allocation. The binary transition rules are unchanged.
 - title: Square-Difference-Free Sets beyond the Three-Quarter Barrier
   authors:
   - Dmitry Krachun
@@ -66,58 +59,42 @@ sources:
   author_endorsement: not-contacted
   note: Prior perfect-degree-base transfer and coprime prime-power/free-copy reductions. These unweighted
     antecedents are not claimed new.
-- title: User-supplied even-power consultation and research package
-  type: other
-  relationship: adapts
-  note: GPT 6 Pro consultation supplied by JD, following Claude's initial even-k suggestion. Contains
-    the general-k interval direction, conductor formulas, prime-local moment barrier and initial fourth/sixth
-    targets. AI contributions are disclosed as assistance, not human authorship. Input report SHA256 69d1ff1149f07e6550e2dcd7c1ee59aaa46f67bccb27a7a06b5ea9f75479c256.
-- title: Analytic-Lab P0177-P0180 research notes and exact witnesses
-  authors:
-  - JD Jones
-  type: other
-  relationship: formalizes
-  location: https://github.com/JD-Jones-ASES/Analytic-Lab/tree/916d0d604fa36c511b73f7aa214e49c16b637796
-  note: Private research provenance. Curated exact data and a self-contained mathematical account are
-    retained in this repository; no access to the private Lab is needed to build the formal proofs. This
-    package includes selected proved structural statements; stronger Bellman and factor-two results remain
-    outside its comparison scope.
 related_formalizations:
 - id: https://github.com/JD-Jones-ASES/rk-lean/tree/4bf2e3a56b6a522764a4d03e5dc606c12376185e
   relationship: builds-on
-  note: Pinned MIT dependency for general-k ranked blocks, word root cancellation and CRT. The new interval-moment
-    transfer and its certificates are substantive new Lean development in nk-lean.
+  note: Pinned MIT dependency for ranked modular blocks, word constructions, and CRT. The interval transfer
+    and the exact numerical certificates are proved in this repository.
 - id: https://github.com/JD-Jones-ASES/fs-lower-bound/tree/d1294519dfdcc5f7e139e77336a7d042f390b9e7
   relationship: builds-on
   note: Square predecessor and ancestry of rk-lean; not a direct dependency.
 - id: https://github.com/JD-Jones-ASES/ns-lean/tree/035e9b0c147630e35631e4401433660f695d1fba
   relationship: other
-  note: Related function-field conjecture refutation cited by Naslund. No ns-lean theorem is assumed or
-    re-exported here; Frobenius/function-field extensions are outside this comparison surface.
+  note: Related function-field result cited by Naslund. No theorem from this project is used as a dependency.
 automation:
   methods:
   - method: agent
     framework: OpenAI Codex
-    tool_setup: Coordinated AI agents for mathematical development, exact certificate search/replay, Lean
-      proofs and independent scope reviews. Ordinary decide and decide +kernel reduce trusted finite computations;
-      Python/C++ generators and search tools are untrusted. Lean, Mathlib, Comparator, lean4export and
-      NanoDa provide mechanical checks.
-    prompting_notes: JD requested consolidation, exponent improvement, and a coherent private Palomar
-      candidate. The agent was required to retain the full all-N mathematical statements, exact provenance
-      and separate finite/local/global scopes.
+    tool_setup: AI agents assisted with mathematics, exact certificate generation, Lean proofs, and scope
+      review. Python generators are untrusted; Lean proves the certificate checks and their soundness.
+    prompting_notes: The work was directed toward stronger power-difference-free lower bounds and a complete
+      Lean formalization.
   - method: copilot
     models:
     - GPT 6 Pro
     - Claude
-    tool_setup: User-supplied consultation and initial even-power research suggestion; see sources and
-      DISCLOSURE.md.
+    - Grok
+    tool_setup: AI assistance with mathematical ideas, predecessor formalization, and supporting computation;
+      see DISCLOSURE.md.
   spend_usd: not tracked
-  notes: Human responsibility rests with JD Jones. Grok built the original Analytic-Lab engineering framework;
-    Claude contributed predecessor work and the initial port suggestion. See docs/ATTRIBUTION.md.
+  notes: JD Jones is responsible for the statements and submission. AI assistance and the limits of review
+    are disclosed in DISCLOSURE.md.
 status:
-  scope: 'Private candidate: 19 selected theorem statements, complete ordinary definitions and no definition
-    holes. The zero sorry counts refer to the proof-bearing Solution import closure; Challenge has 19 intentional theorem placeholders. All three numerical applications and the selected structural theorems are proved; the complete official local Comparator replay accepted proof commit 409bcef149ae96f40f69d38a17cf8bd7330dee98, while public release and the official Palomar Linux gate remain separate. No global optimum, numerical binary capacity,
-    Bellman identity, factor-two finite-depth estimate, public release or Palomar acceptance is claimed.'
+  scope: All 19 selected theorem statements are proved, including the three unconditional numerical bounds.
+    The proof-bearing Solution has no admissions or definition holes. Challenge has 19 intentional theorem
+    placeholders. The complete official local Comparator replay accepted proof commit 409bcef149ae96f40f69d38a17cf8bd7330dee98.
+    See docs/VERIFICATION.md for presentation changes and the macOS host scope. Public release and Palomar
+    intake have not occurred. No global optimum, computed binary capacity, Bellman identity, or effective
+    convergence rate is claimed.
   sorry_count: 0
   sorry_in_definitions: 0
   axioms:
@@ -129,19 +106,16 @@ review:
   reviewers:
   - Codex theorem-scope reviewer
   - Codex independent definition and signature reviewer
-  notes: Distinct agents reviewed the source/statement match and mathematical scope; no blocking mathematical
-    overclaim was found in the reviewed structural statements. This is not human peer review, source-author
-    endorsement or Palomar editorial review. Mechanical gates and remaining work are recorded in docs/VERIFICATION.md
-    and PROOF_STATUS.md.
+  notes: Separate agents reviewed the theorem statements, definitions, proof scope, and certificate assembly.
+    This is agent review, not human peer review or source-author endorsement. Mechanical evidence is in
+    docs/VERIFICATION.md.
 fidelity:
-  divergences: The interval criterion is generalized from squares to every positive exponent k and permits
-    arbitrary seed moduli through canonical closure. The square application changes the odd437 support
-    and widths and reallocates all nine moment exponents while retaining the source binary geometry. Fourth/sixth
-    data and exact exponents extend the pinned rk-lean applications. Unit conductors use standard sufficient
-    bounds; no minimality assertion. Prime-local capacity includes all supports and widths with the explicit
-    binary-square exception. Binary capacity is an intrinsic supremum of actual alphabets, not an assumed
-    Bellman optimizer.
-acknowledgements: Eric Naslund, Dmitry Krachun, Imre Ruzsa, Khalid Younis and the authors of relevant
-  unit-group/Cayley-graph antecedents; Claude and GPT 6 Pro for the supplied research direction; Grok
-  for historical Lab engineering; Lean, Mathlib, Comparator, lean4export, NanoDa and Palomar. Classical
-  unit-group theory and Mathlib ceiling-root arithmetic are not claimed new.
+  divergences: The interval criterion is generalized from squares to every positive integer k. Canonical
+    closure permits arbitrary seed moduli. The square application changes odd supports, widths, and moment
+    exponents while retaining Naslund's binary transition rules. Fourth- and sixth-power applications
+    give the stated exact bounds. Unit conductors are sufficient bounds, without a minimality claim. Prime-depth
+    capacity ranges over all interval alphabets and excludes binary squares. Binary capacity is defined
+    from actual alphabets; no optimizer or Bellman identity is assumed.
+acknowledgements: Eric Naslund, Dmitry Krachun, Imre Ruzsa, Khalid Younis, and the authors of the mathematical
+  antecedents listed in docs/ATTRIBUTION.md; the contributors to Lean, Mathlib, Comparator, lean4export,
+  NanoDa, and Palomar. AI assistance is described in DISCLOSURE.md.

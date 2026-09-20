@@ -1,152 +1,210 @@
 # Mathematical account
 
-The theorem `NK.powerLowerBound_of_intervalMoments` is a general finite-data
-criterion for every k≥1. For each of finitely many pairwise coprime bases b_i=s_i^k≥2,
-choose a finite support of residues and a positive interval inside[0,1] at
-each residue. Every nonzero kth-power modular difference must order the
-corresponding intervals from left to right. All widths are strictly below1.
-If f_i≥0, each width moment Z_i(f_i)≥b_i^α, and Σf_i>α≥0, then
+For positive integers k and N, let D_k(N) be the largest size of a subset of
+{1, …, N} containing no two elements whose positive difference is a kth power.
+The numerical theorems give constants c_k > 0, independent of N, such that
 
-    ∃c>0, ∀N≥1, ∃A⊆{1,…,N}, A has no positive kth-power difference,
-      |A|≥c N^α.
+    D_2(N) ≥ c_2 N^0.75806770413,
+    D_4(N) ≥ c_4 N^0.9142,
+    D_6(N) ≥ c_6 N^0.95295
 
-This statement is now proved in Lean. `MomentComponent` contains only the
-finite alphabet, perfect-power base, exponent and displayed hypotheses.
-It contains no lower-bound or transfer assumption. The proof also works
-at k=1 when its hypotheses hold; the intended applications have k≥2.
+for every N ≥ 1. The proofs use a general interval-moment criterion, exact
+finite certificates, and structural results about prime-power moduli.
 
-## Why the criterion works
+## The interval-moment criterion
 
-Finite positive widths admit common bounds0<σ≤w≤ρ<1. Compose their affine
-maps along words, least significant digit outermost. In a perfect-power
-base, the first differing digit of a modular kth-power difference is itself
-a kth-power arc: the common prefix factors out a kth power of the root.
-Thus the composed intervals order all word arcs; widths multiply.
+An interval alphabet modulo b consists of a finite set A of residues and an
+interval I_x = [a_x, a_x + w_x] inside [0, 1] for each x in A, with w_x > 0.
+Whenever y − x is a nonzero kth power modulo b, the intervals satisfy
+a_x + w_x ≤ a_y. Its moment at a real exponent f is
 
-Stop each branch the first time its width is at mostδ=ρ^K. Every branch
-stops by depthK, and every terminal width exceedsσδ. Actual finite-word
-extension and partition give the exact active/terminal moment recurrence.
-A pigeonhole argument selects a depth1≤e_i≤K with
+    Z_A(f) = Σ_(x ∈ A) w_x^f.
 
-    b_i^(e_i α) ≤ (K+1)|E_i|δ^f_i.
+The theorem NK.powerLowerBound_of_intervalMoments applies for every k ≥ 1.
+Take a nonempty finite family of such alphabets on pairwise coprime bases
+b_i = s_i^k ≥ 2. Suppose all widths are less than one, f_i ≥ 0, α ≥ 0, and
 
-Encoding the selected equal-length words preserves cardinality, interval
-order and moment. Floor interval starts at resolutionσδ and reverse the
-ranks to match the decreasing convention in rk-lean. Each component has
-heightH=ceil(1/(σδ)). CRT combines their supports at modulus
-M=∏b_i^e_i and cardinalityQ=∏|E_i|, with heighth=1+n(H−1).
-Multiplication of the local estimates gives
+    Z_i(f_i) ≥ b_i^α for every i,       Σ_i f_i > α.
 
-    M^α ≤ (K+1)^n Q δ^(Σf_i).
+Then D_k(N) ≥ c N^α for a fixed c > 0 and every N ≥ 1. The hypotheses contain
+only finite alphabets and their moment inequalities. The lower bound is
+derived from these data.
 
-The strict surplusΣf_i−α>0 makes the geometric decay dominate the fixed
-polynomial factor and rank cost. For a sufficiently large fixedK,
-(Mh)^α≤Q. The pinned RK construction repeats in the perfect-power baseM
-and producesQ^t integers up to(Mh)^t avoiding kth-power differences.
-Integer-log interpolation retains the full exponent with constant1/Q
-for everyN≥1. The range scaleMh need not be a perfect power and is never
-used as the digit base.
+Finite positive widths admit common bounds 0 < σ ≤ w ≤ ρ < 1. Compose the
+affine interval maps along words, with the least significant digit outermost.
+In a perfect-power base, the first differing digit of a modular kth-power
+difference is itself a kth-power arc: the common prefix factors out a kth
+power of the root. The composed intervals therefore order every word arc,
+and their widths multiply.
 
-## Arbitrary seed moduli
+Stop each branch when its width first becomes at most δ = ρ^K. Every branch
+stops by depth K, and each terminal width is greater than σδ. An exact
+recurrence for the moments of active and terminal words, followed by a
+pigeonhole argument, selects a depth 1 ≤ e_i ≤ K with
 
-For k,d≥1, define B_k(d)=∏p|d p^(k ceil(v_p(d)/k)). Mathlib's ceiling-root divisibility
-adjunction gives d|z^k iff B_k(d)|z^k. Consequently copying a seed interval
-to every residue of its fiber in B_k(d) never collapses a nonzero power arc.
-The resulting interval alphabet has exactly B_k(d)/d copies of each seed
-interval, so its cardinality and every real moment acquire that factor.
-Both the actual copied alphabet and the factor identities are proved.
-For example d=9,k=6 gives B=729 and81 copies; lifting instead to an
-arbitrarily larger perfect power would fail zero detection.
+    b_i^(e_i α) ≤ (K + 1) |E_i| δ^f_i.
 
-## Which depth searches can matter
+Encoding these equal-length words preserves their number and interval order.
+Round their interval starts down at resolution σδ, and reverse the ranks to
+use a decreasing rank on each directed arc. Each component has height
+H = ceil(1/(σδ)). The Chinese remainder theorem combines the supports into a
+ranked block with modulus M = ∏_i b_i^e_i, size Q = ∏_i |E_i|, and height
+h = 1 + n(H − 1), where n is the number of components. Thus
 
-For a prime p and k≥1 the unit kth-power image stabilizes at the sufficient
-conductor s_p(k)=v_p(k)+1 for odd p, at1 for p=2 and odd k, and at
-v_2(k)+2 for p=2 and even k. This covers singular primes p|k as well as
-ordinary Hensel lifting. These are standard unit-group facts, now proved in
-the interface used here. The conductor satisfies s_p(k)≤k except at (2,2).
-No minimal-conductor claim is needed.
+    M^α ≤ (K + 1)^n Q δ^(Σ_i f_i).
 
-Outside that exception, take the first unequal base-p^k digit of two
-residues modulo p^(ke). A nonzero kth power in a single p^k block is a unit:
-a nonunit root would already give zero in that block. Conversely the unit
-conductor theorem extends the first-block kth-power condition through all
-remaining digits. This proves an actual graph isomorphism with the e-fold
-lexicographic power of the one-block graph, including nonunit differences
-whose first unequal block occurs later.
+The positive surplus Σ_i f_i − α makes geometric decay dominate the
+polynomial and rank costs. For a sufficiently large fixed K, this gives
+(Mh)^α ≤ Q. The ranked construction repeats in the perfect-power base M
+and produces Q^t integers in {1, …, (Mh)^t} with no positive kth-power
+difference. Interpolation between these scales gives the constant 1/Q
+for every N ≥ 1. The range scale Mh need not be a perfect power; the digit
+base is M.
 
-For any finite digraph G, let M_f(G) be the supremum of interval moments
-over all selected vertices and all positive intervals contained in[0,1]
-and ordered by its arcs; full width1 is allowed in this capacity definition.
-Actual nesting proves M_f(G∘H)≥M_f(G)M_f(H). For the reverse inequality,
-take the hull of each occupied G-fiber and normalize its H-intervals inside
-that hull. The hulls form a G-alphabet and each normalized fiber has moment
-at most M_f(H). Therefore, for f≥0,
+## Canonical lifting of seed moduli
 
-    M_f(G∘H)=M_f(G)M_f(H),
-    M_f(G_k(p^(ke)))=M_f(G_k(p^k))^e,       e≥1, (p,k)≠(2,2).
+For k, d ≥ 1, define
 
-The formal result ranges over every support and every admissible width
-assignment. Thus extra depth at a single such prime cannot improve the
-normalized interval capacity. This is a barrier for this interval method at
-p^(ke) and f≥0, not an upper bound on the integer extremal function D_k(N).
-It does not rule out coupled-prime gains.
-Binary squares have conductor3 greater than block length2: five is a square
-modulo4 but not modulo16. The extra bit explains why the binary depth
-problem is different.
+    B_k(d) = ∏_(p | d) p^(k ceil(v_p(d)/k)).
 
-## Binary capacity and the finite witness
+This is the least positive perfect kth power divisible by d. For every
+natural number z, including zero,
 
-Let U_m(f) be the supremum of actual square-interval moments modulo4^m.
-Nesting gives U_(m+n)≥U_m U_n; choosing the binary digits0 and2 gives
-U_m≥2^m, and widths≤1 give U_m≤4^m. Applying the subadditive limit theorem
-to −log U_m proves
+    d divides z^k  if and only if  B_k(d) divides z^k.
 
-    Λ(f)=lim_m U_m(f)^(1/m)=sup_(m≥1) U_m(f)^(1/m),   2≤Λ(f)≤4.
+For positive d and e, the closure preserves coprimality: B_k(d) and B_k(e)
+are coprime exactly when d and e are coprime. It is also idempotent:
+B_k(B_k(d)) = B_k(d). These facts allow arbitrary positive seed moduli to
+be replaced by compatible perfect-power bases. The arithmetic uses
+Mathlib's ceiling-root divisibility theorem.
 
-These statements are formalized for f≥0. They do not assert an attained
-stationary optimizer, a Bellman identity, or a quantitative convergence rate.
-The stronger factor-two/Bellman statements in the Lab research notes are
-outside the present formal comparison surface.
+Copy each seed interval to every residue in its reduction fiber modulo d.
+The divisibility equivalence ensures that a nonzero power arc cannot
+collapse to a zero difference in the seed. The resulting interval alphabet
+has exactly B_k(d)/d copies of each interval. Its cardinality and every real
+moment acquire this same factor, while its widths are unchanged.
 
-The numerical lower witness uses Naslund's actual25-state,94-branch policy.
-Its geometry, positive rational weights and all weighted row inequalities
-are checked in Lean. A proved induction constructs a real interval alphabet
-at every finite depth. At m=10^15 its moment is at least
-2^(−f) a^(m−1)/4, with
+For example, d = 9 and k = 6 give B_k(d) = 729 and 81 copies per seed
+interval. An arbitrary larger perfect-power multiple would not necessarily
+preserve the required zero-difference criterion.
 
-    f=15494199041779/10^14,
-    a=1430119207986461/(5·10^14).
+## Unit conductors and prime-power graphs
 
-The initialization and final shrink are charged explicitly. A logarithmic
-certificate proves that this finite alphabet meets the required moment at
-α=75806770413/10^11; no infinite-policy optimizer is assumed. The formal depth
-is chosen from the singleton {10^15}, with its exact equality proved. Thus
-the natural powers remain symbolic even in an eager independent kernel. This
-is a representation choice, not an added hypothesis or a change of witness.
+For a prime p and k ≥ 1, a sufficient conductor for kth powers of units is
 
-## Numerical applications and their scope
+    s_p(k) = v_p(k) + 1             if p is odd,
+    s_2(k) = 1                     if k is odd,
+    s_2(k) = v_2(k) + 2             if k is even.
 
-Square differences at exponent0.75806770413, fourth powers at0.9142 and
-sixth powers at0.95295 are closed all-N Lean theorems. The square proof
-assembles the actual binary, six chain and two odd components through the
-general criterion. Exact geometry and numerical checks have all passed.
-PROOF_STATUS.md records the verification record and remaining release gates.
+If p does not divide u and n ≥ s_p(k), then u is a kth power modulo p^n
+exactly when it is a kth power modulo p^s_p(k). This includes primes
+dividing k as well as the nonsingular lifting case. These conductor formulas
+come from classical unit-group arithmetic; no minimal-conductor claim is
+required.
 
-The square gain starts with P0179's four support replacements and width
-optimization over the pinned Naslund0.75806746 witness. P0180 adds cooperative
-three-vertex changes in the437=19·23 retained alphabet, further width
-reoptimization, and reallocation of all nine moment exponents. The215 component and binary
-transition geometry are unchanged. Ten final support positions differ from
-the prior P0179 certificate. This is a small numerical improvement with a
-new exact witness, not a global optimum. A fixed-geometry numerical boundary
-near0.7580677041313194 explains the last digits but does not bound other
-supports, reoptimized widths even on the same support, other policies or
-prime couplings, or the unrestricted integer problem.
+The inequality s_p(k) ≤ k holds exactly outside (p, k) = (2, 2).
+Consequently, outside that exception, a unit is a kth power modulo p^n
+for n ≥ k exactly when it is one modulo p^k.
 
-The research evidence is pinned at Analytic-Lab commit
-916d0d604fa36c511b73f7aa214e49c16b637796. Naslund's interval method is a source
-theorem; classical unit groups, CRT and Mathlib's ceiling-root adjunction
-are prior theory. The development combines them with the general-k transfer,
-canonical copying, exact capacity statements and improved applications.
-Credit and source pins are in docs/ATTRIBUTION.md.
+Let G_k(m) be the directed graph on residues modulo m, with an arc x → y
+when y − x is a nonzero kth power modulo m. For e ≥ 1 and (p, k) ≠ (2, 2),
+write residues modulo p^(ke) in base p^k, starting with the least significant
+block. A nonzero kth power in one block is a unit, since a nonunit root
+would already give zero modulo p^k. The unit conductor theorem extends a
+power condition in the first unequal block through the remaining blocks.
+This gives an exact graph isomorphism between G_k(p^(ke)) and the e-fold
+lexicographic power of G_k(p^k), including differences whose first unequal
+block occurs later.
+
+## Interval capacity
+
+For a finite directed graph G and f ≥ 0, let M_f(G) be the supremum of
+interval moments over all selected vertices and positive intervals inside
+[0, 1] ordered by the graph's arcs. Width one is allowed in this capacity
+definition, and the empty selection is allowed.
+
+Nesting interval alphabets proves M_f(G ∘ H) ≥ M_f(G) M_f(H). For the reverse
+inequality, take the hull of the intervals in each occupied G-fiber and
+normalize the H-intervals inside that hull. The hulls form a G-alphabet,
+and each normalized fiber has moment at most M_f(H). Therefore
+
+    M_f(G ∘ H) = M_f(G) M_f(H).
+
+For words of length e, put an arc from v to w when some position j has
+equal entries at all earlier positions and a G-arc from v_j to w_j. For
+graphs without loops, this is the first-difference rule. Iterating the
+identity gives capacity M_f(G)^e for every e ≥ 0, including the single
+empty word at e = 0.
+
+Combining this with the prime-power graph isomorphism gives
+
+    M_f(G_k(p^(ke))) = M_f(G_k(p^k))^e
+
+for p prime, k, e ≥ 1, f ≥ 0, and (p, k) ≠ (2, 2). In particular, every
+individual interval alphabet at modulus p^(ke) has moment at most the
+right-hand side. The statement covers every support and admissible choice
+of widths.
+
+Extra depth at a single such prime cannot improve its normalized interval
+capacity. This is a restriction on the interval method, not an upper bound
+on D_k(N). Coupled-prime constructions remain possible.
+
+Binary squares have conductor 3, greater than block length 2: five is a
+square modulo 4 but not modulo 16. This extra bit accounts for the different
+behavior of binary depth.
+
+## Binary capacity and an explicit witness
+
+Let U_m(f) be the supremum of square-interval moments modulo 4^m. For f ≥ 0,
+nesting gives U_(m+n)(f) ≥ U_m(f) U_n(f). Choosing digits 0 and 2 gives
+U_m(f) ≥ 2^m, while the number of residues and the bound on widths give
+U_m(f) ≤ 4^m. Applying the subadditive limit theorem to −log U_m(f) proves
+
+    Λ(f) = lim_(m → ∞) U_m(f)^(1/m)
+         = sup_(m ≥ 1) U_m(f)^(1/m),       2 ≤ Λ(f) ≤ 4.
+
+No attained stationary optimizer, Bellman identity, factor-two finite-depth
+estimate, or quantitative convergence rate is asserted.
+
+The explicit binary witness uses Naslund's 25-state, 94-branch policy.
+Its geometry, positive rational weights, and all weighted row inequalities
+are checked in Lean. An induction constructs an actual interval alphabet
+at each finite depth. At m = 10^15, its moment is at least
+
+    2^(−f) a^(m−1) / 4,
+    f = 15494199041779 / 10^14,
+    a = 1430119207986461 / (5 · 10^14).
+
+The initialization and final shrink are included in this bound. A
+logarithmic certificate proves that the resulting finite alphabet meets
+the required moment at α = 75806770413/10^11. The formal depth is chosen
+from the singleton {10^15}, and its equality to that value is proved.
+Natural powers can therefore remain symbolic without changing the witness
+or adding a hypothesis.
+
+## Numerical applications and scope
+
+The square application combines the binary alphabet, six prime-chain
+components, and two odd coupled-prime components. The chain primes are
+3, 7, 11, 31, 59, and 103. The odd components use 5 · 43 and 19 · 23, with
+retained words of length three and full moduli 215^6 and 437^6. Their free
+multiplicities are 215^3 and 437^3.
+
+The square witness refines Naslund's published construction at exponent
+0.75806746. Replacing several retained words together in the 19 · 23 alphabet,
+repositioning their intervals, adjusting rational widths, and reallocating
+all nine moment exponents yield the bound 0.75806770413. Naslund's
+binary transition geometry is unchanged.
+
+The fourth- and sixth-power applications use 18 finite seed alphabets,
+their canonical lifts, and exact moment inequalities. They yield exponents
+4571/5000 = 0.9142 and 19059/20000 = 0.95295. All three numerical conclusions
+are unconditional theorems for every N ≥ 1.
+
+These are explicit lower bounds. The optimal exponents remain open, as do
+possible improvements from other supports, interval widths, binary policies,
+prime couplings, or integer constructions.
+
+[Attribution](docs/ATTRIBUTION.md) identifies the public mathematical and
+formal sources. [Proof status](PROOF_STATUS.md) and the
+[verification record](docs/VERIFICATION.md) describe the mechanical checks.

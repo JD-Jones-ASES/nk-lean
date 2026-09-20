@@ -7,7 +7,7 @@ from generate_even_certificates import ROOT,S,powerdata,lean,frac
 def main():
     data=json.loads((ROOT/'certificates/square/certificate.json').read_text())
     alpha=Fraction(data['alpha']);an,ad=alpha.numerator,alpha.denominator;a=frac(an,ad)
-    lines=['import NK.RationalMomentCertificate','','/-! Exact P0180 square-chain components; all arithmetic is kernel checked. -/',
+    lines=['import NK.RationalMomentCertificate','','/-! Exact square-chain components; all arithmetic is kernel checked. -/',
       'set_option maxHeartbeats 0','set_option maxRecDepth 32768','namespace NK.Certificates',
       'open RationalMomentCertificate','']
     for row in data['chains']:

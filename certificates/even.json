@@ -1,7 +1,6 @@
 {
-  "title": "P0177 arbitrary-modulus interval certificates",
-  "source_sha256": "99fbbef1f9092ac5efb813a67354aab217f719908bccc42bc597768f5957ecee",
-  "status": "Exact rational finite hypotheses; paper proof in THEOREMS.md; no Lean replay",
+  "title": "Exact interval certificates for fourth- and sixth-power differences",
+  "status": "Exact inputs checked by the Lean geometry, moment, and application theorems.",
   "cases": [
     {
       "k": 4,

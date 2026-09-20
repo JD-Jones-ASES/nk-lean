@@ -1,84 +1,44 @@
-# nk-lean submission plan
+# Palomar submission
 
-JD authorized the private repository and Lean development on 20 September 2026.
-The proposed single Palomar entry is **Interval moments for power-difference-free
-sets: a general criterion, local capacity laws, and three numerical applications**.
-Public release and registry intake remain separate steps requiring JD's direction.
+## Entry title
 
-## Mathematical case for the entry
+Lower bounds for sets without perfect-power differences
 
-Lead with the reusable finite-family interval-moment theorem for every k≥1.
-Its hypotheses describe ordinary finite alphabets, pairwise coprime
-perfect-kth-power bases, exact local moment inequalities and strict global
-surplus. Its conclusion is the unconditional lower bound c N^α for every N≥1.
-The selected applications are:
+## Abstract
 
-| Forbidden differences | Exact exponent |
-|---|---:|
-| Squares | 75806770413/100000000000 = 0.75806770413 |
-| Fourth powers | 4571/5000 = 0.9142 |
-| Sixth powers | 19059/20000 = 0.95295 |
+Let D_k(N) be the largest size of a subset of {1, …, N} with no positive
+k-th-power difference. We prove D_k(N) ≥ c_k N^α_k for every N ≥ 1, with
+positive constants c_k and exponents 0.75806770413, 0.9142, and 0.95295 for
+squares, fourth powers, and sixth powers. The proofs use a general
+interval-moment criterion for every positive integer k. We also prove
+arithmetic lifting results, exact product and prime-depth laws for interval
+capacity, and existence of the binary square capacity limit. The square
+construction refines Naslund's published example while retaining its binary
+transition rules. All selected statements are proved in Lean.
 
-The square improvement over the pinned Naslund witness is small but exact.
-The broader mathematical contribution makes the package useful beyond its last
-digits: canonical perfect-power closure and free copying from arbitrary seeds;
-unit-power stabilization including singular primes; unrestricted interval-moment
-multiplicativity under lexicographic graph products; the exact prime-depth law
-outside binary squares; and existence of intrinsic binary capacity as a limit.
-The prime-depth theorem explains where further local searches cannot help this
-method. It neither bounds the unrestricted integer extremal function nor rules
-out coupled-prime or binary-policy improvements.
+## Submission files
 
-## Comparison and evidence
+Use this repository at the exact 40-character commit on `main` approved
+for release. `formalization.yaml` contains the entry metadata. The single
+`comparator.json` selects 19 theorems in `Challenge.lean`; `Solution.lean`
+imports their proofs. The Lean toolchain, Lake manifest, and MIT license
+are committed.
 
-Use the single master `comparator.json`, selecting 19 statements in
-`Challenge.lean`. Challenge imports only Mathlib, has complete ordinary
-definitions, and contains 19 intentional theorem placeholders. Solution imports
-the actual proved library and certificates. Keep `definition_names` empty,
-NanoDa enabled, and exactly the three standard permitted axioms.
+The [mathematical account](PROOF.md) explains the full selected scope.
+[Attribution](docs/ATTRIBUTION.md) records the public mathematical and formal
+sources. [DISCLOSURE.md](DISCLOSURE.md) describes AI assistance and review.
+[Verification](docs/VERIFICATION.md) retains the successful local replay
+and distinguishes it from official intake.
 
-All 19 statements and all three numerical applications compile in Lean. The
-full transitive declaration audit and all 25 saved controls pass. The unchanged
-official Comparator accepted proof commit
-409bcef149ae96f40f69d38a17cf8bd7330dee98 under statement/definition matching,
-the standard-axiom policy, Lean default-kernel replay and NanoDa. The earlier
-failed run and the mathematically equivalent depth representation are documented
-in docs/NANODA_POWER_REDUCTION.md. Exact run evidence is in docs/VERIFICATION.md.
+## Remaining release steps
 
-Retain the exact input files, source pins, generator replay controls and sound
-Lean checkers in this repository. No access to the private Analytic-Lab is needed
-to build the proofs. Keep its research commit
-`916d0d604fa36c511b73f7aa214e49c16b637796` as provenance, with release backlinks
-recorded in the Lab. Python and floating-point search are witness-discovery
-tools, not proof oracles.
+1. Obtain JD Jones's direction to make the repository public and submit it.
+2. Confirm the exact main commit, current entry metadata, and source links.
+3. Submit the public repository, that full commit hash, and `comparator.json`
+   through the current Palomar intake. Its Linux mechanical checks and
+   editorial review are distinct from the completed local verification.
+4. Record the resulting entry and version only after registration is confirmed.
 
-## Release sequence
-
-1. Completed: freeze the proved candidate and record the complete local
-   independent replay, exact tool revisions, source/export hashes and host scope.
-2. Retain the private default-branch checkpoint with metadata, license,
-   proof account, attribution and verification report. The single comparison
-   configuration covers all 19 statements.
-3. When JD authorizes public release, refresh the official intake policy and
-   current numerical literature, publish the approved private candidate, and
-   run the official Linux verification gate. The macOS development shim is
-   unsandboxed and must not be described as that gate.
-4. Submit the same approved source and metadata to Palomar. Distinguish a
-   submitted or registered entry from mechanical acceptance and editorial review.
-   Link the resulting release back to the Lab without removing research evidence.
-
-## Honest boundaries and next research
-
-No global optimality or worldwide record claim is made. The numerical boundary
-near 0.7580677041313194 is for the current fixed geometry, not arbitrary supports,
-reoptimized widths or policies. The strongest certified endpoint is the rational
-number displayed above. The binary transition geometry remains Naslund's;
-the gain comes from odd support changes, widths and a new allocation across all
-nine components.
-
-The unformalized Bellman identity and factor-two finite-depth estimates stay
-outside this entry's selected claims. Further exponent research should target
-new coupled-prime geometry and better binary policies, rather than depth alone
-at one of the primes covered by the exact capacity law. Source attribution
-belongs beside these claims: see `docs/ATTRIBUTION.md`, `DISCLOSURE.md`, and the
-complete mathematical account in `PROOF.md`.
+The repository remains private. No Palomar entry has been submitted or
+registered. The current [submission policy](https://github.com/PalomarRegistry/PalomarPolicy/blob/792c7c0b9e798bd02719e795ef11fa2b5929e067/CONTRIBUTING.md)
+sets the package and metadata requirements.

@@ -1,6 +1,6 @@
 import NK.RetainedPairCertificate
 
-/-! Exact P0180 data in a verified prefix/minimum-start pruning tree.
+/-! Exact interval data in a verified prefix/minimum-start pruning tree.
 The generator is untrusted. All summaries, uniqueness and queries are checked. -/
 set_option maxRecDepth 32768
 set_option maxHeartbeats 0

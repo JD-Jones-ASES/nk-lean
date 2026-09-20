@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Generate the finite-depth logarithmic certificate at the P0180 allocation."""
+"""Generate the finite-depth logarithmic certificate at the certified allocation."""
 from fractions import Fraction as F
 import json
 from generate_even_certificates import ROOT,S,logpos,frac

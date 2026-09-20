@@ -100,12 +100,10 @@ lake build NK.Certificates.SquareApplication
 ```
 
 Generated large modules disable asynchronous theorem elaboration so bounded
-kernel checks do not overlap in memory. The production Odd215 numerical
-representation has changed; this document records its generator replay,
-not completion of the post-change aggregate or independent verifier checks.
-PROOF_STATUS.md and VERIFICATION.md record actual Lean, Comparator and NanoDa
-outcomes. Generator controls and an external exact research replay do not
-substitute for those checks or establish that NanoDa's resource issue is resolved.
+kernel checks do not overlap in memory. The complete Lean build and independent replay
+subsequently passed, as recorded in [VERIFICATION.md](VERIFICATION.md).
+Generator controls establish reproducibility; Lean and independent kernel
+replay establish the proved conclusions.
 
 ## Chosen-depth generator freshness
 

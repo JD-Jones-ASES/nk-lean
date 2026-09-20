@@ -1,6 +1,6 @@
 import NK.RationalMomentCertificate
 
-/-! Exact P0180 square-chain components; all arithmetic is kernel checked. -/
+/-! Exact square-chain components; all arithmetic is kernel checked. -/
 set_option maxHeartbeats 0
 set_option maxRecDepth 32768
 namespace NK.Certificates

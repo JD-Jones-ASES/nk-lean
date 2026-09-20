@@ -1,57 +1,38 @@
-# After the certified endpoint
+# Further questions
 
-The current square exponent is 0.75806770413. It is not an optimum over
-supports, widths, policies, prime couplings or integer constructions. These
-priorities reflect the observed search results, not a theorem about where
-future progress must occur.
+The proved exponents are lower bounds. Several ways to improve them remain
+open within the interval method.
 
-## Coupled-prime supports
+## Coupled primes
 
-The concrete gains came from cooperative support changes and width optimization
-in the 437 = 19·23 component. Broaden the exhausted last-digit triple moves:
-use tight weighted paths to identify shared bottlenecks, then test specified
-four-to-six-point changes involving middle or leading retained digits. Reweight
-jointly and compare the final nine-component allocation. A local gain must pay
-for every displaced component; raw moment gain alone is insufficient.
+The prime-depth law covers one prime at a time. It does not determine the
+best interval alphabet for a modulus with several prime factors. Changing
+such supports and their widths may yield a better global moment allocation.
+Any comparison must account for every component replaced by the new block.
 
-Different neighborhoods in the 215 component and new prime couplings remain
-open. The prime-depth capacity theorem rules out improvement from extra depth
-alone at the covered individual primes. It does not exclude coupled gains.
+## Binary squares
 
-## Binary states and policies
+Binary squares are the exception to the prime-depth law. Their power
+residues require an additional binary digit. The capacity limit exists, but
+its value and optimal transition rules are unknown. A larger collection of
+states could improve the finite policy used in the square construction.
 
-Binary squares are the conductor exception. The next distinct route is an
-expanded state and topology class, guided by residuals of the written four-cut
-optimization. Promote useful child windows to new states instead of fitting
-all children back into Naslund's 25-state library. Include required parity and
-reflection variants. Previously tested unrollings, selected topology changes
-and library envelopes are bounded numerical evidence, not capacity bounds.
+## Exact bounds for fixed supports
 
-Any accepted rational policy needs exact geometry and weighted growth checks,
-initialization and finite-depth costs, and a fresh global allocation. Neither
-stationary optimality nor a Bellman identity or convergence rate is assumed by
-the present Lean package.
+For a finite directed acyclic graph, positive widths w_v can be placed as
+ordered intervals in [0,1] exactly when every directed path P satisfies
+Σ_(v∈P) w_v ≤ 1, including singleton paths. To see sufficiency, place each
+interval after the longest weighted path ending before its vertex.
 
-## A rigorous fixed-support optimization target
-
-For a fixed finite directed acyclic support, positive widths w_v fit ordered
-intervals in [0,1] exactly when every directed path P satisfies Σ_(v∈P) w_v≤1
-(include singleton paths). Necessity follows by placing successive disjoint
-intervals along a path. For sufficiency, place each interval after the longest
-weighted path ending immediately before its vertex; the path constraints keep
-all right endpoints at most one.
-
-For 0<f<1, choose reference widths x_v>0 and nonnegative weights λ_P on paths,
-with Σ_(P∋v) λ_P ≥ f x_v^(f−1). Concavity gives
+For 0 < f < 1, choose positive reference widths x_v and nonnegative path
+weights λ_P with Σ_(P∋v) λ_P ≥ f x_v^(f−1). Concavity gives
 
     Σ_v w_v^f ≤ (1−f) Σ_v x_v^f + Σ_P λ_P.
 
-Indeed, w_v^f≤(1−f)x_v^f+f x_v^(f−1)w_v; sum the tangent inequalities, use
-the path-cover inequalities, then the path constraints. Outward rational power
-enclosures can turn this elementary bound into an exact certificate. Large
-path weights also suggest which cooperative deletions to search.
+This follows by summing the tangent inequalities for w_v^f and then applying
+the path constraints. Rational enclosures could turn this upper bound into
+an exact optimization certificate for a specified support.
 
-Implementing such a certificate would give a meaningful endpoint to width
-optimization on one specified support. This is a proposed next development,
-not part of the present checked certificates or the 19 selected Lean statements.
-It would not certify optimal support, policy, prime coupling or global exponent.
+These questions are outside the 19 statements selected for comparison.
+A bound for one support would not establish an optimal support, transition
+policy, or exponent for the unrestricted integer problem.

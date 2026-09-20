@@ -3,7 +3,7 @@ import NK.Certificates.SquareChains
 import NK.Certificates.Odd215Moments
 import NK.Certificates.Odd437Moments
 
-/-! The nine exact P0180 components, assembled through the general interval
+/-! The nine exact square components, assembled through the general interval
 criterion. Coprimality treats the binary modulus symbolically. -/
 namespace NK.Certificates
 

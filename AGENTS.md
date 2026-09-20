@@ -1,20 +1,18 @@
-# nk-lean development rules
+# Development rules
 
-This is the user-authorized private spin-out of Analytic-Lab P0177–P0180.
-Read README.md and SUBMISSION_PLAN.md. Preserve full intended scope; distinguish
-research certificates from formal proofs. All target theorems must be genuine
-unconditional applications, not hidden assumptions or redefinitions.
+Read README.md, PROOF.md, and SUBMISSION_PLAN.md. Keep the documentation
+self-contained and suitable for readers of the Palomar entry. Describe the
+mathematics and public sources in plain language.
 
-Use pinned, attributed dependencies. Only permitted standard Lean axioms may
-occur transitively in submitted proofs. No sorry in proofs, custom axioms, native_decide,
-unsafe/partial proof substitutes or weakening of the mathematical statement.
-Record actual builds and axiom checks. Keep optional hosted CI controlled and
-run independent release gates on a concrete exact commit. Do not publish the
-private repository or register a submission without the user's release direction.
+Preserve the exact statements and unconditional numerical bounds. Use pinned,
+attributed dependencies. Only the standard permitted Lean axioms may occur
+transitively in submitted proofs. Do not introduce admissions, custom axioms,
+native evaluation assumptions, or weaker replacement statements.
 
-Coordinate file ownership between agents. Keep mathematical discovery in
-Analytic-Lab and copy only curated, pinned research evidence into this project.
+Challenge.lean may contain labelled theorem placeholders for independent
+comparison. Its definitions must have complete bodies. Solution and NK must
+not import Challenge. Keep all 19 comparisons and NanoDa enabled.
 
-Challenge.lean may contain explicitly labelled theorem placeholders for the
-standard independent comparison protocol. It must never be imported by Solution
-or NK. Mathematical definitions in Challenge must have complete ordinary bodies.
+Record the scope and exact commit of verification. Coordinate file ownership
+between agents. Keep hosted checks controlled. Do not make the repository
+public or submit it to Palomar without the user's direction.

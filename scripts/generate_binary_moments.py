@@ -12,7 +12,7 @@ def main():
     f=F(d['moment_power']);growth=F(d['growth_lower']);vs=[F(s['positive_weight']) for s in d['states']]
     fn,fd=f.numerator,f.denominator
     lines=['import NK.Certificates.BinaryGeometry','import NK.RationalMomentCertificate','',
-      '/-! Exact weighted-row certificate at the P0180 square allocation. -/',
+      '/-! Exact weighted-row certificate at the certified square allocation. -/',
       'set_option maxHeartbeats 0','set_option maxRecDepth 32768',
       'namespace NK.Certificates','open NK.BinaryPolicy NK.RationalMomentCertificate','',
       'noncomputable def binaryWeights (i : Fin 25) : ℝ :=', '  match i.val with', *[f'  | {i} => {rat(v)}' for i,v in enumerate(vs)], '  | _ => 0','',

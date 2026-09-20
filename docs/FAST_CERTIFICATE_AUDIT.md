@@ -1,34 +1,52 @@
-# Fast retained-pair query audit
+# Fast retained-pair query review
 
-Scope: `NK/FastPairCertificate.lean` in `/private/tmp/nk-lean-work`.
-The implementation accelerates only finite certificate evaluation. It does not change the tree data, interval geometry, or existing alphabet constructor.
+[FastPairCertificate.lean](../NK/FastPairCertificate.lean) accelerates finite
+certificate evaluation without changing the tree data, interval geometry,
+or alphabet constructor. This note records an AI-assisted soundness review
+and exact controls. The accepted official replay is documented in
+[VERIFICATION.md](VERIFICATION.md).
 
-## Soundness boundary
+## Soundness
 
-`PowerMaskValid k m mask` checks all residues `d : Fin m` against the existing definition `KthPower.IsNonzeroPowerMod k m d`. The bit at zero is therefore checked as false; arbitrary bits at indices at least `m` are irrelevant.
+`PowerMaskValid k m mask` checks every residue `d : Fin m` against
+`KthPower.IsNonzeroPowerMod k m d`. The zero bit must be false. Bits at
+indices at least `m` are irrelevant.
 
-`FastPrefixBlocks` returns false when either list ends before a discrepancy. Otherwise it compares entries until the first unequal pair and tests exactly the difference used by `CertificatePrefixBlocks`. A successful test supplies the old first-difference witness. Equal heads merely increase that witness index by one. The theorem requires positive `m`, so the modular difference is an element of `Fin m` even before bounded-digit assumptions are supplied.
+`FastPrefixBlocks` returns false when a list ends before a discrepancy.
+Otherwise it compares entries up to the first unequal pair and tests the
+same modular difference as `CertificatePrefixBlocks`. Success supplies
+the required first-difference witness; equal heads increase its index by
+one. Positive `m` ensures that the modular difference defines a member
+of `Fin m`, independently of bounded-digit hypotheses.
 
-`fastQuery_sound` is structural induction on the unchanged tree. Ordered intervals return the same answer. A successful fast prefix test implies its original prefix predicate. Otherwise a leaf requires word equality and a branch requires both recursive queries. The proof does not assume that unsuccessful fast tests are complete; one-way soundness suffices.
+`fastQuery_sound` proceeds by induction on the tree. Interval ordering
+and successful prefix tests imply the corresponding original predicates.
+Otherwise a leaf requires word equality and a branch requires both recursive
+queries. Only this implication is needed; completeness of unsuccessful
+fast tests is not assumed.
 
-`fastGeometryValid_sound` applies the query refinement to every literal source row. Existing `GeometryValid` plus `Valid` remain the predicates used by the existing geometric soundness and alphabet constructor. Thus the acceleration cannot turn an unverified summary, invalid row, or wrong interval ordering into an accepted alphabet.
+`fastGeometryValid_sound` applies the implication to every source row.
+The alphabet constructor still requires the original `GeometryValid` and
+`Valid` predicates. The faster query therefore cannot bypass a row bound,
+tree summary, or interval-order condition.
 
-## Exact controls
+## Controls
 
-`audit/fast-pair-controls.lean` checks production masks for square residues modulo 5, 19, 23, and 43, an additional modulus-3 control, deliberately incorrect masks including a false zero bit, both orientations of a first difference, equal/short/empty prefixes, a two-row ordered tree, and a valid-row tree rejected for overlapping intervals along a square arc. All computations use ordinary kernel reduction (`decide +kernel`), not native evaluation.
+[audit/fast-pair-controls.lean](../audit/fast-pair-controls.lean) checks
+production square masks modulo 5, 19, 23, and 43, an additional modulus-3
+example, incorrect masks including a false zero bit, both first-difference
+orientations, equal and exhausted prefixes, an ordered two-row tree, and
+rejection of overlapping intervals along a square arc.
 
-No finite performance test establishes an asymptotic runtime claim. The structural reduction removes repeated root enumeration and an existential scan over possible first-difference indices from each prefix decision.
-
-## Verified result
-
-The module builds without warnings. The complete controls file exits successfully. All three main soundness theorems have exactly the standard printed axioms `propext`, `Classical.choice`, and `Quot.sound`. `git diff --check` is clean for the new module.
-
-Final module SHA256: `a1835c0deae5d0e432d24ac83abc35e20454f361ee9b3f28f3bc91b59765d701`.
-Controls SHA256: `8226dcfcf282e3bd56ee1e9d7adfb54480bd5d81071545910d564e34368bb3ae`.
-
-Rerun:
+The controls use `decide +kernel`, not native evaluation. The three
+soundness theorem axiom reports contain only `propext`,
+`Classical.choice`, and `Quot.sound`.
 
 ```sh
 lake build NK.FastPairCertificate
 lake env lean audit/fast-pair-controls.lean
 ```
+
+The implementation avoids repeated root enumeration and repeated searches
+for a first-difference index. No asymptotic runtime claim follows from these
+finite controls.

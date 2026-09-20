@@ -6,11 +6,10 @@ These are finite-sum real inequalities. At rational inputs every displayed
 sum and error bound is rational, so subsequent certificates can check them
 using exact arithmetic. No native evaluation axiom is used.
 
-The exponential bound matches the positive Taylor tail in the P0179
-checker. The logarithm bound below is Mathlib's atanh remainder estimate;
-its uniform tail is deliberately weaker than P0179's additional factor
-`1/(2*n+1)`. That sharper tail and the checker's fixed-point rounding
-operations are not claimed proved by this module.
+The exponential bound uses a positive Taylor tail. The logarithm bound
+is Mathlib's atanh remainder estimate, without the sharper factor
+`1/(2*n+1)`. That sharper tail and fixed-point rounding operations
+are outside the scope of this module.
 -/
 
 namespace NK.NumericBounds
@@ -40,7 +39,7 @@ theorem expTaylor_bounds (x : ℝ) (hx : 0 ≤ x) (hx1 : x ≤ 1)
     (Real.exp_bound' hx hx1 (by omega : 0 < n)).trans (add_le_add le_rfl hratio)⟩
 
 /-- The exact uniform tail used after range reduction to [0,1/8].
-For the P0179 loop through degree30, use n=31. -/
+For a sum through degree 30, use n = 31. -/
 theorem expTaylor_eighth_bounds (x : ℝ) (hx : 0 ≤ x) (hx8 : x ≤ 1 / 8)
     (n : ℕ) (hn : 1 ≤ n) :
     expTaylor x n ≤ Real.exp x ∧

@@ -1,6 +1,6 @@
-# Proposed comparison surface
+# Compared statements
 
-The submission should lead with one reusable theorem and its three numerical
+The submission presents one reusable theorem and its three numerical
 applications, with structural results explaining which local searches can
 improve the construction. The finite data and checking algorithms belong in
 Solution; they must not appear as unproved hypotheses of the numerical claims.
@@ -44,16 +44,13 @@ statements over complete ordinary mathematical definitions. Its definitions can 
 fully qualified names and signatures as the independently developed library;
 Solution then supplies the actual declarations through its imports. Check this
 layout against Comparator on the exact candidate commit before release.
-The current draft has239 lines and9,186 bytes, below the official limits;
-recheck these counts on the final candidate.
+The statement file is below the official 1,000-line and 100 KiB limits.
 
 No definition holes are permitted: comparator.json keeps definition_names
 empty so all ordinary definition bodies are compared transitively.
 
-Keep the numerical results together with the general transfer. Put proof
-architecture, certificate provenance, credit, numerical scope and the remaining
-search opportunities in the paper/README rather than adding implementation
-hypotheses to the statement. Retain Krachun/Jones/Naslund attribution and separate
+Keep the numerical results together with the general transfer. The mathematical account explains the proof, certificate data, sources, and
+numerical scope. The numerical statements contain no certificate assumptions. Retain Krachun/Jones/Naslund attribution and separate
 standard unit-group/Mathlib ingredients from this project's new constructions.
 
 Public release and Palomar intake are separate from completion of the private
