@@ -35,7 +35,7 @@ antecedents are not claimed as new results here.
 
 The unit-conductor arguments use classical prime-power unit-group theory.
 Keith Conrad's
-[Prime-power units and finite subgroups of GL_n(Q)](https://kconrad.math.uconn.edu/blurbs/gradnumthy/primepowerunitsandGLnQ.pdf)
+[Prime powers units and finite subgroups of GL_n(Q)](https://kconrad.math.uconn.edu/blurbs/gradnumthy/primepowerunitsandGLnQ.pdf)
 gives an exposition of the relevant arithmetic. Related finite-ring graph
 results include Podestá and Videla's
 [Waring numbers over finite commutative local rings](https://arxiv.org/abs/2212.12396),

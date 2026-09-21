@@ -40,8 +40,12 @@ separate step.
 3. Record the resulting entry and version only after registration is confirmed.
 
 The submission of `0a2e7b8cb640ab3528fef6d0e44798940c4006fd` failed during
-mechanical verification. The [repair record](docs/MODULE_IDENTITY.md) explains
-the module-name collision. The replacement proof and build inputs passed the
-[official Linux preflight](https://github.com/JD-Jones-ASES/nk-lean/actions/runs/35540659599).
-A new submission is required; no registration is claimed. The [submission policy](https://github.com/PalomarRegistry/PalomarPolicy/blob/792c7c0b9e798bd02719e795ef11fa2b5929e067/CONTRIBUTING.md)
+mechanical verification; the [repair record](docs/MODULE_IDENTITY.md) explains
+the module-name collision. The submission of `943c83f3bab7156b69c4a6235c78724fea409ab4`
+passed mechanical verification and automated review on 21 September 2026; the
+review asked that `formalization.yaml` list every reference named in the
+attribution, which the commit after it does. Registration needs a new
+submission at that commit's full hash, with the same repository and
+`comparator.json`; no registration is claimed. The
+[submission policy](https://github.com/PalomarRegistry/PalomarPolicy/blob/792c7c0b9e798bd02719e795ef11fa2b5929e067/CONTRIBUTING.md)
 sets the package and metadata requirements.

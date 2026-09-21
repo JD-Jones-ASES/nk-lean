@@ -61,3 +61,5 @@ The project uses the MIT license.
 remaining release steps. The first Palomar submission failed because its
 module names collided with those of a dependency. The submission now uses
 `NKChallenge` and `NKSolution`; see the [repair record](docs/MODULE_IDENTITY.md).
+The second submission passed mechanical verification and automated review;
+the source record now lists every reference in the attribution.

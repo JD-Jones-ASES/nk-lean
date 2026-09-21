@@ -115,3 +115,18 @@ depth and proves it equal to that exact value. All powers retain the chosen
 depth symbolically. No theorem, numerical endpoint, or axiom is changed.
 [The diagnostic note](NANODA_POWER_REDUCTION.md) records the earlier failed
 replay and the correction accepted by the unchanged official checker.
+
+## Palomar submission and the source record
+
+The submission of `943c83f3bab7156b69c4a6235c78724fea409ab4` passed Palomar's
+mechanical verification on 21 September 2026
+([run 35545688971](https://github.com/PalomarRegistry/PalomarSubmission/actions/runs/35545688971):
+all 19 statements, the axiom policy, Lean kernel checking, and NanoDa), and
+its automated review identified no blocking problem. The review noted that
+`formalization.yaml` omitted references named in [ATTRIBUTION.md](ATTRIBUTION.md).
+The following commit adds four `background` sources, the unit-group note behind
+the conductors and three unit Cayley graph papers as graph-literature context,
+and corrects one title in the attribution. It changes no Lean, certificate,
+build, or comparator input: all 121 inputs in the
+[repair manifest](replay/module-repair-inputs.json) hash unchanged. Registration
+requires a new submission at that commit; none is claimed.
