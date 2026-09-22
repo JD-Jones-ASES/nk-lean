@@ -37,15 +37,16 @@ separate step.
 2. Submit the public repository, that full commit hash, and `comparator.json`
    through the current Palomar intake. Its Linux mechanical checks and
    editorial review are distinct from the completed local verification.
-3. Record the resulting entry and version only after registration is confirmed.
+3. Record the resulting entry and version only after registration is confirmed:
+   PALOMAR-2026-09-21-000004 v1, registered 21 September 2026 at `55acbf0`.
 
 The submission of `0a2e7b8cb640ab3528fef6d0e44798940c4006fd` failed during
 mechanical verification; the [repair record](docs/MODULE_IDENTITY.md) explains
 the module-name collision. The submission of `943c83f3bab7156b69c4a6235c78724fea409ab4`
 passed mechanical verification and automated review on 21 September 2026; the
 review asked that `formalization.yaml` list every reference named in the
-attribution, which the commit after it does. Registration needs a new
-submission at that commit's full hash, with the same repository and
-`comparator.json`; no registration is claimed. The
+attribution, which the commit after it does. That commit,
+`55acbf0def926afb15eb243a3c3f2a3b42439bce`, is registered as
+[PALOMAR-2026-09-21-000004](https://palomar-registry.org/entry.html?id=PALOMAR-2026-09-21-000004&version=1), version 1, 21 September 2026. The
 [submission policy](https://github.com/PalomarRegistry/PalomarPolicy/blob/792c7c0b9e798bd02719e795ef11fa2b5929e067/CONTRIBUTING.md)
 sets the package and metadata requirements.

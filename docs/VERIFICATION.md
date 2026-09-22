@@ -128,5 +128,7 @@ The following commit adds four `background` sources, the unit-group note behind
 the conductors and three unit Cayley graph papers as graph-literature context,
 and corrects one title in the attribution. It changes no Lean, certificate,
 build, or comparator input: all 121 inputs in the
-[repair manifest](replay/module-repair-inputs.json) hash unchanged. Registration
-requires a new submission at that commit; none is claimed.
+[repair manifest](replay/module-repair-inputs.json) hash unchanged. That commit,
+`55acbf0def926afb15eb243a3c3f2a3b42439bce`, passed verification again on
+21 September 2026 and is registered as [PALOMAR-2026-09-21-000004](https://palomar-registry.org/entry.html?id=PALOMAR-2026-09-21-000004&version=1),
+version 1, trust high.

@@ -60,4 +60,5 @@ shim. The later Linux preflight used Palomar's sandboxed workflow. The
 repository is public. Its first submission failed before proof comparison
 because Palomar resolved the dependency's statement module; the
 [module repair](docs/MODULE_IDENTITY.md) fixes that collision.
-A new intake run and editorial review are required; registration is not claimed.
+The resubmission at `55acbf0` is registered as PALOMAR-2026-09-21-000004 (version 1,
+21 September 2026).

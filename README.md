@@ -62,4 +62,6 @@ remaining release steps. The first Palomar submission failed because its
 module names collided with those of a dependency. The submission now uses
 `NKChallenge` and `NKSolution`; see the [repair record](docs/MODULE_IDENTITY.md).
 The second submission passed mechanical verification and automated review;
-the source record now lists every reference in the attribution.
+the source record now lists every reference in the attribution. The
+resubmission at `55acbf0` is registered as Palomar entry
+[PALOMAR-2026-09-21-000004](https://palomar-registry.org/entry.html?id=PALOMAR-2026-09-21-000004&version=1) (version 1, 21 September 2026, trust high).

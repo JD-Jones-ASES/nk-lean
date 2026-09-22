@@ -66,4 +66,5 @@ Lean kernel. All 19 comparisons passed, with no warnings or errors.
 The following documentation and evidence commit preserves all 121 inputs
 in the repair manifest and the accepted metadata. The
 [verification history](VERIFICATION.md) distinguishes this Linux result
-from the earlier local replay. A new Palomar submission is still required.
+from the earlier local replay. The later submission at `55acbf0` is registered
+as PALOMAR-2026-09-21-000004 (version 1).
